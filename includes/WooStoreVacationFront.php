@@ -43,7 +43,7 @@ if ( !class_exists( 'WooStoreVacationFront' ) ) :
                     jQuery("body").prepend($vacationAlert);
                 });
             </script>
-            <?
+            <?php
         }
         public function woo_store_front_vacation_scripts() {
             wp_enqueue_style('woo-store-vacation-jquery-stickyalert', $this->front_assets_url . 'css/custom.css', false, '1.0', false);
