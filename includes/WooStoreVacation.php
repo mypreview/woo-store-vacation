@@ -139,14 +139,28 @@ if ( !class_exists( 'WooStoreVacation' ) ) :
 				'woo-store-vacation-admin', // page
 				'woo_store_vacation_setting_section' // section
 			);
-			add_settings_field(
-				'notice_style', // id
-				__('Notice Style', 'woo-store-vacation') . ' <abbr class="required" title="required">*</abbr>', // title
-				array( $this, 'notice_style_callback' ), // callback
-				'woo-store-vacation-admin', // page
-				'woo_store_vacation_setting_section' // section
-			);
-			add_settings_field(
+            add_settings_field(
+                'notice_bgcolor', // id
+                __('Notice Background Color', 'woo-store-vacation'), // title
+                array( $this, 'notice_bgcolor_callback' ), // callback
+                'woo-store-vacation-admin', // page
+                'woo_store_vacation_setting_section' // section
+            );
+            add_settings_field(
+                'notice_textcolor', // id
+                __('Notice Text Color', 'woo-store-vacation'), // title
+                array( $this, 'notice_textcolor_callback' ), // callback
+                'woo-store-vacation-admin', // page
+                'woo_store_vacation_setting_section' // section
+            );
+            add_settings_field(
+                'notice_customcss', // id
+                __('Notice Custom CSS', 'woo-store-vacation'), // title
+                array( $this, 'notice_customcss_callback' ), // callback
+                'woo-store-vacation-admin', // page
+                'woo_store_vacation_setting_section' // section
+            );
+            add_settings_field(
 				'vacation_notice', // id
 				__('Vacation Notice', 'woo-store-vacation') . ' <abbr class="required" title="required">*</abbr>', // title
 				array( $this, 'vacation_notice_callback' ), // callback
@@ -165,17 +179,30 @@ if ( !class_exists( 'WooStoreVacation' ) ) :
 			if ( isset( $input['end_date'] ) ) :
 				$sanitary_values['end_date'] = sanitize_text_field( $input['end_date'] );
 			endif;
-			if ( isset( $input['notice_style'] ) ) {
-				$sanitary_values['notice_style'] = $input['notice_style'];
-			}
+            if ( isset( $input['notice_textcolor'] ) && $this->check_color($input['notice_textcolor']) ) :
+                $sanitary_values['notice_textcolor'] = $input['notice_textcolor'];
+            endif;
+            if ( isset( $input['notice_bgcolor'] ) && $this->check_color($input['notice_bgcolor'])) :
+                $sanitary_values['notice_bgcolor'] = $input['notice_bgcolor'];
+            endif;
+            if ( isset( $input['notice_customcss'] ) ) :
+                $sanitary_values['notice_customcss'] = esc_textarea( $input['notice_customcss'] );
+            endif;
 			if ( isset( $input['vacation_notice'] ) ) :
 				$sanitary_values['vacation_notice'] = esc_textarea( $input['vacation_notice'] );
 			endif;
+
 			return $sanitary_values;
 		}
 		public function woo_store_vacation_section_info() {
 			
 		}
+        public function check_color( $value ) {
+            if ( preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) { // if user insert a HEX color with #
+                return true;
+            }
+            return false;
+        }
 		public function enable_vacation_mode_callback() {
 			printf(
 				'<input type="checkbox" name="woo_store_vacation_option_name[enable_vacation_mode]" id="enable_vacation_mode" value="enable_vacation_mode" %s /> <label for="enable_vacation_mode"><em><small>' . esc_html__( 'Want to go vacation by closing my store publically.', 'woo-store-vacation') . '</small></em></label>',
@@ -203,14 +230,27 @@ if ( !class_exists( 'WooStoreVacation' ) ) :
 				isset( $this->woo_store_vacation_options['end_date'] ) ? esc_attr( $this->woo_store_vacation_options['end_date']) : ''
 			);
 		}
-		public function notice_style_callback() {
-			?> <fieldset><?php $checked = ( isset( $this->woo_store_vacation_options['notice_style'] ) && $this->woo_store_vacation_options['notice_style'] === 'notice' ) ? 'checked' : '' ; ?>
-			<label for="notice_style-0"><input type="radio" name="woo_store_vacation_option_name[notice_style]" id="notice_style-0" value="notice" <?php echo $checked; ?>> <?php _e('Info', 'woo-store-vacation'); ?></label>&nbsp;&nbsp;
-			<?php $checked = ( isset( $this->woo_store_vacation_options['notice_style'] ) && $this->woo_store_vacation_options['notice_style'] === 'error' ) ? 'checked' : '' ; ?>
-			<label for="notice_style-1"><input type="radio" name="woo_store_vacation_option_name[notice_style]" id="notice_style-1" value="error" <?php echo $checked; ?>> <?php _e('Error', 'woo-store-vacation'); ?></label>&nbsp;&nbsp;
-			<?php $checked = ( isset( $this->woo_store_vacation_options['notice_style'] ) && $this->woo_store_vacation_options['notice_style'] === 'success' ) ? 'checked' : '' ; ?>
-			<label for="notice_style-2"><input type="radio" name="woo_store_vacation_option_name[notice_style]" id="notice_style-2" value="success" <?php echo $checked; ?>> <?php _e('Success', 'woo-store-vacation'); ?></label></fieldset> <?php
-		}
+        public function notice_bgcolor_callback() {
+            $notice_bgcolor = isset( $this->woo_store_vacation_options['notice_bgcolor'] ) ? esc_attr($this->woo_store_vacation_options['notice_bgcolor']) : '#000000';
+            printf(
+                '<input class="regular-text woo-store-vacation-color-field" type="text" name="woo_store_vacation_option_name[notice_bgcolor]" id="notice_bgcolor" value="%s" />' ,
+                $notice_bgcolor
+            );
+        }
+        public function notice_textcolor_callback() {
+            $notice_textcolor = isset( $this->woo_store_vacation_options['notice_textcolor'] ) ? esc_attr($this->woo_store_vacation_options['notice_textcolor']) : '#FFFFFF';
+            printf(
+                '<input class="regular-text woo-store-vacation-color-field" type="text" name="woo_store_vacation_option_name[notice_textcolor]" id="notice_textcolor" value="%s" />' ,
+                $notice_textcolor
+            );
+        }
+        public function notice_customcss_callback() {
+            $notice_customcss = isset( $this->woo_store_vacation_options['notice_customcss'] ) ? esc_attr($this->woo_store_vacation_options['notice_customcss']) : '';
+            printf(
+                '<textarea class="large-text" type="text" name="woo_store_vacation_option_name[notice_customcss]" rows="5" id="notice_customcss">%s</textarea>' ,
+                $notice_customcss
+            );
+        }
 		public function vacation_notice_callback() {
 			printf(
 				'<textarea class="large-text" rows="5" name="woo_store_vacation_option_name[vacation_notice]" id="vacation_notice" />%s</textarea>',
@@ -218,11 +258,13 @@ if ( !class_exists( 'WooStoreVacation' ) ) :
 			);
 		}
 		public function woo_store_vacation_scripts() {
-			//jQuery UI theme css file
+		    // Wp color picker css file
+            wp_enqueue_style( 'wp-color-picker' );
+            //jQuery UI theme css file
 			wp_enqueue_style('woo-store-vacation-jquery-ui-datepicker-css', $this->admin_assets_url . 'css/jquery.ui.datepicker.css', false, '1.0', false);
 			//jQuery UI date picker file
 			wp_enqueue_script('jquery-ui-datepicker');
-			wp_enqueue_script( 'woo-store-vacation-init-datepicker', $this->admin_assets_url . 'js/custom.js', array('jquery', 'jquery-ui-datepicker'), '1.0', true );
+			wp_enqueue_script( 'woo-store-vacation-init-datepicker', $this->admin_assets_url . 'js/custom.js', array('jquery', 'jquery-ui-datepicker', 'wp-color-picker'), '1.0', true );
 		}
 		public function woo_store_vacation_settings_link($links) {
 			// Add settings, docs and support links link to plugin list table
