@@ -30,8 +30,11 @@ defined( 'ABSPATH' ) or exit;
 require_once dirname( __FILE__ ) . '/includes/requirements.php';
 // Woo Store Vacation Class.
 require_once dirname( __FILE__ ) . '/includes/WooStoreVacation.php';
-// Retrieve plugin option value(s).
-require_once dirname( __FILE__ ) . '/includes/front-end.php';
+// Woo Store Vacation Front Class.
+require_once dirname( __FILE__ ) . '/includes/WooStoreVacationFront.php';
+
+$woo_store_vacation_front = new WooStoreVacationFront(__FILE__);
+
 if ( is_admin() ) :
 	$woo_store_vacation = new WooStoreVacation(__FILE__);
 	load_plugin_textdomain( 'woo-store-vacation', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
