@@ -5,7 +5,7 @@ Donate link: https://mypreview.one/woo-store-vacation
 Requires at least: 5.3
 Tested up to: 6.1
 Requires PHP: 7.4
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,6 +137,9 @@ Currently, the key features offered by the premium (paid) version of the plugin 
 5. Displaying a notice at the top of shop archive pages
 
 == Changelog ==
+= 1.6.2 =
+* Compatibility with WooCommerce 7.3
+
 = 1.6.1 =
 * Improved logic in displaying admin-notices.
 
