@@ -748,9 +748,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 
 			// Make sure that the WooCommerce plugin is active.
 			if ( $this->is_woocommerce() ) {
-				$wc_plugin_url = WC()->plugin_url();
-				wp_register_style( 'jquery-ui-style', trailingslashit( $wc_plugin_url ) . 'assets/css/jquery-ui/jquery-ui.min.css', array(), WC_VERSION, 'screen' );
-				wp_register_style( 'woocommerce-activation', trailingslashit( $wc_plugin_url ) . 'assets/css/activation.css', array(), WC_VERSION, 'screen' );
+				wp_register_style( 'jquery-ui-style', trailingslashit( WC()->plugin_url() ) . 'assets/css/jquery-ui/jquery-ui.min.css', array(), WC_VERSION, 'screen' );
 			}
 
 			// Enqueue a script.
@@ -760,7 +758,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 
 			if ( 'admin.php' === $pagenow && isset( $_GET['page'] ) && WOO_STORE_VACATION_SLUG === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				wp_enqueue_style( 'jquery-ui-style' );
-				wp_enqueue_style( 'woocommerce-activation' );
+				wp_enqueue_style( 'wp-color-picker' );
 				wp_enqueue_script( WOO_STORE_VACATION_SLUG );
 			}
 
