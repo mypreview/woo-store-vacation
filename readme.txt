@@ -24,16 +24,16 @@ If you want to start selling products again, then you can unpause your store at 
 >
 > Store Vacation plugin has a premium version which comes with several additional benefits:
 >
-> * One-click store close.
-> * Exclude list of user roles.
-> * Exclude list of product types.
-> * Exclude products individually.
-> * Display notice via shortcode or block.
-> * Allow **Shop Managers** to edit.
-> * Unlimited date-time ranges.
-> * Unlimited weekday hours.
-> * Unlimited notifications.
-> * Import and export plugin settings.
+> * One-click store close
+> * Exclude list of user roles
+> * Exclude list of product types
+> * Exclude products individually
+> * Display notice via shortcode or block
+> * Allow **Shop Managers** to edit
+> * Unlimited date-time ranges
+> * Unlimited weekday hours
+> * Unlimited notifications
+> * Import and export plugin settings
 >
 > [Upgrade to premium! &#8594;](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)")
 
@@ -118,16 +118,16 @@ Yes, there is!
 
 Currently, the key features offered by the premium (paid) version of the plugin are:
 
-* One-click store close.
-* Exclude list of user roles.
-* Exclude list of product types.
-* Exclude products individually.
-* Allow **Shop Managers** to edit.
-* Display notice via shortcode or block.
-* Unlimited date-time ranges.
-* Unlimited weekday hours.
-* Unlimited notifications.
-* Import and export plugin settings.
+* One-click store close
+* Exclude list of user roles
+* Exclude list of product types
+* Exclude products individually
+* Allow **Shop Managers** to edit
+* Display notice via shortcode or block
+* Unlimited date-time ranges
+* Unlimited weekday hours
+* Unlimited notifications
+* Import and export plugin settings
 
 [Go Premium, Be Happy! &#8594;](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)")
 
