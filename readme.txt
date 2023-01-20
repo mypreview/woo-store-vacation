@@ -140,6 +140,7 @@ Currently, the key features offered by the premium (paid) version of the plugin 
 
 == Changelog ==
 = 1.6.2 =
+* Add support for HPOS (High-Performance Order Storage)
 * Compatibility with WooCommerce 7.3
 
 = 1.6.1 =
