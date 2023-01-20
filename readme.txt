@@ -33,6 +33,7 @@ If you want to start selling products again, then you can unpause your store at 
 > * Unlimited date-time ranges.
 > * Unlimited weekday hours.
 > * Unlimited notifications.
+> * Import and export plugin settings.
 >
 > [Upgrade to premium! &#8594;](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)")
 
@@ -126,6 +127,7 @@ Currently, the key features offered by the premium (paid) version of the plugin 
 * Unlimited date-time ranges.
 * Unlimited weekday hours.
 * Unlimited notifications.
+* Import and export plugin settings.
 
 [Go Premium, Be Happy! &#8594;](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)")
 
