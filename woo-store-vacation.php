@@ -880,9 +880,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					z-index:2;
 					text-align:left;
 					list-style:none;
-					border-top:0;
-					border-right:0;
-					border-bottom:0;
+					border:none;
 					border-left:.6180469716em solid rgba(0,0,0,.15);
 					border-radius:2px;
 					padding:1em 1.618em;
@@ -903,13 +901,8 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					background:0 0;
 					line-height:1.618;
 					margin-left:2em;
-					border-width:0;
-					border-top:0;
-					border-right:0;
-					border-bottom:0;
-					border-left-width:1px;
-					border-left-style:solid;
-					border-left-color:rgba(255,255,255,.25)!important;
+					border:none;
+					border-left:1px solid rgba(255,255,255,.25)!important;
 					border-radius:0;
 					box-shadow:none!important;
 					text-decoration:none;
