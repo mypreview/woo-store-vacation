@@ -808,6 +808,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					if ( isset( $disable_purchase ) && wc_string_to_bool( $disable_purchase ) ) {
 						// Make all products not purchasable.
 						add_filter( 'woocommerce_is_purchasable', '__return_false', PHP_INT_MAX );
+						add_filter( 'body_class', array( $this, 'body_classes' ) );
 
 						/**
 						 * Allow third-party plugin(s) to hook into this place and add their own functionality if needed.
@@ -822,7 +823,6 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					add_action( 'woocommerce_before_cart', array( $this, 'vacation_notice' ), 5 );
 					add_action( 'woocommerce_before_checkout_form', array( $this, 'vacation_notice' ), 5 );
 					add_action( 'wp_print_styles', array( $this, 'inline_css' ), 99 );
-					add_filter( 'body_class', array( $this, 'body_classes' ) );
 				}
 			}
 		}
