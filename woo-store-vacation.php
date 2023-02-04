@@ -535,7 +535,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @return    void
 		 */
 		public function vacation_mode_callback() {
-			$value = ( isset( $this->options['vacation_mode'] ) ) ? $this->options['vacation_mode'] : null;
+			$value = $this->options['vacation_mode'] ?? null;
 			printf(
 				'<input
 					type="checkbox"
@@ -557,7 +557,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @return    void
 		 */
 		public function disable_purchase_callback() {
-			$value = ( isset( $this->options['disable_purchase'] ) ) ? $this->options['disable_purchase'] : null;
+			$value = $this->options['disable_purchase'] ?? null;
 			printf(
 				'<input
 					type="checkbox"
@@ -579,7 +579,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @return    void
 		 */
 		public function start_date_callback() {
-			$value = isset( $this->options['start_date'] ) ? $this->options['start_date'] : null;
+			$value = $this->options['start_date'] ?? null;
 			printf(
 				'<input
 					type="text"
@@ -601,7 +601,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function end_date_callback() {
 			$today              = current_datetime()->format( self::DATE_TIME_FORMAT );
-			$value              = isset( $this->options['end_date'] ) ? $this->options['end_date'] : null;
+			$value              = $this->options['end_date'] ?? null;
 			$end_date           = new DateTimeImmutable( $value, wp_timezone() );
 			$end_date           = $end_date->setTime( 0, 0, 0 );
 			$end_date_formatted = $end_date->format( self::DATE_TIME_FORMAT );
@@ -638,7 +638,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @return    void
 		 */
 		public function text_color_callback() {
-			$value = isset( $this->options['text_color'] ) ? $this->options['text_color'] : '#FFFFFF';
+			$value = $this->options['text_color'] ?? '#FFFFFF';
 			printf(
 				'<input
 					type="text"
@@ -660,7 +660,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @return    void
 		 */
 		public function background_color_callback() {
-			$value = isset( $this->options['background_color'] ) ? $this->options['background_color'] : '#E2401C';
+			$value = $this->options['background_color'] ?? '#E2401C';
 			printf(
 				'<input
 					type="text"
@@ -683,7 +683,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function btn_txt_callback() {
 			$placeholder = _x( 'Contact me &#8594;', 'settings field placeholder', 'woo-store-vacation' );
-			$value       = isset( $this->options['btn_txt'] ) ? $this->options['btn_txt'] : null;
+			$value       = $this->options['btn_txt'] ?? null;
 			printf(
 				'<input
 					type="text"
@@ -706,7 +706,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function btn_url_callback() {
 			$placeholder = _x( 'https://www.example.com', 'settings field placeholder', 'woo-store-vacation' );
-			$value       = isset( $this->options['btn_url'] ) ? $this->options['btn_url'] : null;
+			$value       = $this->options['btn_url'] ?? null;
 			printf(
 				'<input
 					type="url"
@@ -729,7 +729,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function vacation_notice_callback() {
 			$placeholder = _x( 'I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience.', 'settings field placeholder', 'woo-store-vacation' );
-			$value       = isset( $this->options['vacation_notice'] ) ? esc_attr( $this->options['vacation_notice'] ) : null;
+			$value       = $this->options['vacation_notice'] ?? null;
 			printf(
 				'<textarea
 					class="large-text"
@@ -790,10 +790,10 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			$today            = current_datetime()->format( self::DATE_TIME_FORMAT );
 			$timezone         = wp_timezone();
 			$get_options      = (array) get_option( 'woo_store_vacation_options' );
-			$vacation_mode    = isset( $get_options['vacation_mode'] ) ? $get_options['vacation_mode'] : null;
-			$disable_purchase = isset( $get_options['disable_purchase'] ) ? $get_options['disable_purchase'] : null;
-			$start_date       = isset( $get_options['start_date'] ) ? $get_options['start_date'] : null;
-			$end_date         = isset( $get_options['end_date'] ) ? $get_options['end_date'] : null;
+			$vacation_mode    = $get_options['vacation_mode'] ?? null;
+			$disable_purchase = $get_options['disable_purchase'] ?? null;
+			$start_date       = $get_options['start_date'] ?? null;
+			$end_date         = $get_options['end_date'] ?? null;
 
 			if ( isset( $vacation_mode, $start_date, $end_date ) && wc_string_to_bool( $vacation_mode ) && ! empty( $start_date ) && ! empty( $end_date ) ) {
 				// Parses a time string according to a specified format.
@@ -835,21 +835,25 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function vacation_notice() {
 			$get_options = (array) get_option( 'woo_store_vacation_options' );
-			$btn_txt     = isset( $get_options['btn_txt'] ) ? $get_options['btn_txt'] : null;
-			$btn_url     = isset( $get_options['btn_url'] ) ? $get_options['btn_url'] : null;
-			$notice      = isset( $get_options['vacation_notice'] ) ? $get_options['vacation_notice'] : null;
+			$btn_txt     = $get_options['btn_txt'] ?? null;
+			$btn_url     = $get_options['btn_url'] ?? null;
+			$notice      = $get_options['vacation_notice'] ?? null;
 
-			if ( isset( $notice ) && ! empty( $notice ) ) :
-				printf( '<div id="%s">', esc_attr( WOO_STORE_VACATION_SLUG ) );
-				if ( empty( $btn_txt ) || empty( $btn_url ) || '#' === $btn_url ) {
-					$message = wp_kses_post( nl2br( $notice ) );
-				} else {
-					$message = sprintf( '<a href="%1$s" class="%2$s__btn" target="_self">%3$s</a> <span class="%2$s__msg">%4$s</span>', esc_url( $btn_url ), sanitize_html_class( WOO_STORE_VACATION_SLUG ), esc_html( $btn_txt ), wp_kses_post( nl2br( $notice ) ) );
-				}
+			if ( ! isset( $notice ) || empty( $notice ) || ! function_exists( 'wc_print_notice' ) ) {
+				return;
+			}
 
-				wc_print_notice( $message, apply_filters( 'woo_store_vacation_notice_type', 'notice' ) );
-				echo '</div>';
-			endif;
+			printf( '<div id="%s">', esc_attr( WOO_STORE_VACATION_SLUG ) );
+
+			if ( empty( $btn_txt ) || empty( $btn_url ) || '#' === $btn_url ) {
+				$message = wp_kses_post( nl2br( $notice ) );
+			} else {
+				$message = sprintf( '<a href="%1$s" class="%2$s__btn" target="_self">%3$s</a> <span class="%2$s__msg">%4$s</span>', esc_url( $btn_url ), sanitize_html_class( WOO_STORE_VACATION_SLUG ), esc_html( $btn_txt ), wp_kses_post( nl2br( $notice ) ) );
+			}
+
+			wc_print_notice( $message, apply_filters( 'woo_store_vacation_notice_type', 'notice' ) );
+
+			echo '</div>';
 		}
 
 		/**
