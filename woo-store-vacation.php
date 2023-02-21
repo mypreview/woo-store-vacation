@@ -218,7 +218,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 						printf( '<div id="%s-dismiss-upsell" class="notice notice-info woocommerce-message notice-alt is-dismissible"><p>%s</p></div>', esc_attr( WOO_STORE_VACATION_SLUG ), wp_kses_post( $message ) );
 					} elseif ( ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) {
 						/* translators: 1: HTML symbol, 2: Plugin name, 3: Activation duration, 4: HTML symbol, 5: Open anchor tag, 6: Close anchor tag. */
-						$message = sprintf( esc_html_x( '%1$s You have been using the %2$s plugin for %3$s now, do you like it as much as we like you? %4$s %5$sRate 5-Stars%6$s', 'admin notice', 'woo-store-vacation' ), '&#9733;', esc_html( WOO_STORE_VACATION_NAME ), human_time_diff( (int) get_site_option( 'woo_store_vacation_activation_timestamp' ), time() ), '&#8594;', sprintf( '<a href="https://wordpress.org/support/plugin/%s/reviews?rate=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">&#9733; ', esc_attr( WOO_STORE_VACATION_SLUG ) ), '</a>' );
+						$message = sprintf( esc_html_x( '%1$s You have been using the %2$s plugin for %3$s now, do you like it as much as we like you? %4$s %5$sRate 5-Stars%6$s', 'admin notice', 'woo-store-vacation' ), '&#9733;', esc_html( WOO_STORE_VACATION_NAME ), human_time_diff( (int) get_site_option( 'woo_store_vacation_activation_timestamp' ), time() ), '&#8594;', sprintf( '<a href="https://wordpress.org/support/plugin/%s/reviews?filter=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">&#9733; ', esc_attr( WOO_STORE_VACATION_SLUG ) ), '</a>' );
 						printf( '<div id="%s-dismiss-rate" class="notice notice-info is-dismissible"><p>%s</p></div>', esc_attr( WOO_STORE_VACATION_SLUG ), wp_kses_post( $message ) );
 					}
 				}
@@ -999,7 +999,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				esc_html__( '%1$sIf you like %2$s please leave us a %3$s rating to help us spread the word!%4$s', 'woo-store-vacation' ),
 				'<p class="alignleft">',
 				sprintf( '<strong>%s</strong>', esc_html( WOO_STORE_VACATION_NAME ) ),
-				'<a href="https://wordpress.org/support/plugin/' . esc_html( WOO_STORE_VACATION_SLUG ) . '/reviews?rate=5#new-post" target="_blank" rel="noopener noreferrer nofollow" aria-label="' . esc_attr__( 'five star', 'woo-store-vacation' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>',
+				'<a href="https://wordpress.org/support/plugin/' . esc_html( WOO_STORE_VACATION_SLUG ) . '/reviews?filter=5#new-post" target="_blank" rel="noopener noreferrer nofollow" aria-label="' . esc_attr__( 'five star', 'woo-store-vacation' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>',
 				'</p><style>#wpfooter{display:inline !important}</style>'
 			);
 		}
