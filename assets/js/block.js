@@ -13,13 +13,14 @@
 	registerBlockType( 'mypreview/woo-store-vacation', {
 		title: __( 'Store Vacation Notice', 'woo-store-vacation' ),
 		description: __( 'Placeholder block for displaying store vacation notice.', 'woo-store-vacation' ),
-		icon: { src: 'palmtree' },
+		icon: { foreground: '#7f54b3', src: 'palmtree' },
 		category: 'woocommerce',
 		supports: { html: false },
 		edit: () => {
 			return el(
 				Notice,
 				{
+					className: 'wc-blocks-sidebar-compatibility-notice is-dismissible',
 					isDismissible: false,
 					status: 'warning',
 				},
