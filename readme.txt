@@ -12,33 +12,39 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Woo Store Vacation allows you to put your WooCommerce shop on pause or hold mode for a certain amount of time.
 
 == Description ==
-It might be difficult for a store owner to find a time and take a vacation, but when they do they need a plan for their online store.
+The Woo Store Vacation plugin is a perfect solution for online store owners who need to pause their business temporarily. Whether you need to take a break from managing your store or are unable to fulfill orders or respond to customer inquiries.
 
-Store Vacation plugin provides a robust and missing feature of the WooCommerce core out of the box by allowing the site manager to schedule a range of vacation dates and putting eCommerce functionality of the site on pause or hold mode for a certain amount of time.
+You can easily schedule a vacation period based on your local time. During this period, your shop will automatically pause, and customers will not be able to place new orders. However, your shop will reopen again at the beginning of the end date, ensuring that you don't miss out on any potential sales or customers while you take a break. This feature provides you with peace of mind, knowing that your online store will resume normal operation automatically without any extra effort on your part. Additionally, if you decide to enable purchases during closing time, you can simply unselect the "Disable Purchase" checkbox. This allows customers to continue making purchases during your vacation period. With this feature, you have the flexibility to manage your online store based on your unique needs and circumstances.
 
-Pausing your store disables the checkout but keeps your store online and accessible to visitors. You can pause or temporarily close your store by defining a few simple options within a minute or two. This means customers can see your products but can't purchase them.
+The plugin is designed to have no negative impact on your site's SEO. It does not add any meta tags, such as no-index, to your store, ensuring that your site's search engine rankings are not affected while the vacation mode is activated. This means that you can confidently take time off without worrying about any negative effects on your online presence.
 
-If you want to start selling products again, then you can unpause your store at any time by deactivating the Vacation Mode or schedule the plugin which does this behind the scenes for you automatically!
+If you need to end your vacation early and want to reopen your store before the scheduled time, the plugin makes it simple to do so. You can easily deactivate the vacation mode whenever you want or reschedule the plugin to adjust your vacation period. This flexibility allows you to manage your online store with ease, knowing that you can make changes as needed.
 
+The vacation notice feature allows you to customize an automated message to inform users of your return date or any other relevant information they need to know while your shop is closed. You can even customize the notice's color to match your site branding and add a call-to-action button to navigate users to a specific page, such as the contact page.
 
-> &#128293; **BECOME A PREMIUM USER**
->
-> Take Store Vacation to the next level with [Woo Store Vacation Pro](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)"). The Pro plugin enhances your marketing capabilities and comes with the ability to schedule unlimited vacation dates/days.
->
-> Here’s a look at what’s currently included with Pro:
->
-> * One-click store close
-> * Exclude list of user roles
-> * Exclude list of product types
-> * Exclude products individually
-> * Display notice via shortcode or block
-> * Allow **Shop Managers** to edit
-> * Unlimited date-time ranges
-> * Unlimited weekday hours
-> * Unlimited notifications
-> * Import and export plugin settings
->
-> [Upgrade to PRO! &#8594;](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)")
+By default, the vacation notice displays on the WooCommerce pages, including the shop and product pages. However, if you prefer, you can also add the vacation notice to any other pages on your site. If you use the core block editor or Gutenberg plugin, you can easily add the holiday message by inserting the Store Vacation Notice block. Alternatively, if you use a page builder like Elementor, SeedProd, or Divi builder, you can use the `[woo_store_vacation]` shortcode to display the notice on any page you choose. This allows you to show your vacation message whether you want to showcase it on the homepage, sidebar, or any other location.
+
+This plugin is provided to handle multilingual sites with ease. It comes fully equipped with a configuration file to support WPML and Polylang plugins, making it translation-ready and easy to use for websites that cater to a global audience.
+
+Overall, the Woo Store Vacation plugin is an essential tool for WooCommerce shop owners who need to take time off for personal or business reasons. By activating vacation mode, you can avoid negative reviews or damage to your reputation by providing clear communication to potential buyers about your availability and expected return date.
+
+**Unlock the full potential of your online store with PRO**
+
+[Upgrade now](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") and enjoy powerful features and customization options that are not available in the basic version.
+
+With Woo Store Vacation PRO, you get access to the following features:
+
+* Schedule an unlimited number of vacation periods for any duration of time, so you can plan multiple breaks throughout the year and adjust vacation dates according to your schedule.
+* Schedule specific weekdays to close your shop on a recurring basis each week, which is perfect for store owners who need to take time off regularly or want to adjust store hours on certain days.
+* Shop managers can access the plugin settings to manage and edit vacation options.
+* Use the Smart Conditional Logic feature to set specific conditions to a schedule that alter the vacation mode behavior to your unique needs. You can exclude or include certain products, categories, tags, shipping classes, product types, or WooCommerce brands from the vacation mode, which is particularly useful for allowing certain products to be purchased during closing time.
+* Exclude specific user roles, such as administrators or shop managers, from the vacation mode, so you can keep your shop open for these users even when the vacation mode is activated.
+* Exclude product types from vacation mode and keep selling certain types of products even when your store is closed.
+* Use the force close feature to activate vacation mode without setting a specific schedule or end time, which is helpful for unexpected situations where you need to close your store immediately without prior notice.
+* Exclude individual products using the setting on the product edit page, so your shop can still accept new orders of those specified products when you close your shop using schedule a vacation, define weekday closing time, or enable force closed.
+* Import and Export features that allow you to quickly transfer your plugin settings and content to a new website, saving you time and avoiding manual configuration.
+
+In addition, with the PRO version, you'll receive priority support from our team, ensuring you get the help you need when you need it. Upgrade to **Woo Store Vacation PRO** now and take your online store management to the next level. [Visit our PRO page](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") to learn more and purchase.
 
 == Installation ==
 = Minimum Requirements =
@@ -63,60 +69,49 @@ The manual installation method requires downloading the plugin and uploading it 
 Automatic updates should work smoothly, but we still recommend you back up your site.
 
 == Frequently Asked Questions ==
-= Why you might want to put your store on vacation? =
-You might want to temporarily close your shop, if:
+= Why should you use the Woo Store Vacation plugin? =
+You may want to use the Woo Store Vacation plugin if you need to temporarily close your store for various reasons, such as an illness, personal trip, family emergency, or to catch up on unfulfilled orders. You may also want to give your employees time off over a holiday weekend to improve their productivity. The plugin allows you to keep your entire store visible while disabling the actual shopping cart and checkout procedure, so no sales or transactions can be made during the closure.
 
-* You run a solo business, and sometimes life interferes, whether it be an illness, a personal trip, or a family emergency.
-* You want to give your employees a few days off over a holiday weekend to improve their productivity.
-* Your store has been very busy, so you need some time to catch up on unfulfilled orders.
-* For a day or two, you need everything to remain static while you update and compare the inventory in both your offline and online stores.
+= Will using the plugin hurt my store’s SEO ranking? =
+No, using the plugin will not hurt your store’s SEO ranking. The plugin keeps your entire store visible, so your search engine rankings are unaffected, and your customers can still browse products and plan purchases.
 
-= Does vacation mode hurt SEO ranking? =
-Not at all! The plugin keeps your entire store visible, so your search engine rankings are unaffected and your customers can still browse products and make plans for purchases. However, it disables the actual shopping cart and checkout procedure, so no sales or transactions can be made while the extension is in use.
+= Where can I find the plugin’s settings page? =
+To access the plugin’s settings page, log into your WordPress website dashboard, and navigate to “WooCommerce” » “Store Vacation”.
 
-= Where do I find the plugin’s settings page? =
-1. Log into your WordPress website dashboard.
-2. Navigate to “WooCommerce” » “Store Vacation”.
-
-= How do I set up my vacation dates? =
+= How do I set up my vacation dates using the plugin? =
+To set up your vacation dates: 
 1. Navigate to “WooCommerce” » “Store Vacation”.
-2. Check the checkbox “Set Vacation Mode” to enable vacation mode in your shop.
-2. Enter the “Start Date” — first day where the shop will be closed.
-3. Enter the “End Date” — first day where the shop will be re-opened.
-4. Optionally, fill in a temporary shop announcement or vacation message.
+2. Check the “Set Vacation Mode” checkbox to enable vacation mode in your shop.
+2. Enter the “Start Date” (the first day your shop will be closed).
+3. Enter the “End Date” (the first day your shop will be re-opened).
+4. Optionally, fill in a temporary shop announcement or vacation message. 
 5. Click “Save Changes”.
 
-= What does “Disable Purchase” checkbox do? =
-Enabling this option will disable eCommerce functionality and takes out the cart, checkout process and add to cart buttons with disabling purchases for all users whether they’re logged in or not.
+= What does the “Disable Purchase” checkbox do? =
+Enabling the “Disable Purchase” option will disable eCommerce functionality and take out the cart, checkout process, and add to cart buttons, thus disabling purchases for all users, whether they’re logged in or not.
 
-= Why there is no message displaying on my theme!? =
+= Why is the vacation message not displaying on my theme? =
 Your store notification will display on your shop and single product page(s), letting your customers know the details of the closure.
 
-However, you can add the vacation notice on any specific page by adding the **Store Vacation Notice**  block to the page content or using the `[woo_store_vacation]` shortcode instead.
+However, you can add the vacation notice on any specific page by adding the Store Vacation Notice block to the page content or using the `[woo_store_vacation]` shortcode instead.
 
-= How do I get help with the plugin? =
-The easiest way to receive support is to “Create a new topic” by visiting Community Forums page [here](https://wordpress.org/support/plugin/woo-store-vacation "Woo Store Vacation Support Forum").
+= How can I get help with the plugin? =
+The easiest way to receive support is to visit the [Community Forums page](https://wordpress.org/support/plugin/woo-store-vacation "Woo Store Vacation Support Forum") and create a new topic. Be sure to check the “Notify me of follow-up replies via email” checkbox to receive notifications as soon as a reply is posted to your question or inquiry.
 
-Make sure to check the “Notify me of follow-up replies via email” checkbox to receive notifications, as soon as a reply posted to your question or inquiry.
+= Is the plugin compatible with multilingual websites?  =
+Yes, absolutely. The plugin has been designed to be translation-ready and comes with a configuration file that fully supports WPML and Polylang plugins.
 
-= Does this plugin supports WPML? =
-Yes. The plugin is translation-ready and has a config file to support both WPML and Polylang plugins fully.
+= Can I contribute to translating the plugin into a new language? =
+Yes, certainly! The plugin has been made translation-ready and localized using the GNU framework, and we welcome translators who would like to contribute to the plugin. You can visit the WordPress translation website to get started. [Here’s the link &#8594;](https://translate.wordpress.org/projects/wp-plugins/woo-store-vacation "WordPress translation website")
 
-= Can I help in translating this plugin into a new language? =
-The plugin is fully translation-ready and localized using the GNU framework, and translators are welcome to contribute to the plugin.
+= How can I contribute to this plugin?  =
+We welcome contributions in various forms, such as bug reporting, testing, and providing detailed feedback. You can check out our [GitHub development repository](https://github.com/mypreview/woo-store-vacation "GitHub development repository") for more information.
 
-Here’s the [WordPress translation website &#8594;](https://translate.wordpress.org/projects/wp-plugins/woo-store-vacation "WordPress translation website")
+= What is your opinion about the concept behind this plugin? =
+If you enjoyed using this plugin, we would greatly appreciate your feedback in the form of a [5-star rating](https://wordpress.org/support/plugin/woo-store-vacation/reviews/ "Rate Woo Store Vacation 5 stars"). Your rating will help us improve and continue providing high-quality services. Thank you!
 
-= How do I contribute to this plugin? =
-We welcome contributions in any form, and you can help reporting, testing, and detailing bugs.
-
-Here’s the [GitHub development repository &#8594;](https://github.com/mypreview/woo-store-vacation "GitHub development repository")
-
-= Did you like the idea behind this plugin? =
-Please share your experience by leaving this plugin [5 shining stars](https://wordpress.org/support/plugin/woo-store-vacation/reviews/ "Rate Woo Store Vacation 5 stars") if you like it, thanks!
-
-= Is there a pro/premium version of Woo Store Vacation? =
-Absolutely! [Woo Store Vacation Pro](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") is available as an upgrade and includes advanced functionality and third-party integrations.
+= Does Woo Store Vacation have a pro or premium version? =
+Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") is available as an upgrade and offers additional features and third-party integrations.
 
 == Screenshots ==
 1. Plugin’s settings page
