@@ -718,11 +718,11 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			printf(
 				'<input
 					type="text"
-					class="%1$s-text-color-field"
+					class="%s-text-color-field"
 					name="woo_store_vacation_options[text_color]"
-					data-default-color="%2$s"
+					data-default-color="#ffffff"
 					id="text_color"
-					value="%2$s"
+					value="%s"
 				/>',
 				esc_attr( self::SLUG ),
 				// phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
@@ -744,11 +744,11 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			printf(
 				'<input
 					type="text"
-					class="%1$s-background-color-field"
+					class="%s-background-color-field"
 					name="woo_store_vacation_options[background_color]"
-					data-default-color="%2$s"
+					data-default-color="#e2401c"
 					id="background_color"
-					value="%2$s"
+					value="%s"
 				/>',
 				esc_attr( self::SLUG ),
 				// phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped
