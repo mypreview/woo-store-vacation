@@ -12,27 +12,31 @@
  * Free Software Foundation, either version 3 of the License, or
  * any later version.
  *
- * @link                    https://www.mypreview.one
- * @since                   1.0.0
- * @package                 woo-store-vacation
- * @author                  MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- * @copyright               © 2015 - 2023 MyPreview. All Rights Reserved.
+ * @link https://www.mypreview.one
+ *
+ * @since 1.0.0
+ *
+ * @package woo-store-vacation
+ *
+ * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
+ *
+ * @copyright © 2015 - 2023 MyPreview. All Rights Reserved.
  *
  * @wordpress-plugin
- * Plugin Name:             Woo Store Vacation
- * Plugin URI:              https://mypreview.one/woo-store-vacation
- * Description:             Pause your store operations for a set of fixed dates during your vacation and display a user-friendly notice on your shop.
- * Version:                 1.7.1
- * Author:                  MyPreview
- * Author URI:              https://mypreview.one/woo-store-vacation
- * Requires at least:       5.3
- * Requires PHP:            7.4
- * License:                 GPL-3.0
- * License URI:             http://www.gnu.org/licenses/gpl-3.0.txt
- * Text Domain:             woo-store-vacation
- * Domain Path:             /languages
- * WC requires at least:    4.0
- * WC tested up to:         7.6
+ * Plugin Name:          Woo Store Vacation
+ * Plugin URI:           https://mypreview.one/woo-store-vacation
+ * Description:          Pause your store operations for a set of fixed dates during your vacation and display a user-friendly notice on your shop.
+ * Version:              1.7.1
+ * Author:               MyPreview
+ * Author URI:           https://mypreview.one/woo-store-vacation
+ * Requires at least:    5.3
+ * Requires PHP:         7.4
+ * License:              GPL-3.0
+ * License URI:          http://www.gnu.org/licenses/gpl-3.0.txt
+ * Text Domain:          woo-store-vacation
+ * Domain Path:          /languages
+ * WC requires at least: 4.0
+ * WC tested up to:      7.6
  */
 
 use Automattic\WooCommerce\Utilities\FeaturesUtil;
@@ -42,8 +46,8 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 /**
  * Gets the path to a plugin file or directory.
  *
- * @see     https://codex.wordpress.org/Function_Reference/plugin_basename
- * @see     http://php.net/manual/en/language.constants.predefined.php
+ * @see https://codex.wordpress.org/Function_Reference/plugin_basename
+ * @see http://php.net/manual/en/language.constants.predefined.php
  */
 $woo_store_vacation_plugin_data = get_file_data(
 	__FILE__,
@@ -93,7 +97,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		const DATE_TIME_FORMAT = 'Y-m-d H:i:s';
 
 		/**
-		 * Date time format constant.
+		 * Plugin slug.
 		 *
 		 * @since 1.7.1
 		 */
