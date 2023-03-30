@@ -59,6 +59,7 @@ define( 'WOO_STORE_VACATION_URI', $woo_store_vacation_plugin_data['plugin_uri'] 
 define( 'WOO_STORE_VACATION_VERSION', $woo_store_vacation_plugin_data['version'] );
 define( 'WOO_STORE_VACATION_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'WOO_STORE_VACATION_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'WOO_STORE_VACATION_IS_PRO', defined( 'WSVPRO_META' ) && WSVPRO_META );
 define( 'WOO_STORE_VACATION_MIN_DIR', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : trailingslashit( 'minified' ) );
 
 if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
@@ -240,7 +241,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				return;
 			}
 
-			if ( ! get_transient( 'woo_store_vacation_upsell' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > DAY_IN_SECONDS ) {
+			if ( ! WOO_STORE_VACATION_IS_PRO && ! get_transient( 'woo_store_vacation_upsell' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > DAY_IN_SECONDS ) {
 				/* translators: 1: Dashicon, 2: HTML symbol, 3: Open anchor tag, 4: Close anchor tag. */
 				$message = sprintf( esc_html_x( '%1$s Automate your closings by defining unlimited number of vacation dates, times (hours), and weekdays without any manual effort needed. %2$s %3$sUpgrade to PRO%4$s', 'admin notice', 'woo-store-vacation' ), '<i class="dashicons dashicons-calendar-alt" style="vertical-align:sub"></i>', '&#8594;', sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer nofollow"><button class="button-primary">', esc_url( WOO_STORE_VACATION_URI ) ), '</button></a>' );
 				printf( '<div id="%s-dismiss-upsell" class="notice notice-info woocommerce-message notice-alt is-dismissible"><p>%s</p></div>', esc_attr( self::SLUG ), wp_kses_post( $message ) );
@@ -1122,6 +1123,11 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @return array
 		 */
 		public function add_action_links( $links ) {
+
+			// Bail early, in case the PRO version of the plugin is installed.
+			if ( WOO_STORE_VACATION_IS_PRO ) {
+				return $links;
+			}
 
 			$plugin_links = array();
 			/* translators: 1: Open anchor tag, 2: Close anchor tag. */
