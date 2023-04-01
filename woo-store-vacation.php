@@ -351,7 +351,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				return;
 			}
 
-			FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+			FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__ );
 		}
 
 		/**
@@ -379,8 +379,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 								'tab'  => self::SLUG,
 							),
 							admin_url( 'admin.php' )
-						),
-						302
+						)
 					);
 					exit();
 				}
