@@ -449,32 +449,74 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			?>
 			<div class="woocommerce-message" style="background:#fff;border:1px solid #dadada;padding:25px 20px;margin-top:20px;position:relative;">
 				<h3 style="margin-top:0;">
-					<?php echo esc_html_x( 'Add terms & conditions checkboxes and protect your business by requiring the acknowledgment of rules.', 'upsell', 'woo-store-vacation' ); ?>
+					<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO for Even More Powerful Features', 'upsell', 'woo-store-vacation' ); ?>
 				</h3>
-				<p>
-					<?php echo esc_html_x( 'Add unlimited customizable “I Agree with the terms and conditions” checkboxes to the WooCommerce checkout page.', 'upsell', 'woo-store-vacation' ); ?>
+				<p class="importer-title">
+					<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO now and unlock a world of possibilities for your online store! With powerful features and customization options that are not available in the basic version, you’ll be able to take your online store management to the next level.', 'upsell', 'woo-store-vacation' ); ?>
 				</p>
-				<ul style="max-width:700px;columns:2;list-style-type:disclosure-closed;margin-left:15px;">
-					<li><?php echo esc_html_x( 'Display terms in a modal', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( '(Non) Skippable checkboxes', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( 'Unlimited T&C checkboxes', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( 'Unlimited ToS page links', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( 'Smart conditional logic', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( 'Detailed acceptance summary', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( 'Multilingual ready', 'upsell', 'woo-store-vacation' ); ?></li>
-					<li><?php echo esc_html_x( 'Easy to install', 'upsell', 'woo-store-vacation' ); ?></li>
+				<p class="importer-title">
+					<?php echo esc_html_x( 'Here’s a summary of the features you’ll get with Woo Store Vacation PRO', 'upsell', 'woo-store-vacation' ); ?>
+				</p>
+				<ul style="display:grid;gap:5px 10px;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));font-size:14px;margin-block:20px;">
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Schedule an unlimited number of vacation periods', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Schedule specific weekdays to close shop recurring', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Close your store immediately without prior notice', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Keep your shop open for specific user roles', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Create complex conditional logic to alter a vacation mode', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Exclude product types from vacation mode', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Allow certain Products to be purchased during vacation', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Restrict a vaction mode by Categories', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Restrict vaction mode by Tags', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Restrict vaction mode by Shipping classes', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Restrict vaction mode by WooCommerce brands', 'upsell', 'woo-store-vacation' ); ?>
+					</li>
+					<li>
+						<i class="dashicons dashicons-yes"></i>
+						<?php echo esc_html_x( 'Import and export your plugin settings and content', 'upsell', 'woo-additional-terms' ); ?>
+					</li>
 				</ul>
-				<p>
-					<em>
-						<?php echo esc_html_x( 'Smart logic conditions will allow you to define restrictions based on several complex rules, such as products in the cart, which categories, tags, shipping classes, etc., cart items belong.', 'upsell', 'woo-store-vacation' ); ?>
-					</em>
+				<p class="importer-title">
+					<?php echo esc_html_x( 'Upgrade now and take advantage of all these features to grow your online store.', 'upsell', 'woo-store-vacation' ); ?>
 				</p>
 				<p>
 					<a href="<?php echo esc_url( WOO_STORE_VACATION_URI ); ?>" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">
 						<?php
 						/* translators: 1: Open anchor tag, 2: Close anchor tag. */
-						printf( esc_html_x( 'Get %s Pro and Unlock all the Powerful Features &#8594;', 'upsell', 'woo-store-vacation' ), esc_html( WOO_STORE_VACATION_NAME ) );
+						echo esc_html_x( 'Go PRO for More Options;', 'upsell', 'woo-store-vacation' );
 						?>
+						 &#8594
 					</a>
 				</p>
 			</div>
