@@ -232,9 +232,21 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 
 			// Query WooCommerce activation.
 			if ( ! $this->is_woocommerce() ) {
-				/* translators: 1: Dashicon, 2: Open anchor tag, 3: Close anchor tag. */
-				$message = sprintf( esc_html_x( '%1$s requires the following plugin: %2$sWooCommerce%3$s', 'admin notice', 'woo-store-vacation' ), sprintf( '<i class="dashicons dashicons-admin-plugins"></i> <strong>%s</strong>', WOO_STORE_VACATION_NAME ), '<a href="https://wordpress.org/plugins/woocommerce" target="_blank" rel="noopener noreferrer nofollow"><em>', '</em></a>' );
-				printf( '<div class="notice notice-error notice-alt"><p>%s</p></div>', wp_kses_post( $message ) );
+				$message = sprintf(
+					/* translators: 1: Dashicon, 2: Open anchor tag, 3: Close anchor tag. */
+					esc_html_x( '%1$s requires the following plugin: %2$sWooCommerce%3$s', 'admin notice', 'woo-store-vacation' ),
+					sprintf(
+						'<i class="dashicons dashicons-admin-plugins"></i> <strong>%s</strong>',
+						WOO_STORE_VACATION_NAME
+					),
+					'<a href="https://wordpress.org/plugins/woocommerce" target="_blank" rel="noopener noreferrer nofollow"><em>',
+					'</em></a>'
+				);
+				?>
+				<div class="notice notice-error notice-alt">
+					<p><?php echo wp_kses_post( $message ); ?></p>
+				</div>
+				<?php
 				return;
 			}
 
@@ -243,22 +255,53 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			$welcome_notice           = get_transient( $welcome_notice_transient );
 
 			if ( $welcome_notice ) {
-				printf( '<div class="notice notice-info"><p>%s</p></div>', wp_kses_post( $welcome_notice ) );
+				?>
+				<div class="notice notice-info">
+					<p><?php echo wp_kses_post( $welcome_notice ); ?></p>
+				</div>
+				<?php
 				delete_transient( $welcome_notice_transient );
 				return;
 			}
 
 			if ( ! WOO_STORE_VACATION_IS_PRO && ! get_transient( 'woo_store_vacation_upsell' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > DAY_IN_SECONDS ) {
-				/* translators: 1: Dashicon, 2: Open anchor tag, 2: Close anchor tag. */
-				$message = sprintf( esc_html_x( '%1$s Do not settle for limited vacation options! Upgrade to Woo store vacation PRO for powerful features like customized closures, smart logic, and more. %2$sGo PRO for More Options %3$s', 'admin notice', 'woo-store-vacation' ), '<i class="dashicons dashicons-palmtree" style="vertical-align:sub"></i>', sprintf( '<br><br><a href="%s" target="_blank" rel="noopener noreferrer nofollow" class="button-primary">', esc_url( WOO_STORE_VACATION_URI ) ), '&#8594;</a>' );
-				printf( '<div id="%s-dismiss-upsell" class="notice notice-info woocommerce-message notice-alt is-dismissible"><p class="subtitle">%s</p></div>', esc_attr( self::SLUG ), wp_kses_post( $message ) );
+				$message = sprintf(
+					/* translators: 1: Dashicon, 2: Open anchor tag, 2: Close anchor tag. */
+					esc_html_x( '%1$s Do not settle for limited vacation options! Upgrade to Woo store vacation PRO for powerful features like customized closures, smart logic, and more. %2$sGo PRO for More Options %3$s', 'admin notice', 'woo-store-vacation' ),
+					'<i class="dashicons dashicons-palmtree" style="vertical-align:sub"></i>',
+					sprintf(
+						'<br><br><a href="%s" target="_blank" rel="noopener noreferrer nofollow" class="button-primary">',
+						esc_url( WOO_STORE_VACATION_URI )
+					),
+					'&#8594;</a>'
+				);
+				?>
+				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-upsell" class="notice notice-info woocommerce-message notice-alt is-dismissible">
+					<p class="subtitle"><?php echo wp_kses_post( $message ); ?></p>
+				</div>
+				<?php
 				return;
 			}
 
 			if ( ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) {
-				/* translators: 1: HTML symbol, 2: Plugin name, 3: Activation duration, 4: HTML symbol, 5: Open anchor tag, 6: Close anchor tag. */
-				$message = sprintf( esc_html_x( '%1$s You have been using the %2$s plugin for %3$s now, do you like it as much as we like you? %4$s %5$sRate 5-Stars%6$s', 'admin notice', 'woo-store-vacation' ), '&#9733;', esc_html( WOO_STORE_VACATION_NAME ), human_time_diff( (int) get_site_option( 'woo_store_vacation_activation_timestamp' ), time() ), '&#8594;', sprintf( '<a href="https://wordpress.org/support/plugin/%s/reviews?filter=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">&#9733; ', esc_attr( self::SLUG ) ), '</a>' );
-				printf( '<div id="%s-dismiss-rate" class="notice notice-info is-dismissible"><p>%s</p></div>', esc_attr( self::SLUG ), wp_kses_post( $message ) );
+				$message = sprintf(
+					/* translators: 1: HTML symbol, 2: Plugin name, 3: Activation duration, 4: HTML symbol, 5: Open anchor tag, 6: Close anchor tag. */
+					esc_html_x( '%1$s You have been using the %2$s plugin for %3$s now, do you like it as much as we like you? %4$s %5$sRate 5-Stars%6$s', 'admin notice', 'woo-store-vacation' ),
+					'&#9733;',
+					esc_html( WOO_STORE_VACATION_NAME ),
+					human_time_diff( (int) get_site_option( 'woo_store_vacation_activation_timestamp' ), time() ),
+					'&#8594;',
+					sprintf(
+						'<a href="https://wordpress.org/support/plugin/%s/reviews?filter=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">&#9733; ',
+						esc_attr( self::SLUG )
+					),
+					'</a>'
+				);
+				?>
+				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-rate" class="notice notice-info is-dismissible">
+					<p><?php echo wp_kses_post( $message ); ?></p>
+				</div>
+				<?php
 			}
 		}
 
