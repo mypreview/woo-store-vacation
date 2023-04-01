@@ -797,7 +797,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				'<p class="alignleft">',
 				sprintf( '<strong>%s</strong>', esc_html( WOO_STORE_VACATION_NAME ) ),
 				'<a href="https://wordpress.org/support/plugin/' . esc_html( self::SLUG ) . '/reviews?filter=5#new-post" target="_blank" rel="noopener noreferrer nofollow" aria-label="' . esc_attr__( 'five star', 'woo-store-vacation' ) . '">&#9733;&#9733;&#9733;&#9733;&#9733;</a>',
-				'</p>'
+				'</p><style>#wpfooter{display:inline !important}.has-woocommerce-navigation #wpfooter{padding-left: 260px;}</style>'
 			);
 		}
 
