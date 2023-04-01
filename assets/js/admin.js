@@ -14,24 +14,16 @@
 			this.els = {};
 			this.els.$startDate = $( '.woo-store-vacation-start-datepicker' );
 			this.els.$endDate = $( '.woo-store-vacation-end-datepicker' );
-			this.els.$txtColor = $( '.woo-store-vacation-text-color-field' );
-			this.els.$bgColor = $( '.woo-store-vacation-background-color-field' );
 		},
 
 		init() {
 			this.cache();
-			this.colorPickers();
 			this.datePickers();
 			this.events();
 		},
 
 		events() {
 			$( document.body ).on( 'click', this.vars.upsell, this.handleOnDismiss );
-		},
-
-		colorPickers() {
-			this.els.$txtColor.wpColorPicker();
-			this.els.$bgColor.wpColorPicker();
 		},
 
 		datePickers() {
