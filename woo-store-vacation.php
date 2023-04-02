@@ -1010,7 +1010,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 						/* translators: 1: Open paragraph tag, 2: Shortcode, 3: Close paragraph tag. */
 						esc_html_x( '%1$sThe %2$s shortcode allows you to display the vacation notification on pages and posts at the scheduled times.%3$s', 'settings field text', 'woo-store-vacation' ),
 						'<p class="description">',
-						'<code>[woo_store_vacation_notice]</code>',
+						'<code>[woo_store_vacation]</code>',
 						'</p>',
 					),
 				),
