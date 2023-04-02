@@ -711,7 +711,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 
 			$options          = get_option( 'woo_store_vacation_options', array() );
 			$text_color       = $options['text_color'] ?? '#ffffff';
-			$background_color = $options['background_color'] ?? '#e2401c';
+			$background_color = $options['background_color'] ?? '#3d9cd2';
 			$css              = sprintf(
 				'
 				#%1$s .woocommerce-info {
@@ -912,24 +912,29 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		private static function get_settings() {
 
+			$timezone_info          = array();
+			$current_offset         = get_option( 'gmt_offset' );
 			$options                = get_option( 'woo_store_vacation_options', array() );
 			$invalid_end_date_style = self::is_invalid_end_date( $options['end_date'] ?? '' ) ? 'border:1px solid red;' : '';
+
+			if ( get_option( 'timezone_string' ) || ! empty( $current_offset ) ) {
+				/* translators: 1: Open span tag, 2: Local time, 3: Close span tag. */
+				$timezone_info[] = sprintf( esc_html__( '%1$sLocal time is %2$s.%3$s', 'woo-store-vacation' ), '<time> ', sprintf( '<code>%s</code>', current_datetime()->format( self::DATE_TIME_FORMAT ) ), '</time>' );
+			}
+
+			/* translators: 1: The timezone of the site as a string. */
+			$timezone_info[] = sprintf( esc_html__( 'Your timezone is currently in %s time.', 'woo-store-vacation' ), sprintf( '<code>%s</code>', esc_html( wc_timezone_string() ) ) );
 
 			$settings = array(
 				'section_title' => array(
 					'id'   => self::SLUG,
 					'type' => 'title',
 					'name' => esc_html_x( 'Woo Store Vacation', 'settings section name', 'woo-store-vacation' ),
-					'desc' => sprintf(
-					/* translators: 1: Current date time in WP timezone, 2: The timezone of the site as a string. */
-						esc_html__( 'Current time: "%1$s". Date and time will be saved in "%2$s" timezone.', 'woo-store-vacation' ),
-						esc_html( current_datetime()->format( self::DATE_TIME_FORMAT ) ),
-						esc_html( wp_timezone_string() )
-					),
+					'desc' => esc_html_x( 'Close your store temporarily by scheduling your vacation time. While your shop will remain online and accessible to visitors, new order operations will pause, and your checkout will be disabled.', 'settings field description', 'woo-store-vacation' ),
 				),
 				'vacation_mode' => array(
 					'name'     => esc_html_x( 'Set Vacation Mode', 'settings field name', 'woo-store-vacation' ),
-					'desc'     => esc_html_x( 'Turn on Vacation mode and close my store publicly.', 'settings field name', 'woo-store-vacation' ),
+					'desc'     => esc_html_x( 'Turn on vacation mode and close my store publicly.', 'settings field name', 'woo-store-vacation' ),
 					'type'     => 'checkbox',
 					'id'       => 'woo_store_vacation_options[vacation_mode]',
 					'value'    => wc_bool_to_string( $options['vacation_mode'] ?? false ),
@@ -937,7 +942,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				),
 				'disable_purchase' => array(
 					'name'     => esc_html_x( 'Disable Purchase', 'settings field name', 'woo-store-vacation' ),
-					'desc'     => esc_html_x( 'This will disable eCommerce functionality and takes out the cart, checkout process and add to cart buttons.', 'settings field description', 'woo-store-vacation' ),
+					'desc'     => '&#9888; ' . esc_html_x( 'This will disable eCommerce functionality and takes out the cart, checkout process and add to cart buttons.', 'settings field description', 'woo-store-vacation' ),
 					'type'     => 'checkbox',
 					'id'       => 'woo_store_vacation_options[disable_purchase]',
 					'value'    => wc_bool_to_string( $options['disable_purchase'] ?? false ),
@@ -946,7 +951,6 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				'start_date' => array(
 					'name'              => esc_html_x( 'Start Date', 'settings field name', 'woo-store-vacation' ),
 					'desc'              => esc_html_x( 'The database will store a time of 00:00:00 by default.', 'settings field description', 'woo-store-vacation' ),
-					'placeholder'       => current_datetime()->setTime( 0, 0 )->format( self::DATE_TIME_FORMAT ),
 					'type'              => 'text',
 					'class'             => self::SLUG . '-start-datepicker',
 					'id'                => 'woo_store_vacation_options[start_date]',
@@ -957,7 +961,6 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				'end_date' => array(
 					'name'              => esc_html_x( 'End Date', 'settings field name', 'woo-store-vacation' ),
 					'desc'              => esc_html_x( 'The validity of the date range begins at midnight on the "Start Date" and lasts until the start of the day on the "End Date".', 'settings field description', 'woo-store-vacation' ),
-					'placeholder'       => current_datetime()->modify( '+ 1 day' )->setTime( 0, 0 )->format( self::DATE_TIME_FORMAT ),
 					'type'              => 'text',
 					'class'             => self::SLUG . '-end-datepicker',
 					'id'                => 'woo_store_vacation_options[end_date]',
@@ -965,46 +968,72 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					'autoload'          => false,
 					'custom_attributes' => array( 'readonly' => true ),
 				),
+				'timezone' => array(
+					'type' => 'info',
+					'text' => '<p class="description">' . implode( '</p><p class="description">', $timezone_info ) . '</p>',
+				),
 				'btn_txt' => array(
 					'name'        => esc_html_x( 'Button Text', 'settings field name', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'If specified, a call to action button will be displayed next to your message.', 'settings field description', 'woo-store-vacation' ),
 					'placeholder' => esc_html_x( 'Contact me &#8594;', 'settings field placeholder', 'woo-store-vacation' ),
 					'type'        => 'text',
 					'id'          => 'woo_store_vacation_options[btn_txt]',
 					'autoload'    => false,
+					'desc_tip'    => true,
 				),
 				'btn_url' => array(
 					'name'        => esc_html_x( 'Button URL', 'settings field name', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'If specified, clicking the CTA button will direct your buyers to do something specific, like visit your contact page.', 'settings field description', 'woo-store-vacation' ),
 					'placeholder' => esc_url( wp_guess_url() ),
 					'type'        => 'url',
 					'id'          => 'woo_store_vacation_options[btn_url]',
 					'autoload'    => false,
+					'desc_tip'    => true,
 				),
 				'vacation_notice' => array(
 					'name'              => esc_html_x( 'Vacation Notice', 'settings field name', 'woo-store-vacation' ),
+					'desc'              => esc_html_x( 'If specified, the notice will be displayed on your shop and single product pages if specified.', 'settings field description', 'woo-store-vacation' ),
 					'placeholder'       => esc_html_x( 'I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience.', 'settings field placeholder', 'woo-store-vacation' ),
 					'type'              => 'textarea',
 					'css'               => 'min-width:50%;height:75px;',
 					'id'                => 'woo_store_vacation_options[vacation_notice]',
+					'desc_tip'          => true,
 					'autoload'          => false,
 					'custom_attributes' => array(
 						'rows' => '5',
 						'cols' => '50',
 					),
 				),
+				'vacation_notice_info' => array(
+					'type' => 'info',
+					'text' => sprintf(
+						/* translators: 1: Open paragraph tag, 2: Shortcode, 3: Close paragraph tag. */
+						esc_html_x( '%1$sThe %2$s shortcode allows you to display the vacation notification on pages and posts at the scheduled times.%3$s', 'settings field text', 'woo-store-vacation' ),
+						'<p class="description">',
+						'<code>[woo_store_vacation_notice]</code>',
+						'</p>',
+					),
+				),
 				'text_color' => array(
 					'name'        => esc_html_x( 'Text Color', 'settings field name', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'It will override the default text color for the WooCommerce info notice if specified.', 'settings field description', 'woo-store-vacation' ),
+					'default'     => '#ffffff',
 					'placeholder' => '#ffffff',
 					'type'        => 'color',
 					'css'         => 'width:6em;',
 					'id'          => 'woo_store_vacation_options[text_color]',
+					'desc_tip'    => true,
 					'autoload'    => false,
 				),
 				'background_color' => array(
 					'name'        => esc_html_x( 'Background Color', 'settings field name', 'woo-store-vacation' ),
-					'placeholder' => '#e2401c',
+					'desc'        => esc_html_x( 'It will override the default background color for the WooCommerce info notice if specified.', 'settings field description', 'woo-store-vacation' ),
+					'default'     => '#3d9cd2',
+					'placeholder' => '#3d9cd2',
 					'type'        => 'color',
 					'css'         => 'width:6em;',
 					'id'          => 'woo_store_vacation_options[background_color]',
+					'desc_tip'    => true,
 					'autoload'    => false,
 				),
 				'section_end' => array(
