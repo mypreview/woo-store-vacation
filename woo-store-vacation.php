@@ -993,6 +993,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				'vacation_notice' => array(
 					'name'              => esc_html_x( 'Vacation Notice', 'settings field name', 'woo-store-vacation' ),
 					'desc'              => esc_html_x( 'If specified, the notice will be displayed on your shop and single product pages if specified.', 'settings field description', 'woo-store-vacation' ),
+					'default'           => esc_html_x( 'I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience.', 'settings field placeholder', 'woo-store-vacation' ),
 					'placeholder'       => esc_html_x( 'I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience.', 'settings field placeholder', 'woo-store-vacation' ),
 					'type'              => 'textarea',
 					'css'               => 'min-width:50%;height:75px;',
