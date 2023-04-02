@@ -21,7 +21,7 @@
  * @wordpress-plugin
  * Plugin Name:             Woo Store Vacation
  * Plugin URI:              https://mypreview.one/woo-store-vacation
- * Description:             Pause your store operations for a set of fixed dates during your vacation and display a user-friendly notice on your shop.
+ * Description:             Pause your store during vacations by scheduling specific dates and display a customizable notice to visitors.
  * Version:                 1.7.0
  * Author:                  MyPreview
  * Author URI:              https://mypreview.one/woo-store-vacation
@@ -294,6 +294,48 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 						<div id="post-body-content">
 							<form method="POST" id="<?php echo esc_attr( WOO_STORE_VACATION_SLUG ); ?>" autocomplete="off" action="options.php">
 								<div class="meta-box-sortables ui-sortable">
+									<div class="postbox notice-info notice-alt">
+										<div class="postbox-header">
+											<h2 class="hndle">
+												<?php esc_html_e( 'Date time notes', 'woo-store-vacation' ); ?>
+											</h2>
+										</div>
+										<div class="inside">
+											<ul>
+												<li>
+													<i class="dashicons dashicons-arrow-right"></i>
+													<strong>
+														<?php esc_html_e( 'Current time:', 'woo-store-vacation' ); ?>
+													</strong>
+													<?php echo esc_html( current_datetime()->format( self::DATE_TIME_FORMAT ) ); ?>
+												</li>
+												<li>
+													<i class="dashicons dashicons-arrow-right"></i>
+													<strong>
+														<?php echo esc_html_e( 'Time format:', 'woo-store-vacation' ); ?>
+													</strong>
+													<?php esc_html_e( 'By default, the database will store a time of 00:00:00.', 'woo-store-vacation' ); ?>
+												</li>
+												<li>
+													<i class="dashicons dashicons-arrow-right"></i>
+													<strong>
+														<?php echo esc_html_e( 'Timezone:', 'woo-store-vacation' ); ?>
+													</strong>
+													<?php
+													/* translators: %s: WordPress timezone label/string. */
+													printf( esc_html__( 'The date and time will be recorded in the timezone of "%s".', 'woo-store-vacation' ), esc_html( wp_timezone_string() ) );
+													?>
+												</li>
+												<li>
+													<i class="dashicons dashicons-arrow-right"></i>
+													<strong>
+														<?php echo esc_html_e( 'Date range:', 'woo-store-vacation' ); ?>
+													</strong>
+													<?php esc_html_e( 'The validity of the date range begins at midnight on the "Start Date" and lasts until the start of the day on the "End Date".', 'woo-store-vacation' ); ?>
+												</li>
+											</ul>
+										</div>
+									</div>
 									<div class="postbox">
 										<div class="postbox-header">
 											<h2 class="hndle">
@@ -320,122 +362,107 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 								<div class="postbox">
 									<div class="postbox-header">
 										<h2 class="hndle">
-											<?php esc_html_e( 'Date time notes', 'woo-store-vacation' ); ?>
+											<?php echo esc_html_x( 'Unlock Advanced Vacation Option', 'upsell', 'woo-store-vacation' ); ?>
 										</h2>
 									</div>
 									<div class="inside">
 										<ul>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
 												<strong>
-													&#8505;
-													<?php esc_html_e( 'Current time:', 'woo-store-vacation' ); ?>
-												</strong>
-												<?php echo esc_html( current_datetime()->format( self::DATE_TIME_FORMAT ) ); ?>
-											</li>
-											<li>
-												<strong>
-													&#8505;
-													<?php echo esc_html_e( 'Time format:', 'woo-store-vacation' ); ?>
-												</strong>
-												<?php esc_html_e( 'The database will store a time of 00:00:00 by default.', 'woo-store-vacation' ); ?>
-											</li>
-											<li>
-												<strong>
-													&#8505;
-													<?php echo esc_html_e( 'Timezone:', 'woo-store-vacation' ); ?>
+													<?php echo esc_html_x( 'Flexible Vacation Scheduling:', 'upsell', 'woo-store-vacation' ); ?>
 												</strong>
 												<?php
-												/* translators: %s: WordPress timezone label/string. */
-												printf( esc_html__( 'Date and time will be saved in "%s" timezone.', 'woo-store-vacation' ), esc_html( wp_timezone_string() ) );
+												echo esc_html_x( 'Schedule unlimited vacation periods throughout the year and adjust dates as needed to fit your schedule.', 'upsell', 'woo-store-vacation' );
 												?>
+												<br>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
 												<strong>
-													&#8505;
-													<?php echo esc_html_e( 'Date range:', 'woo-store-vacation' ); ?>
+													<?php echo esc_html_x( 'Customize your schedule:', 'upsell', 'woo-store-vacation' ); ?>
 												</strong>
-												<?php esc_html_e( 'The date range is valid from midnight of the "Start Date" until the beginning of the "End Date" day.', 'woo-store-vacation' ); ?>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="postbox">
-									<div class="postbox-header">
-										<h2 class="hndle">
-											<?php echo esc_html_x( 'Schedule your shop’s vacations', 'upsell', 'woo-store-vacation' ); ?>
-										</h2>
-									</div>
-									<div class="inside">
-										<h4>
-										<?php echo esc_html_x( 'Key features:', 'upsell', 'woo-store-vacation' ); ?>
-										</h4>
-										<ul>
-											<li>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s One-click store close', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												echo esc_html_x( 'Close your shop on specific weekdays to accommodate your schedule.', 'upsell', 'woo-store-vacation' );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Grant Access to Your Team:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Exclude list of user roles', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'The manager access feature lets your shop managers access the plugin settings, making it easy to manage and edit vacation options.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Fine-tune Your Settings:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Exclude list of product types', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'Use Smart Conditional Logic to tailor your vacation mode behavior to your unique needs, including excluding or including specific products, categories, tags, shipping classes, product types, or WooCommerce brands.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Keep Certain Users Open:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Exclude products individually', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'Exclude specific user roles, so your shop can stay open for these users even when the vacation mode is on.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Sell what you want:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Display notice via shortcode or block', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'Exclude specific product types from vacation mode.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Close Your Shop in a Flash:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Localized calendar support', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'Use the force close feature to activate vacation mode instantly.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Keep Selling Specific Products:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Allow Shop Managers to edit', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'Exclude individual products using the setting on the product edit page.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'Easily migrate to a new website:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Unlimited date-time ranges', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'Import and export your plugin settings and content with ease.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 											<li>
+												<i class="dashicons dashicons-yes"></i>
+												<strong>
+													<?php echo esc_html_x( 'And much more:', 'upsell', 'woo-store-vacation' ); ?>
+												</strong>
 												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Unlimited weekday hours', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
-												?>
-											</li>
-											<li>
-												<?php
-												/* translators: %s: HTML Symbol. */
-												printf( esc_html_x( '%s Unlimited notifications', 'upsell', 'woo-store-vacation' ), '&#x2714;' );
+												printf( esc_html_x( 'With the PRO version, unlock even more powerful features and customization options.', 'upsell', 'woo-store-vacation' ) );
 												?>
 											</li>
 										</ul>
-										<br/>
 										<p align="center">
 										<?php
 											/* translators: 1: Open anchor tag, 2: Close anchor tag. */
-											printf( esc_html_x( '%1$sUpgrade to PRO &#8594;%2$s', 'upsell', 'woo-store-vacation' ), sprintf( '<a href="%s" class="button-primary button-link-delete" target="_blank" rel="noopener noreferrer nofollow" style="width:100%%">', esc_url( WOO_STORE_VACATION_URI ) ), '</a>' );
+											printf( esc_html_x( '%1$sGo PRO for More Options &#8594;%2$s', 'upsell', 'woo-store-vacation' ), sprintf( '<a href="%s" class="button-primary button-link-delete" target="_blank" rel="noopener noreferrer nofollow" style="width:100%%">', esc_url( WOO_STORE_VACATION_URI ) ), '</a>' );
 										?>
 										</p>
 									</div>
