@@ -26,7 +26,7 @@
  * Plugin Name:          Woo Store Vacation
  * Plugin URI:           https://mypreview.one/woo-store-vacation
  * Description:          Pause your store during vacations by scheduling specific dates and display a customizable notice to visitors.
- * Version:              1.7.1
+ * Version:              1.8.0
  * Author:               MyPreview
  * Author URI:           https://mypreview.one/woo-store-vacation
  * Requires at least:    5.3
@@ -92,7 +92,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		/**
 		 * Plugin slug.
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 */
 		const SLUG = 'woo-store-vacation';
 
@@ -390,7 +390,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * Create plugin options tab (page).
 		 * Add a new settings tab to the WooCommerce settings tabs array.
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 *
 		 * @param array $settings_tabs Array of WooCommerce setting tabs & their labels.
 		 *
@@ -407,7 +407,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * Render and display plugin options page.
 		 * Uses the WooCommerce admin fields API to output settings.
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 *
 		 * @return void
 		 */
@@ -420,7 +420,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * Render and display plugin options page.
 		 * Uses the WooCommerce options API to save settings.
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 *
 		 * @return void
 		 */
@@ -432,7 +432,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		/**
 		 * Promote PRO version adequately!
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 *
 		 * @return void
 		 */
@@ -906,7 +906,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		/**
 		 * Get all the settings for this plugin.
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 *
 		 * @return array
 		 */
@@ -1048,7 +1048,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		/**
 		 * Determine whether the end date has passed.
 		 *
-		 * @since 1.7.1
+		 * @since 1.8.0
 		 *
 		 * @param string $end_date_string End date in string. i.e. 2023-01-31.
 		 *

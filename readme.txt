@@ -3,9 +3,9 @@ Contributors: mahdiyazdani, mypreview, gookaani
 Tags: vacation,holiday,calendar,close shop,catalog mode,disable cart,woocommerce
 Donate link: https://mypreview.one/woo-store-vacation
 Requires at least: 5.3
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.7.0
+Stable tag: 1.8.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -79,12 +79,12 @@ No, using the plugin will not hurt your store’s SEO ranking. The plugin keeps 
 To access the plugin’s settings page, log into your WordPress website dashboard, and navigate to “WooCommerce” » “Store Vacation”.
 
 = How do I set up my vacation dates using the plugin? =
-To set up your vacation dates: 
+To set up your vacation dates:
 1. Navigate to “WooCommerce” » “Store Vacation”.
 2. Check the “Set Vacation Mode” checkbox to enable vacation mode in your shop.
 2. Enter the “Start Date” (the first day your shop will be closed).
 3. Enter the “End Date” (the first day your shop will be re-opened).
-4. Optionally, fill in a temporary shop announcement or vacation message. 
+4. Optionally, fill in a temporary shop announcement or vacation message.
 5. Click “Save Changes”.
 
 = What does the “Disable Purchase” checkbox do? =
@@ -121,6 +121,11 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 5. Displaying a notice at the top of shop archive pages
 
 == Changelog ==
+= 1.8.0 =
+* Feature: Allow shop manager role to edit plugin settings page.
+* Compatibility: WordPress 6.1
+* Compatibility: WooCommerce 7.4
+
 = 1.7.0 =
 * Feature: Vacation notice can be displayed using the "[woo_store_vacation]" shortcode or editor block.
 * Compatibility: WooCommerce 7.4
