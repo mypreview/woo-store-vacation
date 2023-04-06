@@ -10,7 +10,6 @@
 	const { __ } = wp.i18n;
 	const wsvAdmin = {
 		cache() {
-			this.vars = {};
 			this.els = {};
 			this.els.$startDate = $( '.woo-store-vacation-start-datepicker' );
 			this.els.$endDate = $( '.woo-store-vacation-end-datepicker' );
@@ -19,11 +18,6 @@
 		init() {
 			this.cache();
 			this.datePickers();
-			this.events();
-		},
-
-		events() {
-			$( document.body ).on( 'click', this.vars.upsell, this.handleOnDismiss );
 		},
 
 		datePickers() {
