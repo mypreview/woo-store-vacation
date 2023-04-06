@@ -259,20 +259,21 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 
 			if ( ! WOO_STORE_VACATION_IS_PRO && ! get_transient( 'woo_store_vacation_upsell' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > DAY_IN_SECONDS ) {
 				?>
-				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-upsell" class="notice notice-info woocommerce-message notice-alt is-dismissible">
-					<p class="subtitle">
-						<i class="dashicons dashicons-palmtree" style="vertical-align:sub"></i>
-						<?php
-						printf(
-							/* translators: 1: Open strong tag, 2: Close strong tag. */
-							esc_html_x( 'Do not settle for limited vacation options! Upgrade to %1$sWoo Store Vacation PRO%2$s for powerful features like unlimited scheduled vacations, smart logic, and more.', 'admin notice', 'woo-store-vacation' ),
-							'<strong>',
-							'</strong>'
-						);
-						?>
-						<br>
-						<br>
-						<a href="<?php echo esc_url( WOO_STORE_VACATION_URI ); ?>" target="_blank" rel="noopener noreferrer nofollow" class="button-primary">
+				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-upsell" class="notice woocommerce-message notice-alt is-dismissible" style="border-left-color:#00818a">
+					<p>
+						<i class="dashicons dashicons-palmtree" style="color:#c62a88;vertical-align:sub;"></i>
+						<strong>
+							<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO', 'admin notice', 'woo-store-vacation' ); ?>
+						</strong>
+					</p>
+					<p>
+						<?php echo esc_html_x( 'Unlock a whole new world of customization! Enjoy unlimited vacation scheduling, automated weekday closing times, smart conditional logic, and more.', 'admin notice', 'woo-store-vacation' ); ?>
+					</p>
+					<p>
+						<?php echo esc_html_x( 'Upgrade now to experience the full potential of the plugin!', 'admin notice', 'woo-store-vacation' ); ?>
+					</p>
+					<p>
+						<a href="<?php echo esc_url( WOO_STORE_VACATION_URI ); ?>" class="button-primary" target="_blank" rel="noopener noreferrer nofollow" style="margin-top:10px;">
 							<?php echo esc_html_x( 'Go PRO for More Options', 'admin notice', 'woo-store-vacation' ); ?> &#8594;
 						</a>
 					</p>
@@ -282,24 +283,33 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			}
 
 			if ( ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) {
-				$message = sprintf(
-					/* translators: 1: HTML symbol, 2: Plugin name, 3: Activation duration, 4: HTML symbol, 5: Open anchor tag, 6: Close anchor tag. */
-					esc_html_x( '%1$s You have been using the %2$s plugin for %3$s now, do you like it as much as we like you? %4$s %5$sRate 5-Stars%6$s', 'admin notice', 'woo-store-vacation' ),
-					'&#9733;',
-					esc_html( WOO_STORE_VACATION_NAME ),
-					human_time_diff( (int) get_site_option( 'woo_store_vacation_activation_timestamp' ), time() ),
-					'&#8594;',
-					sprintf(
-						'<a href="https://wordpress.org/support/plugin/%s/reviews?filter=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">&#9733; ',
-						esc_attr( self::SLUG )
-					),
-					'</a>'
-				);
 				?>
-				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-rate" class="notice notice-info is-dismissible">
-					<p><?php echo wp_kses_post( $message ); ?></p>
+				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-rate" class="notice notice-alt is-dismissible" style="border-left-color:#00818a">
+					<p>
+						<i class="dashicons dashicons-star-filled" style="color:#c62a88;vertical-align:sub;"></i>
+						<strong>
+							<?php
+							printf(
+								/* translators: 1: Activation duration, 2: Plugin name */
+								esc_html_x( '%1$s have passed since you started using %2$s.', 'admin notice', 'woo-store-vacation' ),
+								esc_html( human_time_diff( (int) get_site_option( 'woo_store_vacation_activation_timestamp' ), time() ) ),
+								esc_html( WOO_STORE_VACATION_NAME )
+							);
+							?>
+						</strong>
+					</p>
+					<p>
+						<?php echo esc_html_x( ' Would you kindly consider leaving a review and letting us know how the plugin has helped your business? Your feedback is greatly appreciated!', 'admin notice', 'woo-store-vacation' ); ?>
+					</p>
+					<p>
+						<a href="https://wordpress.org/support/plugin/<?php echo esc_attr( self::SLUG ); ?>/reviews?rate=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow" style="margin-top:10px;">
+							&#9733;
+							<?php echo esc_html_x( 'Give 5 Stars', 'admin notice', 'woo-store-vacation' ); ?> &#8594;
+						</a>
+					</p>
 				</div>
 				<?php
+				return;
 			}
 		}
 
@@ -449,10 +459,10 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO for Even More Powerful Features', 'upsell', 'woo-store-vacation' ); ?>
 				</h3>
 				<p class="importer-title">
-					<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO now and unlock a world of possibilities for your online store! With powerful features and customization options that are not available in the basic version, you’ll be able to take your online store management to the next level.', 'upsell', 'woo-store-vacation' ); ?>
+					<?php echo esc_html_x( 'Looking for more vacation options for your online store? Upgrade to Woo Additional Terms PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools.', 'upsell', 'woo-store-vacation' ); ?>
 				</p>
 				<p class="importer-title">
-					<?php echo esc_html_x( 'Here’s a summary of the features you’ll get with Woo Store Vacation PRO', 'upsell', 'woo-store-vacation' ); ?>
+					<?php echo esc_html_x( 'Here’s a summary of the features you’ll get with Woo Store Vacation PRO:', 'upsell', 'woo-store-vacation' ); ?>
 				</p>
 				<ul style="display:grid;gap:5px 10px;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));font-size:14px;margin-block:20px;">
 					<li>
@@ -974,7 +984,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				),
 				'btn_txt' => array(
 					'name'        => esc_html_x( 'Button Text', 'settings field name', 'woo-store-vacation' ),
-					'desc'        => esc_html_x( 'If specified, a call to action button will be displayed next to your message.', 'settings field description', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'Use this field to add a call-to-action button alongside your message.', 'settings field description', 'woo-store-vacation' ),
 					'placeholder' => esc_html_x( 'Contact me &#8594;', 'settings field placeholder', 'woo-store-vacation' ),
 					'type'        => 'text',
 					'id'          => 'woo_store_vacation_options[btn_txt]',
@@ -983,7 +993,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				),
 				'btn_url' => array(
 					'name'        => esc_html_x( 'Button URL', 'settings field name', 'woo-store-vacation' ),
-					'desc'        => esc_html_x( 'If specified, clicking the CTA button will direct your buyers to do something specific, like visit your contact page.', 'settings field description', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'If a CTA button text has been added, you can use this field to specify the URL that the button should direct your buyers to, such as contact page.', 'settings field description', 'woo-store-vacation' ),
 					'placeholder' => esc_url( wp_guess_url() ),
 					'type'        => 'url',
 					'id'          => 'woo_store_vacation_options[btn_url]',
@@ -992,7 +1002,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				),
 				'vacation_notice' => array(
 					'name'              => esc_html_x( 'Vacation Notice', 'settings field name', 'woo-store-vacation' ),
-					'desc'              => esc_html_x( 'If specified, the notice will be displayed on your shop and single product pages if specified.', 'settings field description', 'woo-store-vacation' ),
+					'desc'              => esc_html_x( 'If specified, this text will be displayed as a notice on your shop and single product pages during your defined vacation dates.', 'settings field description', 'woo-store-vacation' ),
 					'default'           => esc_html_x( 'I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience.', 'settings field placeholder', 'woo-store-vacation' ),
 					'placeholder'       => esc_html_x( 'I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience.', 'settings field placeholder', 'woo-store-vacation' ),
 					'type'              => 'textarea',
@@ -1017,7 +1027,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				),
 				'text_color' => array(
 					'name'        => esc_html_x( 'Text Color', 'settings field name', 'woo-store-vacation' ),
-					'desc'        => esc_html_x( 'It will override the default text color for the WooCommerce info notice if specified.', 'settings field description', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'If specified, it will change the text color of the WooCommerce info notice to a custom color of your choice.', 'settings field description', 'woo-store-vacation' ),
 					'default'     => '#ffffff',
 					'placeholder' => '#ffffff',
 					'type'        => 'color',
@@ -1028,7 +1038,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				),
 				'background_color' => array(
 					'name'        => esc_html_x( 'Background Color', 'settings field name', 'woo-store-vacation' ),
-					'desc'        => esc_html_x( 'It will override the default background color for the WooCommerce info notice if specified.', 'settings field description', 'woo-store-vacation' ),
+					'desc'        => esc_html_x( 'If specified, it will change the background color of the WooCommerce info notice to a custom color of your choice.', 'settings field description', 'woo-store-vacation' ),
 					'default'     => '#3d9cd2',
 					'placeholder' => '#3d9cd2',
 					'type'        => 'color',
