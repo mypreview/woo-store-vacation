@@ -63,7 +63,6 @@ define( 'WOO_STORE_VACATION_URI', $woo_store_vacation_plugin_data['plugin_uri'] 
 define( 'WOO_STORE_VACATION_VERSION', $woo_store_vacation_plugin_data['version'] );
 define( 'WOO_STORE_VACATION_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'WOO_STORE_VACATION_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'WOO_STORE_VACATION_IS_PRO', defined( 'WSVPRO_META' ) && WSVPRO_META );
 define( 'WOO_STORE_VACATION_MIN_DIR', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : trailingslashit( 'minified' ) );
 
 if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
@@ -95,6 +94,13 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @since 1.8.0
 		 */
 		const SLUG = 'woo-store-vacation';
+
+		/**
+		 * Nonce name for Ajax requests verification.
+		 *
+		 * @since 1.8.0
+		 */
+		const NONCE = 'woo-store-vacation-dismiss';
 
 		/**
 		 * Main `Woo_Store_Vacation` instance.
@@ -131,6 +137,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			add_action( 'admin_notices', array( self::instance(), 'admin_notices' ) );
 			add_action( 'wp_ajax_woo_store_vacation_dismiss_upsell', array( self::instance(), 'dismiss_upsell' ) );
 			add_action( 'wp_ajax_woo_store_vacation_dismiss_rate', array( self::instance(), 'dismiss_rate' ) );
+			add_action( 'wp_ajax_woo_store_vacation_dismiss_rated', array( self::instance(), 'dismiss_rated' ) );
 			add_action( 'before_woocommerce_init', array( self::instance(), 'add_compatibility' ), 99 );
 			add_action( 'admin_menu', array( self::instance(), 'add_submenu_page' ), 999 );
 			add_filter( 'woocommerce_settings_tabs_array', array( self::instance(), 'add_settings_tab' ), 999 );
@@ -224,7 +231,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		public function admin_notices() {
 
 			// Query WooCommerce activation.
-			if ( ! $this->is_woocommerce() ) {
+			if ( ! $this->is_woocommerce() ) :
 				$message = sprintf(
 					/* translators: 1: Dashicon, 2: Open anchor tag, 3: Close anchor tag. */
 					esc_html_x( '%1$s requires the following plugin: %2$sWooCommerce%3$s', 'admin notice', 'woo-store-vacation' ),
@@ -241,13 +248,13 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				</div>
 				<?php
 				return;
-			}
+			endif;
 
 			// Display a friendly admin notice upon plugin activation.
 			$welcome_notice_transient = 'woo_store_vacation_welcome_notice';
 			$welcome_notice           = get_transient( $welcome_notice_transient );
 
-			if ( $welcome_notice ) {
+			if ( $welcome_notice ) :
 				?>
 				<div class="notice notice-info">
 					<p><?php echo wp_kses_post( $welcome_notice ); ?></p>
@@ -255,9 +262,9 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				<?php
 				delete_transient( $welcome_notice_transient );
 				return;
-			}
+			endif;
 
-			if ( ! WOO_STORE_VACATION_IS_PRO && ! get_transient( 'woo_store_vacation_upsell' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > DAY_IN_SECONDS ) {
+			if ( ! $this->is_pro() && ! get_transient( 'woo_store_vacation_upsell' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > DAY_IN_SECONDS ) :
 				?>
 				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-upsell" class="notice woocommerce-message notice-alt is-dismissible" style="border-left-color:#00818a">
 					<p>
@@ -280,9 +287,9 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				</div>
 				<?php
 				return;
-			}
+			endif;
 
-			if ( ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) {
+			if ( ! get_option( 'woo_additional_terms_rated' ) && ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) :
 				?>
 				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-rate" class="notice notice-alt is-dismissible" style="border-left-color:#00818a">
 					<p>
@@ -302,15 +309,20 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 						<?php echo esc_html_x( ' Would you kindly consider leaving a review and letting us know how the plugin has helped your business? Your feedback is greatly appreciated!', 'admin notice', 'woo-store-vacation' ); ?>
 					</p>
 					<p>
-						<a href="https://wordpress.org/support/plugin/<?php echo esc_attr( self::SLUG ); ?>/reviews?rate=5#new-post" class="button-primary" target="_blank" rel="noopener noreferrer nofollow" style="margin-top:10px;">
+						<a href="https://wordpress.org/support/plugin/<?php echo esc_attr( self::SLUG ); ?>/reviews?filter=5#new-post" class="button-primary notice-dismiss-later" target="_blank" rel="noopener noreferrer nofollow" style="margin-top:10px;">
 							&#9733;
 							<?php echo esc_html_x( 'Give 5 Stars', 'admin notice', 'woo-store-vacation' ); ?> &#8594;
 						</a>
+						<button class="button-link notice-dismiss-later" style="margin-left:10px;">
+							<?php echo esc_html_x( 'Maybe later', 'admin notice', 'woo-store-vacation' ); ?>
+						</button>
+						<button class="button-link notice-dismiss-rated" style="margin-left:10px;">
+							<?php echo esc_html_x( 'I already did!', 'admin notice', 'woo-store-vacation' ); ?>
+						</button>
 					</p>
 				</div>
 				<?php
-				return;
-			}
+			endif;
 		}
 
 		/**
@@ -322,7 +334,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function dismiss_upsell() {
 
-			check_ajax_referer( self::SLUG . '-dismiss' );
+			check_ajax_referer( self::NONCE );
 
 			set_transient( 'woo_store_vacation_upsell', true, MONTH_IN_SECONDS );
 
@@ -338,9 +350,25 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function dismiss_rate() {
 
-			check_ajax_referer( self::SLUG . '-dismiss' );
+			check_ajax_referer( self::NONCE );
 
 			set_transient( 'woo_store_vacation_rate', true, 3 * MONTH_IN_SECONDS );
+
+			exit();
+		}
+
+		/**
+		 * AJAX dismiss ask-to-rate admin notice for users who already rated.
+		 *
+		 * @since 1.5.2
+		 *
+		 * @return void
+		 */
+		public function dismiss_rated() {
+
+			check_ajax_referer( self::NONCE );
+
+			add_option( 'woo_store_vacation_rated', true );
 
 			exit();
 		}
@@ -449,7 +477,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		public function upsell_after_settings() {
 
 			// Bail early, in case the PRO version of the plugin is installed.
-			if ( WOO_STORE_VACATION_IS_PRO ) {
+			if ( $this->is_pro() ) {
 				return;
 			}
 
@@ -538,7 +566,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			// Enqueue a script.
 			wp_register_script( self::SLUG, trailingslashit( WOO_STORE_VACATION_DIR_URL ) . 'assets/js/' . WOO_STORE_VACATION_MIN_DIR . 'admin.js', array( 'jquery', 'jquery-ui-datepicker', 'wp-i18n' ), WOO_STORE_VACATION_VERSION, true );
 			wp_register_script( self::SLUG . '-upsell', trailingslashit( WOO_STORE_VACATION_DIR_URL ) . 'assets/js/' . WOO_STORE_VACATION_MIN_DIR . 'upsell.js', array( 'jquery' ), WOO_STORE_VACATION_VERSION, true );
-			wp_localize_script( self::SLUG . '-upsell', 'wsvVars', array( 'dismiss_nonce' => wp_create_nonce( self::SLUG . '-dismiss' ) ) );
+			wp_localize_script( self::SLUG . '-upsell', 'wsvVars', array( 'dismiss_nonce' => wp_create_nonce( self::NONCE ) ) );
 
 			if ( ! get_transient( 'woo_store_vacation_rate' ) || ! get_transient( 'woo_store_vacation_upsell' ) ) {
 				wp_enqueue_script( self::SLUG . '-upsell' );
@@ -824,7 +852,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		public function add_action_links( $links ) {
 
 			// Bail early, in case the PRO version of the plugin is installed.
-			if ( WOO_STORE_VACATION_IS_PRO ) {
+			if ( $this->is_pro() ) {
 				return $links;
 			}
 
@@ -1081,6 +1109,18 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			$today = current_datetime();
 
 			return $today > $end_date;
+		}
+
+		/**
+		 * Determine whether the pro version is active.
+		 *
+		 * @since 1.8.0
+		 *
+		 * @return bool
+		 */
+		private function is_pro() {
+
+			return class_exists( 'WSVPRO', false ) && defined( 'WSVPRO_META' );
 		}
 
 		/**
