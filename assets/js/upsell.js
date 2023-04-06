@@ -10,32 +10,41 @@
 	const wsvUpsell = {
 		cache() {
 			this.vars = {};
-			this.els = {};
 			this.vars.rate = '#woo-store-vacation-dismiss-rate .notice-dismiss';
+			this.vars.rate += ', #woo-store-vacation-dismiss-rate .notice-dismiss-later';
+			this.vars.rated = '#woo-store-vacation-dismiss-rate .notice-dismiss-rated';
 			this.vars.upsell = '#woo-store-vacation-dismiss-upsell .notice-dismiss';
 		},
 
 		init() {
 			this.cache();
-			this.events();
+			this.bindEvents();
 		},
 
-		events() {
-			$( document.body ).on( 'click', this.vars.rate, ( event ) => this.handleOnDismiss( event, 'rate' ) );
-			$( document.body ).on( 'click', this.vars.upsell, ( event ) => this.handleOnDismiss( event, 'upsell' ) );
+		bindEvents() {
+			$( document.body )
+				.on( 'click', this.vars.rate, ( event ) => this.handleOnDismiss( event, 'rate' ) )
+				.on( 'click', this.vars.rated, ( event ) => this.handleOnDismiss( event, 'rated' ) )
+				.on( 'click', this.vars.upsell, ( event ) => this.handleOnDismiss( event, 'upsell' ) );
 		},
 
 		handleOnDismiss( event, action ) {
-			event.preventDefault();
+			const $this = $( event.target );
+
+			if ( ! $this.attr( 'href' ) ) {
+				event.preventDefault();
+			}
 
 			$.ajax( {
 				type: 'POST',
 				url: ajaxurl,
+				dataType: 'json',
 				data: {
 					_ajax_nonce: wsvVars.dismiss_nonce,
 					action: `woo_store_vacation_dismiss_${ action }`,
 				},
-				dataType: 'json',
+			} ).always( () => {
+				$this.closest( 'div.notice:visible' ).slideUp();
 			} );
 		},
 	};
