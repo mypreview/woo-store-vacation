@@ -123,7 +123,7 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 
 == Changelog ==
 = 1.8.0 =
-* Feature: Allow shop manager role to edit plugin settings page.
+* Feature: Allow the "Shop Manager" role to edit plugin settings page.
 * Compatibility: WordPress 6.2
 * Compatibility: WooCommerce 7.6
 
