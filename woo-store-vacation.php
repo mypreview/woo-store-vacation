@@ -170,7 +170,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
-		 * Unserializing instances of this class is forbidden.
+		 * Unserializing instances of this class are forbidden.
 		 *
 		 * @since 1.0.0
 		 *
@@ -200,7 +200,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
-		 * Check date on admin initiation and add to admin notice if it was more than the time limit.
+		 * Check the date on admin initiation and add to admin notice if it was more than the time limit.
 		 *
 		 * @since 1.6.1
 		 *
@@ -212,7 +212,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				return;
 			}
 
-			// If not installation date set, then add it.
+			// If the installation date is not set, then add it.
 			$option_name          = 'woo_store_vacation_activation_timestamp';
 			$activation_timestamp = get_site_option( $option_name );
 
@@ -468,7 +468,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
-		 * Promote PRO version adequately!
+		 * Promote the "PRO" plugin adequately!
 		 *
 		 * @since 1.8.0
 		 *
@@ -703,7 +703,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
-		 * Returns notice element when shortcode is found among the post content.
+		 * Return notice element when shortcode is found among the post-content.
 		 *
 		 * @since 1.7.0
 		 *
@@ -805,7 +805,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		public function body_classes( $classes ) {
 
 			/**
-			 * Append a class to the body element when shop is closed.
+			 * Append a class to the body element when the shop is closed.
 			 */
 			$classes[] = 'woo-store-vacation-shop-closed';
 
@@ -840,7 +840,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
-		 * Display additional links in plugins table page.
+		 * Display additional links in the plugin table page.
 		 * Filters the list of action links displayed for a specific plugin in the Plugins list table.
 		 *
 		 * @since 1.0.0
@@ -1112,7 +1112,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
-		 * Determine whether the pro version is active.
+		 * Determine whether the "PRO" version is active.
 		 *
 		 * @since 1.8.0
 		 *
@@ -1156,7 +1156,7 @@ if ( ! function_exists( 'woo_store_vacation_init' ) ) :
 	/**
 	 * Begins execution of the plugin.
 	 * The main function responsible for returning the one true Woo_Store_Vacation
-	 * Instance to functions everywhere.
+	 * Instance to function everywhere.
 	 *
 	 * This function is meant to be used like any other global variable,
 	 * except without needing to declare the global.
