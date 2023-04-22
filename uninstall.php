@@ -1,17 +1,22 @@
 <?php
 /**
- * Unistall Woo Store Vacation.
+ * Uninstall Woo Store Vacation.
  * Fired when the plugin is uninstalled.
  *
- * @link       https://mypreview.one/woo-store-vacation
- * @author     MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- * @since      1.0.0
+ * @link https://mypreview.one/woo-store-vacation
  *
- * @package    woo-store-vacation
+ * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
+ *
+ * @since 1.0.0
+ *
+ * @package woo-store-vacation
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 defined( 'WP_UNINSTALL_PLUGIN' ) || exit; // If uninstall not called from WordPress, then exit.
+
+// Delete the already rated option.
+delete_option( 'woo_store_vacation_rated' );
 
 // Reset the activation timestamp as the user already decided to delete the plugin.
 delete_site_option( 'woo_store_vacation_activation_timestamp' );

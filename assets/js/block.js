@@ -16,6 +16,7 @@
 		icon: { foreground: '#7f54b3', src: 'palmtree' },
 		category: 'woocommerce',
 		supports: { html: false },
+		keywords: [ __( 'shortcode', 'woo-store-vacation' ) ],
 		edit: () => {
 			return el(
 				Notice,
