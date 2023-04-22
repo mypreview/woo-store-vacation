@@ -124,8 +124,8 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 == Changelog ==
 = 1.8.0 =
 * Feature: Allow shop manager role to edit plugin settings page.
-* Compatibility: WordPress 6.1
-* Compatibility: WooCommerce 7.4
+* Compatibility: WordPress 6.2
+* Compatibility: WooCommerce 7.6
 
 = 1.7.0 =
 * Feature: Vacation notice can be displayed using the "[woo_store_vacation]" shortcode or editor block.
