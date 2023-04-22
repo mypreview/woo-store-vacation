@@ -15,7 +15,7 @@
 		description: __( 'Placeholder block for displaying store vacation notice.', 'woo-store-vacation' ),
 		icon: { foreground: '#7f54b3', src: 'palmtree' },
 		category: 'woocommerce',
-		supports: { html: false },
+		supports: { html: false, customClassName: false },
 		keywords: [ __( 'shortcode', 'woo-store-vacation' ) ],
 		edit: () => {
 			return el(
