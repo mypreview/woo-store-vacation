@@ -971,8 +971,8 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					'desc' => esc_html_x( 'Close your store temporarily by scheduling your vacation time. While your shop will remain online and accessible to visitors, new order operations will pause, and your checkout will be disabled.', 'settings field description', 'woo-store-vacation' ),
 				),
 				'vacation_mode' => array(
-					'name'     => esc_html_x( 'Set Vacation Mode', 'settings field name', 'woo-store-vacation' ),
-					'desc'     => esc_html_x( 'Turn on vacation mode and close my store publicly.', 'settings field name', 'woo-store-vacation' ),
+					'name'     => esc_html_x( 'Enable Vacation Mode', 'settings field name', 'woo-store-vacation' ),
+					'desc'     => esc_html_x( 'Check to enable vacation mode and vacation settings. Uncheck to deactivate the vacation functionality.', 'settings field name', 'woo-store-vacation' ),
 					'type'     => 'checkbox',
 					'id'       => 'woo_store_vacation_options[vacation_mode]',
 					'value'    => wc_bool_to_string( $options['vacation_mode'] ?? false ),

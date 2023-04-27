@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-06T20:44:03+00:00\n"
+"POT-Creation-Date: 2023-04-27T11:16:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -248,12 +248,12 @@ msgstr ""
 
 #: woo-store-vacation.php:974
 msgctxt "settings field name"
-msgid "Set Vacation Mode"
+msgid "Enable Vacation Mode"
 msgstr ""
 
 #: woo-store-vacation.php:975
 msgctxt "settings field name"
-msgid "Turn on vacation mode and close my store publicly."
+msgid "Check to enable vacation mode and vacation settings. Uncheck to deactivate the vacation functionality."
 msgstr ""
 
 #: woo-store-vacation.php:982

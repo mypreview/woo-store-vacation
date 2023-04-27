@@ -82,7 +82,7 @@ To access the plugin’s settings page, log into your WordPress website dashboar
 = How do I set up my vacation dates using the plugin? =
 To set up your vacation dates:
 1. Navigate to “WooCommerce” » “Settings” » “Store Vacation”.
-2. Check the “Set Vacation Mode” checkbox to enable vacation mode in your shop.
+2. Check the “Enable Vacation Mode” checkbox to enable vacation mode in your shop.
 2. Enter the “Start Date” (the first day your shop will be closed).
 3. Enter the “End Date” (the first day your shop will be re-opened).
 4. Optionally, fill in a temporary shop announcement or vacation message.
