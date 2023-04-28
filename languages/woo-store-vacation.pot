@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-27T11:16:05+00:00\n"
+"POT-Creation-Date: 2023-04-28T15:18:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: woo-store-vacation.php:490
 msgctxt "upsell"
-msgid "Looking for more vacation options for your online store? Upgrade to Woo Additional Terms PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools."
+msgid "Looking for more vacation options for your online store? Upgrade to Woo Store Vacation PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools."
 msgstr ""
 
 #: woo-store-vacation.php:493
