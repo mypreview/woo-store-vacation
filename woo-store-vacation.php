@@ -289,7 +289,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				return;
 			endif;
 
-			if ( ! get_option( 'woo_additional_terms_rated' ) && ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) :
+			if ( ! get_option( 'woo_store_vacation_rated' ) && ! get_transient( 'woo_store_vacation_rate' ) && ( time() - (int) get_site_option( 'woo_store_vacation_activation_timestamp' ) ) > WEEK_IN_SECONDS ) :
 				?>
 				<div id="<?php echo esc_attr( self::SLUG ); ?>-dismiss-rate" class="notice notice-alt is-dismissible" style="border-left-color:#00818a">
 					<p>
@@ -487,7 +487,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO for Even More Powerful Features', 'upsell', 'woo-store-vacation' ); ?>
 				</h3>
 				<p class="importer-title">
-					<?php echo esc_html_x( 'Looking for more vacation options for your online store? Upgrade to Woo Additional Terms PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools.', 'upsell', 'woo-store-vacation' ); ?>
+					<?php echo esc_html_x( 'Looking for more vacation options for your online store? Upgrade to Woo Store Vacation PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools.', 'upsell', 'woo-store-vacation' ); ?>
 				</p>
 				<p class="importer-title">
 					<?php echo esc_html_x( 'Here’s a summary of the features you’ll get with Woo Store Vacation PRO:', 'upsell', 'woo-store-vacation' ); ?>
