@@ -5,7 +5,7 @@ Donate link: https://mypreview.one/woo-store-vacation
 Requires at least: 5.3
 Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -122,6 +122,9 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 5. Displaying a notice at the top of shop archive pages
 
 == Changelog ==
+= 1.8.1 =
+* Feature: Add support for {{start_date}} and {{end_date}} smart tags.
+
 = 1.8.0 =
 * Feature: Allow the "Shop Manager" role to edit plugin settings page.
 * Compatibility: WordPress 6.2
