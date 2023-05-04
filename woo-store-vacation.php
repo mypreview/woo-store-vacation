@@ -63,7 +63,13 @@ define( 'WOO_STORE_VACATION_URI', $woo_store_vacation_plugin_data['plugin_uri'] 
 define( 'WOO_STORE_VACATION_VERSION', $woo_store_vacation_plugin_data['version'] );
 define( 'WOO_STORE_VACATION_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'WOO_STORE_VACATION_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'WOO_STORE_VACATION_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'WOO_STORE_VACATION_MIN_DIR', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : trailingslashit( 'minified' ) );
+
+/**
+ * Loads the autoloader implementation.
+ */
+require trailingslashit( WOO_STORE_VACATION_DIR_PATH ) . 'vendor/autoload.php';
 
 if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 
@@ -101,6 +107,13 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 * @since 1.8.0
 		 */
 		const NONCE = 'woo-store-vacation-dismiss';
+
+		/**
+		 * Shortcode name.
+		 *
+		 * @since 1.8.1
+		 */
+		const SHORTCODE = 'woo_store_vacation';
 
 		/**
 		 * Main `Woo_Store_Vacation` instance.
@@ -146,12 +159,13 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			add_action( 'woocommerce_after_settings_' . self::SLUG, array( self::instance(), 'upsell_after_settings' ) );
 			add_action( 'admin_enqueue_scripts', array( self::instance(), 'admin_enqueue' ) );
 			add_action( 'enqueue_block_editor_assets', array( self::instance(), 'editor_enqueue' ) );
+			add_action( 'elementor/widgets/widgets_registered', array( self::instance(), 'elementor_widget' ) );
 			add_action( 'woocommerce_loaded', array( self::instance(), 'close_the_shop' ) );
 			add_filter( 'admin_footer_text', array( self::instance(), 'ask_to_rate' ) );
 			add_filter( 'plugin_action_links_' . WOO_STORE_VACATION_PLUGIN_BASENAME, array( self::instance(), 'add_action_links' ) );
 			add_filter( 'plugin_row_meta', array( self::instance(), 'add_meta_links' ), 10, 2 );
 
-			add_shortcode( 'woo_store_vacation', '__return_empty_string' );
+			add_shortcode( self::SHORTCODE, '__return_empty_string' );
 
 			register_activation_hook( __FILE__, array( self::instance(), 'activation' ) );
 			register_deactivation_hook( __FILE__, array( self::instance(), 'deactivation' ) );
@@ -593,6 +607,26 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		}
 
 		/**
+		 * Register the widget.
+		 *
+		 * @since 1.8.1
+		 *
+		 * @param object $widget_manager The widget manager object.
+		 *
+		 * @return void
+		 */
+		public function elementor_widget( $widget_manager ) {
+
+			// Bail early, in case the elementor extension class is not available.
+			if ( ! class_exists( 'Woo_Store_Vacation_Elementor_Widget' ) ) {
+				return;
+			}
+
+			// Register the widget.
+			$widget_manager->register_widget_type( new Woo_Store_Vacation_Elementor_Widget() );
+		}
+
+		/**
 		 * Determine whether the shop should be closed or not!
 		 *
 		 * @since 1.0.0
@@ -654,7 +688,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				do_action( 'woo_store_vacation_shop_closed' );
 			}
 
-			remove_shortcode( 'woo_store_vacation' );
+			remove_shortcode( self::SHORTCODE );
 
 			add_action( 'woocommerce_before_shop_loop', array( self::instance(), 'vacation_notice' ), 5 );
 			add_action( 'woocommerce_before_single_product', array( self::instance(), 'vacation_notice' ) );
@@ -662,7 +696,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			add_action( 'woocommerce_before_checkout_form', array( self::instance(), 'vacation_notice' ), 5 );
 			add_action( 'wp_print_styles', array( self::instance(), 'inline_css' ), 99 );
 
-			add_shortcode( 'woo_store_vacation', array( self::instance(), 'return_vacation_notice' ) );
+			add_shortcode( self::SHORTCODE, array( self::instance(), 'return_vacation_notice' ) );
 		}
 
 		/**
@@ -746,7 +780,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			global $post;
 
 			// Bailout, if any of the pages below are not displaying at the moment.
-			if ( ! is_cart() && ! is_checkout() && ! is_product() && ! is_woocommerce() && ! has_shortcode( get_the_content( null, false, $post ), 'woo_store_vacation' ) ) {
+			if ( ! is_cart() && ! is_checkout() && ! is_product() && ! is_woocommerce() && ! has_shortcode( get_the_content( null, false, $post ), self::SHORTCODE ) ) {
 				return;
 			}
 
@@ -828,6 +862,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function ask_to_rate( $text ) {
 
+			// Bailout, if the current page is not the plugin settings page.
 			if ( ! ( isset( $_GET['page'], $_GET['tab'] ) && 'wc-settings' === $_GET['page'] && self::SLUG === $_GET['tab'] ) ) {
 				return $text;
 			}
@@ -854,14 +889,25 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 		 */
 		public function add_action_links( $links ) {
 
+			$plugin_links = array();
+
 			// Bail early, in case the PRO version of the plugin is installed.
 			if ( $this->is_pro() ) {
-				return $links;
+				/* translators: 1: Open anchor tag, 2: Close anchor tag. */
+				$plugin_links[] = sprintf( esc_html_x( '%1$sGet PRO%2$s', 'plugin link', 'woo-store-vacation' ), sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer nofollow" style="color:green;font-weight:bold;">&#127796; ', esc_url( WOO_STORE_VACATION_URI ) ), '</a>' );
 			}
 
-			$plugin_links = array();
-			/* translators: 1: Open anchor tag, 2: Close anchor tag. */
-			$plugin_links[] = sprintf( esc_html_x( '%1$sGet PRO%2$s', 'plugin link', 'woo-store-vacation' ), sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer nofollow" style="color:green;font-weight:bold;">&#127796; ', esc_url( WOO_STORE_VACATION_URI ) ), '</a>' );
+			if ( $this->is_woocommerce() ) {
+				$settings_url = add_query_arg(
+					array(
+						'page' => 'wc-settings',
+						'tab'  => self::SLUG,
+					),
+					admin_url( 'admin.php' )
+				);
+				/* translators: 1: Open anchor tag, 2: Close anchor tag. */
+				$plugin_links[] = sprintf( esc_html_x( '%1$sSettings%2$s', 'plugin settings page', 'woo-store-vacation' ), sprintf( '<a href="%s">', esc_url( $settings_url ) ), '</a>' );
+			}
 
 			return array_merge( $plugin_links, $links );
 		}
@@ -885,18 +931,6 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			$plugin_links = array();
 			/* translators: 1: Open anchor tag, 2: Close anchor tag. */
 			$plugin_links[] = sprintf( esc_html_x( '%1$sCommunity support%2$s', 'plugin link', 'woo-store-vacation' ), sprintf( '<a href="https://wordpress.org/support/plugin/%s" target="_blank" rel="noopener noreferrer nofollow">', esc_html( self::SLUG ) ), '</a>' );
-
-			if ( $this->is_woocommerce() ) {
-				$settings_url = add_query_arg(
-					array(
-						'page' => 'wc-settings',
-						'tab'  => self::SLUG,
-					),
-					admin_url( 'admin.php' )
-				);
-				/* translators: 1: Open anchor tag, 2: Close anchor tag. */
-				$plugin_links[] = sprintf( esc_html_x( '%1$sSettings%2$s', 'plugin settings page', 'woo-store-vacation' ), sprintf( '<a href="%s" style="font-weight:bold;">&#9881; ', esc_url( $settings_url ) ), '</a>' );
-			}
 
 			return array_merge( $links, $plugin_links );
 		}
