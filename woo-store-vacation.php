@@ -892,7 +892,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			$plugin_links = array();
 
 			// Bail early, in case the PRO version of the plugin is installed.
-			if ( $this->is_pro() ) {
+			if ( ! $this->is_pro() ) {
 				/* translators: 1: Open anchor tag, 2: Close anchor tag. */
 				$plugin_links[] = sprintf( esc_html_x( '%1$sGet PRO%2$s', 'plugin link', 'woo-store-vacation' ), sprintf( '<a href="%s" target="_blank" rel="noopener noreferrer nofollow" style="color:green;font-weight:bold;">&#127796; ', esc_url( WOO_STORE_VACATION_URI ) ), '</a>' );
 			}
