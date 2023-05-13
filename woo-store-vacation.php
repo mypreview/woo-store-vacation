@@ -780,7 +780,14 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			global $post;
 
 			// Bailout, if any of the pages below are not displaying at the moment.
-			if ( ! is_cart() && ! is_checkout() && ! is_product() && ! is_woocommerce() && ! has_shortcode( get_the_content( null, false, $post ), self::SHORTCODE ) ) {
+			if (
+				! is_cart()
+				&& ! is_checkout()
+				&& ! is_product()
+				&& ! is_woocommerce()
+				// Check if the vacation notice shortcode exists in the (raw) page content.
+				&& false === strpos( get_post_field( 'post_content', $post ), '[' . self::SHORTCODE . ']' )
+			) {
 				return;
 			}
 
