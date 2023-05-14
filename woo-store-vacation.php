@@ -796,10 +796,10 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 			$background_color = $options['background_color'] ?? '#3d9cd2';
 			$css              = sprintf(
 				'
-				#%1$s .woocommerce-info {
+				#%1$s .woocommerce-info,
+				#%1$s .wc-block-components-notice-banner {
 					background-color:%2$s !important;
 					color:%3$s !important;
-					z-index:2;
 					text-align:left;
 					list-style:none;
 					border:none;
