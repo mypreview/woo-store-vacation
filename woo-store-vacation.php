@@ -799,7 +799,10 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				#%1$s .woocommerce-info,
 				#%1$s .wc-block-components-notice-banner {
 					background-color:%2$s !important;
-					color:%3$s !important;
+					border-color:%3$s !important;
+					color:%4$s !important;
+				}
+				#%1$s .woocommerce-info {
 					text-align:left;
 					list-style:none;
 					border:none;
@@ -808,6 +811,9 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					padding:1em 1.618em;
 					margin:1.617924em 0 2.617924em 0;
 				}
+				#%1$s svg {
+					background-color:%2$s !important;
+				}
 				#%1$s .woocommerce-info::before {
 					content:none;
 				}
@@ -815,7 +821,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					display:table-cell;
 				}
 				.%1$s__btn {
-					color:%3$s !important;
+					color:%4$s !important;
 					background-color:%2$s !important;
 					display:table-cell;
 					float:right;
@@ -831,6 +837,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				}',
 				esc_attr( self::SLUG ),
 				sanitize_hex_color( $background_color ),
+				sanitize_hex_color( wc_hex_darker( $background_color ) ),
 				sanitize_hex_color( $text_color )
 			);
 
