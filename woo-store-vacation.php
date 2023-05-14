@@ -799,8 +799,10 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 				#%1$s .woocommerce-info,
 				#%1$s .wc-block-components-notice-banner {
 					background-color:%2$s !important;
-					border-color:%3$s !important;
 					color:%4$s !important;
+				}
+				#%1$s .wc-block-components-notice-banner {
+					border-color:%3$s !important;
 				}
 				#%1$s .woocommerce-info {
 					text-align:left;
