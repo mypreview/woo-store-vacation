@@ -36,7 +36,7 @@
  * Text Domain:          woo-store-vacation
  * Domain Path:          /languages
  * WC requires at least: 4.0
- * WC tested up to:      7.6
+ * WC tested up to:      7.7
  */
 
 use Automattic\WooCommerce\Utilities\FeaturesUtil;
