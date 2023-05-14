@@ -812,7 +812,7 @@ if ( ! class_exists( 'Woo_Store_Vacation' ) ) :
 					margin:1.617924em 0 2.617924em 0;
 				}
 				#%1$s svg {
-					background-color:%2$s !important;
+					background-color:%3$s !important;
 				}
 				#%1$s .woocommerce-info::before {
 					content:none;
