@@ -120,6 +120,9 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 3. Displaying a notice at the top of shop page
 4. Displaying a notice at the top of product page
 5. Displaying a notice at the top of shop archive pages
+6. Adding the Store Vacation Notice block to the editor
+7. Adding the vacation notice shortcode to the Classic Editor
+8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
 = 1.8.1 =
