@@ -22,7 +22,7 @@ If you need to end your vacation early and want to reopen your store before the 
 
 The vacation notice feature lets you create a personalized automated message to inform users about important details while your shop is closed. You can include the start and return dates using smart tags `{{start_date}}` and `{{end_date}}`. Additionally, you can customize the notice’s color to match your site branding and add a call-to-action button that directs users to a specific page, like the contact page.
 
-The vacation notice is initially visible on WooCommerce pages, including the shop and product pages. However, you have the option to add the notice to other pages on your site as well. If you use the core block editor or Gutenberg plugin, simply insert the Store Vacation Notice block to display the holiday message. For pages created with Elementor, use the Store Vacation Notice widget. Alternatively, you prefer the Classic Editor or other page builders like SeedProd or Divi Builder. In that case, you can use the `[woo_store_vacation]` shortcode to show the notice on any chosen page, such as the homepage, sidebar, or any other location.
+The vacation notice is initially visible on WooCommerce pages, including the shop and product pages. However, you have the option to add the notice to other pages on your site as well. If you use the core block editor or Gutenberg plugin, simply insert the Store Vacation Notice block to display the holiday message. For pages created with Elementor, use the Store Vacation Notice widget. Alternatively, in case you prefer the Classic Editor or other page builders like SeedProd or Divi Builder, you can use the `[woo_store_vacation]` shortcode to show the notice on any chosen page, such as the homepage, sidebar, or any other location.
 
 To better distribute workload and responsibilities and create a collaborative environment for managing your online store, shop managers have access to the plugin settings to manage and edit vacation options.
 
@@ -124,6 +124,9 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 == Changelog ==
 = 1.8.1 =
 * Feature: Add support for {{start_date}} and {{end_date}} smart tags.
+* Feature: Add "Store Vacation Notice" widget for Elementor.
+* Compatibility: WordPress 6.2.1
+* Compatibility: WooCommerce 7.7
 
 = 1.8.0 =
 * Feature: Allow the "Shop Manager" role to edit plugin settings page.
