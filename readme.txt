@@ -20,9 +20,9 @@ The plugin is designed to have no negative impact on your site’s SEO. It does 
 
 If you need to end your vacation early and want to reopen your store before the scheduled time, the plugin makes it simple to do so. You can easily deactivate the vacation mode whenever you want or reschedule the plugin to adjust your vacation period. This flexibility allows you to manage your online store with ease, knowing that you can make changes as needed.
 
-The vacation notice feature allows you to customize an automated message to inform users of your return date or any other relevant information they need to know while your shop is closed. You can even customize the notice’s color to match your site branding and add a call-to-action button to navigate users to a specific page, such as the contact page.
+The vacation notice feature lets you create a personalized automated message to inform users about important details while your shop is closed. You can include the start and return dates using smart tags `{{start_date}}` and `{{end_date}}`. Additionally, you can customize the notice’s color to match your site branding and add a call-to-action button that directs users to a specific page, like the contact page.
 
-By default, the vacation notice displays on the WooCommerce pages, including the shop and product pages. However, if you prefer, you can also add the vacation notice to any other pages on your site. If you use the core block editor or Gutenberg plugin, you can easily add the holiday message by inserting the Store Vacation Notice block. Alternatively, if you use a page builder like Elementor, SeedProd, or Divi builder, you can use the `[woo_store_vacation]` shortcode to display the notice on any page you choose. This allows you to show your vacation message whether you want to showcase it on the homepage, sidebar, or any other location.
+The vacation notice is initially visible on WooCommerce pages, including the shop and product pages. However, you have the option to add the notice to other pages on your site as well. If you use the core block editor or Gutenberg plugin, simply insert the Store Vacation Notice block to display the holiday message. For pages created with Elementor, use the Store Vacation Notice widget. Alternatively, in case you prefer the Classic Editor or other page builders like SeedProd or Divi Builder, you can use the `[woo_store_vacation]` shortcode to show the notice on any chosen page, such as the homepage, sidebar, or any other location.
 
 To better distribute workload and responsibilities and create a collaborative environment for managing your online store, shop managers have access to the plugin settings to manage and edit vacation options.
 
@@ -120,10 +120,16 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 3. Displaying a notice at the top of shop page
 4. Displaying a notice at the top of product page
 5. Displaying a notice at the top of shop archive pages
+6. Adding the Store Vacation Notice block to the editor
+7. Adding the vacation notice shortcode to the Classic Editor
+8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
 = 1.8.1 =
 * Feature: Add support for {{start_date}} and {{end_date}} smart tags.
+* Feature: Add "Store Vacation Notice" widget for Elementor.
+* Compatibility: WordPress 6.2.1
+* Compatibility: WooCommerce 7.7
 
 = 1.8.0 =
 * Feature: Allow the "Shop Manager" role to edit plugin settings page.
