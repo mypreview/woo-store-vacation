@@ -19,6 +19,15 @@ use Woo_Store_Vacation\Installer;
 class Notices {
 
 	/**
+	 * The dismiss nonce name.
+	 *
+	 * @since 1.3.8
+	 *
+	 * @var string
+	 */
+	const DISMISS_NONCE_NAME = 'woo-store-vacation-dismiss';
+
+	/**
 	 * Setup hooks and filters.
 	 *
 	 * @since 1.0.0
