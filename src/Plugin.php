@@ -147,7 +147,7 @@ class Plugin extends Container {
 			$notice->setup();
 
 			// WooCommerce close store.
-			$wc_close = new WooCommerce\Close();
+			$wc_close = new WooCommerce\Vacation();
 			$wc_close->setup();
 		}
 
