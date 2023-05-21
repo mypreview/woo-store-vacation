@@ -48,9 +48,10 @@
 	"license": "GPL-3.0",
 	"name": "mypreview/woo-store-vacation",
 	"require": {
+		"mahdiyazdani/wc-install-notice": "^1.0",
+		"mahdiyazdani/wp-footer-rate": "^1.0",
 		"php": ">=7.4",
-		"pimple/pimple": "^3.5",
-		"mahdiyazdani/wc-install-notice": "^1.0"
+		"pimple/pimple": "^3.5"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "0.7.2",

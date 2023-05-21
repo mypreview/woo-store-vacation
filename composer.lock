@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c27c97320ca7b2f476586a3a3e941e15",
+    "content-hash": "1b3dea6d38691d0ee2066c48f0f4e5d9",
     "packages": [
         {
             "name": "mahdiyazdani/wc-install-notice",
@@ -67,6 +67,65 @@
                 "source": "https://github.com/mahdiyazdani/wc-install-notice/tree/1.0.0"
             },
             "time": "2023-05-21T11:31:44+00:00"
+        },
+        {
+            "name": "mahdiyazdani/wp-footer-rate",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mahdiyazdani/wp-footer-rate.git",
+                "reference": "a6b188f1ea637effd6e10b879c9f21e4404cc1c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mahdiyazdani/wp-footer-rate/zipball/a6b188f1ea637effd6e10b879c9f21e4404cc1c1",
+                "reference": "a6b188f1ea637effd6e10b879c9f21e4404cc1c1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
+                "php-parallel-lint/php-parallel-lint": "1.3.2",
+                "phpcompatibility/phpcompatibility-wp": "2.1.3",
+                "phpunit/phpunit": "9.5.24",
+                "squizlabs/php_codesniffer": "3.7.1",
+                "wp-coding-standards/wpcs": "2.3.0"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "scripts-description": {
+                    "lint:wpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier",
+                    "lint:wpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Footer Rate Notice",
+                    "homepage": "https://mahdiyazdani.one"
+                }
+            ],
+            "description": "Library to be bundled with WordPress themes and plugins to ask for users to leave a review.",
+            "homepage": "https://github.com/mahdiyazdani/wp-footer-rate",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/mahdiyazdani/wp-footer-rate/issues",
+                "source": "https://github.com/mahdiyazdani/wp-footer-rate/tree/1.0.0"
+            },
+            "time": "2023-05-21T17:46:47+00:00"
         },
         {
             "name": "pimple/pimple",
