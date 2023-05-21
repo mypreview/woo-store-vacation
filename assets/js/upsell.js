@@ -1,13 +1,18 @@
-/* global jQuery, ajaxurl, wsvVars */
+/* global jQuery, ajaxurl, woo_store_vacation_params */
 
-( function ( wp, $ ) {
+( function ( wp, $, ajaxurl, l10n ) {
 	'use strict';
 
 	if ( ! wp ) {
 		return;
 	}
 
-	const wsvUpsell = {
+	const upsell = {
+		/**
+		 * Cache.
+		 *
+		 * @since 1.3.6
+		 */
 		cache() {
 			this.vars = {};
 			this.vars.rate = '#woo-store-vacation-dismiss-rate .notice-dismiss';
@@ -16,11 +21,21 @@
 			this.vars.upsell = '#woo-store-vacation-dismiss-upsell .notice-dismiss';
 		},
 
+		/**
+		 * Initialize.
+		 *
+		 * @since 1.3.6
+		 */
 		init() {
 			this.cache();
 			this.bindEvents();
 		},
 
+		/**
+		 * Bind events.
+		 *
+		 * @since 1.3.6
+		 */
 		bindEvents() {
 			$( document.body )
 				.on( 'click', this.vars.rate, ( event ) => this.handleOnDismiss( event, 'rate' ) )
@@ -28,6 +43,14 @@
 				.on( 'click', this.vars.upsell, ( event ) => this.handleOnDismiss( event, 'upsell' ) );
 		},
 
+		/**
+		 * Handle on dismiss.
+		 *
+		 * @since 1.3.6
+		 *
+		 * @param {Object} event  Event object.
+		 * @param {string} action Action to perform.
+		 */
 		handleOnDismiss( event, action ) {
 			const $this = $( event.target );
 
@@ -40,7 +63,7 @@
 				url: ajaxurl,
 				dataType: 'json',
 				data: {
-					_ajax_nonce: wsvVars.dismiss_nonce,
+					_ajax_nonce: l10n.dismiss_nonce,
 					action: `woo_store_vacation_dismiss_${ action }`,
 				},
 			} ).always( () => {
@@ -49,5 +72,5 @@
 		},
 	};
 
-	wsvUpsell.init();
-} )( window.wp, jQuery );
+	upsell.init();
+} )( window.wp, jQuery, ajaxurl, woo_store_vacation_params );
