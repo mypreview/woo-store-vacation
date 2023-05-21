@@ -11,6 +11,8 @@
 
 namespace Woo_Store_Vacation;
 
+use Woo_Store_Vacation\Enhancements\Notices;
+
 /**
  * Load plugin static resources (CSS and JS files).
  */
@@ -59,12 +61,27 @@ abstract class Assets {
 			$version,
 			true
 		);
+
+		wp_register_style(
+			'woo-store-vacation-upsell',
+			woo_store_vacation()->service( 'file' )->asset_path( 'upsell.css' ),
+			array(),
+			$version,
+			'screen'
+		);
 		wp_register_script(
 			'woo-store-vacation-upsell',
 			woo_store_vacation()->service( 'file' )->asset_path( 'upsell.js' ),
 			array( 'jquery' ),
 			$version,
 			true
+		);
+		wp_localize_script(
+			'woo-store-vacation-upsell',
+			'woo_store_vacation_params',
+			array(
+				'dismiss_nonce' => wp_create_nonce( Notices::DISMISS_NONCE_NAME ),
+			)
 		);
 	}
 }
