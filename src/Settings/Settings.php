@@ -13,7 +13,7 @@ namespace Woo_Store_Vacation\Settings;
 
 use WC_Settings_Page;
 use Woo_Store_Vacation\Helper;
-use Woo_Store_Vacation\WooCommerce\Close;
+use Woo_Store_Vacation\WooCommerce;
 
 /**
  * Class Settings.
@@ -226,7 +226,7 @@ class Settings extends WC_Settings_Page {
 		$timezone_info[] = sprintf( /* translators: 1: Open span tag, 2: Local time, 3: Close span tag. */
 			esc_html__( '%1$sLocal time is %2$s.%3$s', 'woo-store-vacation' ),
 			'<time> ',
-			sprintf( '<code>%s</code>', current_datetime()->format( Close::DATETIME_FORMAT ) ),
+			sprintf( '<code>%s</code>', current_datetime()->format( WooCommerce\Vacation::DATETIME_FORMAT ) ),
 			'</time>'
 		);
 
