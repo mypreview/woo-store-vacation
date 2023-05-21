@@ -58,7 +58,7 @@ class Settings extends WC_Settings_Page {
 	private function enqueue() {
 
 		// Bail early if the current page is not the settings page.
-		if ( ! $this->is_page() ) {
+		if ( ! Helpers::is_page() ) {
 			return;
 		}
 
@@ -266,24 +266,5 @@ class Settings extends WC_Settings_Page {
 		$today = current_datetime();
 
 		return $today > $end_date;
-	}
-
-	/**
-	 * Check if the current page is the settings page.
-	 *
-	 * @since 1.8.0
-	 *
-	 * @return bool
-	 */
-	private function is_page() {
-
-		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		return (
-			isset( $_GET['page'] )
-			&& 'wc-settings' === $_GET['page']
-			&& isset( $_GET['tab'] )
-			&& $this->id === $_GET['tab']
-		);
-		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}
 }
