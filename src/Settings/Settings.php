@@ -12,6 +12,7 @@
 namespace Woo_Store_Vacation\Settings;
 
 use WC_Settings_Page;
+use Woo_Store_Vacation\Helper;
 use Woo_Store_Vacation\WooCommerce\Close;
 
 /**
@@ -58,7 +59,7 @@ class Settings extends WC_Settings_Page {
 	private function enqueue() {
 
 		// Bail early if the current page is not the settings page.
-		if ( ! Helpers::is_page() ) {
+		if ( ! Helper\Settings::is_page() ) {
 			return;
 		}
 
