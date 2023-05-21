@@ -28,8 +28,30 @@ class Register {
 	 */
 	public function setup() {
 
+		add_action( 'admin_menu', array( $this, 'add_submenu_page' ), 999 );
 		add_filter( 'woocommerce_get_settings_pages', array( $this, 'settings' ) );
 		add_action( 'woocommerce_settings_start', array( $this, 'rate' ) );
+	}
+
+	/**
+	 * Create plugin options page.
+	 * Backward compatibility for old location of the plugin’s settings page.
+	 *
+	 * @since 1.0.0
+	 * @deprecated 1.8.0
+	 *
+	 * @return void
+	 */
+	public function add_submenu_page() {
+
+		add_submenu_page(
+			'woocommerce',
+			esc_html_x( 'Woo Store Vacation', 'plugin name', 'woo-store-vacation' ),
+			esc_html_x( 'Store Vacation', 'menu title', 'woo-store-vacation' ),
+			'manage_woocommerce',
+			woo_store_vacation()->get_slug(),
+			fn() => wp_safe_redirect( Helper\Settings::page_uri() )
+		);
 	}
 
 	/**
