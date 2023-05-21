@@ -11,8 +11,8 @@ defined( 'ABSPATH' ) || exit;
 defined( 'WC_VERSION' ) || exit;
 
 ?>
-<div class="woocommerce-message" style="background:#fff;border:1px solid #dadada;padding:25px 20px;margin-top:20px;position:relative;">
-	<h3 style="margin-top:0;">
+<div class="woocommerce-message woo-store-vacation-upsell-block">
+	<h3>
 		<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO for Even More Powerful Features', 'upsell', 'woo-store-vacation' ); ?>
 	</h3>
 	<p class="importer-title">
@@ -21,7 +21,7 @@ defined( 'WC_VERSION' ) || exit;
 	<p class="importer-title">
 		<?php echo esc_html_x( 'Here’s a summary of the features you’ll get with Woo Store Vacation PRO:', 'upsell', 'woo-store-vacation' ); ?>
 	</p>
-	<ul style="display:grid;gap:5px 10px;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));font-size:14px;margin-block:20px;">
+	<ul>
 		<li>
 			<i class="dashicons dashicons-yes"></i>
 			<?php echo esc_html_x( 'Schedule an unlimited number of vacation periods', 'upsell', 'woo-store-vacation' ); ?>
