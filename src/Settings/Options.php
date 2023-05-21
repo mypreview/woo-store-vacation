@@ -11,6 +11,8 @@
 
 namespace Woo_Store_Vacation\Settings;
 
+use Woo_Store_Vacation\Installer;
+
 /**
  * Options class.
  */
@@ -56,6 +58,18 @@ class Options {
 		update_option( 'woo_store_vacation_options', $value );
 
 		return $value;
+	}
+
+	/**
+	 * Get the plugin activation timestamp.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @return int
+	 */
+	public function get_usage_timestamp() {
+
+		return (int) get_site_option( Installer::TIMESTAMP_OPTION_NAME, 0 );
 	}
 
 	/**
