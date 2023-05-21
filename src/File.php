@@ -92,6 +92,18 @@ class File {
 	}
 
 	/**
+	 * Return plugin dirname.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @return string
+	 */
+	public function dirname() {
+
+		return dirname( plugin_basename( $this->file ) );
+	}
+
+	/**
 	 * Returns a full path for the asset (static resource CSS/JS) file.
 	 *
 	 * @since 1.0.0
