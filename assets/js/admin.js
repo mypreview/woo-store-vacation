@@ -11,8 +11,8 @@
 	const wsvAdmin = {
 		cache() {
 			this.els = {};
-			this.els.$startDate = $( '.woo-store-vacation-start-datepicker' );
-			this.els.$endDate = $( '.woo-store-vacation-end-datepicker' );
+			this.els.$startDate = $( '[name="woo_store_vacation_options[start_date]"]' );
+			this.els.$endDate = $( '[name="woo_store_vacation_options[end_date]"]' );
 		},
 
 		init() {
