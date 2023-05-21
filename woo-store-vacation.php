@@ -89,12 +89,11 @@ function woo_store_vacation_load(): void {
 	woo_store_vacation();
 }
 
-// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-$is_wc_active = new Nag();
-$is_wc_active->set_file_path( __FILE__ );
-$is_wc_active->set_plugin_name( 'Woo Store Vacation' );
+$woo_store_vacation_is_wc_active = new Nag();
+$woo_store_vacation_is_wc_active->set_file_path( __FILE__ );
+$woo_store_vacation_is_wc_active->set_plugin_name( 'Woo Store Vacation' );
 
-if ( ! $is_wc_active->does_it_requires_nag() ) {
+if ( ! $woo_store_vacation_is_wc_active->does_it_requires_nag() ) {
 
 	add_action( 'woocommerce_loaded', 'woo_store_vacation_load', 20 );
 
