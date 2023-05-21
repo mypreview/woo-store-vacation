@@ -11,6 +11,8 @@
 
 namespace Woo_Store_Vacation;
 
+use Woo_Store_Vacation\Helper;
+
 /**
  * The plugin installer class.
  */
@@ -41,7 +43,7 @@ class Installer {
 	 *
 	 * @return void
 	 */
-	public static function activate(): void {
+	public static function activate() {
 
 		self::store_timestamp();
 		self::store_nux_notice();
@@ -54,7 +56,7 @@ class Installer {
 	 *
 	 * @return void
 	 */
-	public static function deactivate(): void {
+	public static function deactivate() {
 
 		delete_transient( 'woo_store_vacation_rate' );
 		delete_transient( 'woo_store_vacation_upsell' );
@@ -96,7 +98,7 @@ class Installer {
 			),
 			sprintf(
 				'<a href="%s" target="_self">',
-				esc_url( woo_store_vacation()->service( 'options' )->get_uri() )
+				esc_url( Helper\Settings::page_uri() )
 			),
 			'</a>'
 		);

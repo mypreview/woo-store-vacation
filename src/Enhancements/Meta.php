@@ -11,6 +11,8 @@
 
 namespace Woo_Store_Vacation\Enhancements;
 
+use Woo_Store_Vacation\Helper;
+
 /**
  * The plugin meta class.
  */
@@ -98,7 +100,7 @@ class Meta {
 			esc_html_x( '%1$sSettings%2$s', 'plugin settings page', 'woo-store-vacation' ),
 			sprintf(
 				'<a href="%s">',
-				esc_url( woo_store_vacation()->service( 'options' )->get_uri() )
+				esc_url( Helper\Settings::page_uri() )
 			),
 			'</a>'
 		);
