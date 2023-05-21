@@ -71,22 +71,4 @@ class Options {
 
 		return (int) get_site_option( Installer::TIMESTAMP_OPTION_NAME, 0 );
 	}
-
-	/**
-	 * Get the plugin settings URI.
-	 *
-	 * @since 1.9.0
-	 *
-	 * @return string
-	 */
-	public function get_uri() {
-
-		return add_query_arg(
-			array(
-				'page' => 'wc-settings',
-				'tab'  => woo_store_vacation()->get_slug(),
-			),
-			admin_url( 'admin.php' )
-		);
-	}
 }
