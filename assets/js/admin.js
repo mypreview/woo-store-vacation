@@ -8,18 +8,33 @@
 	}
 
 	const { __ } = wp.i18n;
-	const wsvAdmin = {
+	const admin = {
+		/**
+		 * Cache.
+		 *
+		 * @since 1.0.0
+		 */
 		cache() {
 			this.els = {};
 			this.els.$startDate = $( '[name="woo_store_vacation_options[start_date]"]' );
 			this.els.$endDate = $( '[name="woo_store_vacation_options[end_date]"]' );
 		},
 
+		/**
+		 * Initialize.
+		 *
+		 * @since 1.0.0
+		 */
 		init() {
 			this.cache();
 			this.datePickers();
 		},
 
+		/**
+		 * Datepickers.
+		 *
+		 * @since 1.0.0
+		 */
 		datePickers() {
 			this.addDeleteButtonDatepicker();
 
@@ -54,6 +69,11 @@
 			};
 		},
 
+		/**
+		 * Add delete button to datepicker.
+		 *
+		 * @since 1.0.0
+		 */
 		addDeleteButtonDatepicker() {
 			const oldFn = $.datepicker._updateDatepicker;
 
@@ -73,5 +93,5 @@
 		},
 	};
 
-	wsvAdmin.init();
+	admin.init();
 } )( window.wp, jQuery );
