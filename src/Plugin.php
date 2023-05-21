@@ -151,6 +151,7 @@ class Plugin extends Container {
 			$wc_close->setup();
 		}
 
+		add_action( 'before_woocommerce_init', array( 'Woo_Store_Vacation\\I18n', 'textdomain' ) );
 		add_action( 'enqueue_block_editor_assets', array( 'Woo_Store_Vacation\\Assets', 'enqueue_editor' ) );
 		add_action( 'admin_enqueue_scripts', array( 'Woo_Store_Vacation\\Assets', 'enqueue_admin' ) );
 	}
