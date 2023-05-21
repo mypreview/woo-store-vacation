@@ -4,7 +4,7 @@
  *
  * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
  *
- * @since 1.0.0
+ * @since 1.9.0
  *
  * @package woo-store-vacation
  */
@@ -26,6 +26,8 @@ class PluginServiceProvider implements ServiceProviderInterface {
 	 *
 	 * This method should only be used to configure services and parameters.
 	 * It should not get services.
+	 *
+	 * @since 1.9.0
 	 *
 	 * @param Container $pimple Container instance.
 	 */
