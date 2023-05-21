@@ -1,0 +1,22 @@
+/* General styles.
+ * The following will apply settings-wide.
+----------------------------------------------------------------------------- */
+.woo-store-vacation-upsell-block {
+	background: #fff;
+	border: 1px solid #dadada;
+	padding: 25px 20px;
+	margin-top: 20px;
+	position: relative;
+}
+
+.woo-store-vacation-upsell-block > h3 {
+	margin-top: 0;
+}
+
+.woo-store-vacation-upsell-block > ul {
+	display: grid;
+	gap: 5px 10px;
+	grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+	font-size: 14px;
+	margin-block: 20px;
+}
