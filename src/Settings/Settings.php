@@ -248,7 +248,7 @@ class Settings extends WC_Settings_Page {
 	 *
 	 * @return bool
 	 */
-	private static function is_invalid_end_date() {
+	private function is_invalid_end_date() {
 
 		$end_date_string = woo_store_vacation()->service( 'options' )->get( 'end_date', false );
 
