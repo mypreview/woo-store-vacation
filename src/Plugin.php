@@ -12,6 +12,7 @@
 namespace Woo_Store_Vacation;
 
 use Pimple\Container;
+use Woo_Store_Vacation\Ajax;
 use Woo_Store_Vacation\Compatibility;
 use Woo_Store_Vacation\Enhancements;
 use Woo_Store_Vacation\Shortcode;
@@ -119,6 +120,10 @@ class Plugin extends Container {
 	 * @return void
 	 */
 	private function load(): void {
+
+		// Register the AJAX action for the upsell admin notice.
+		$upsell_ajax = new Ajax\Upsell();
+		$upsell_ajax->setup();
 
 		if ( is_admin() ) {
 			// Add compatibility with WooCommerce (core) features.
