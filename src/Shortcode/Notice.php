@@ -14,27 +14,29 @@ namespace Woo_Store_Vacation\Shortcode;
 /**
  * Notice class.
  */
-class Notice {
+class Notice extends Shortcode {
 
 	/**
-	 * Shortcode name.
+	 * Constructor.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @var string
+	 * @return void
 	 */
-	const SHORTCODE = 'woo_store_vacation';
+	public function __construct() {
+
+		// Parent constructor.
+		parent::__construct( 'woo_store_vacation', true );
+	}
 
 	/**
-	 * Constructor method.
+	 * Setup hooks and filters.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
 	public function setup() {
-
-		add_shortcode( self::SHORTCODE, '__return_empty_string' );
 
 		add_action( 'woo_store_vacation_vacation_mode', array( $this, 'init' ) );
 	}
@@ -48,7 +50,7 @@ class Notice {
 	 */
 	public function init() {
 
-		remove_shortcode( self::SHORTCODE );
+		$this->unregister();
 
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'print' ), 5 );
 		add_action( 'woocommerce_before_single_product', array( $this, 'print' ) );
@@ -56,7 +58,7 @@ class Notice {
 		add_action( 'woocommerce_before_checkout_form', array( $this, 'print' ), 5 );
 		add_action( 'wp_print_styles', array( $this, 'inline_css' ), 99 );
 
-		add_shortcode( self::SHORTCODE, array( $this, 'retrieve' ) );
+		$this->register( array( $this, 'retrieve' ) );
 	}
 
 	/**
@@ -145,7 +147,7 @@ class Notice {
 			&& ! is_product()
 			&& ! is_woocommerce()
 			// Check if the vacation notice shortcode exists in the (raw) page content.
-			&& false === strpos( get_post_field( 'post_content', $post ), '[' . self::SHORTCODE . ']' )
+			&& false === strpos( get_post_field( 'post_content', $post ), '[' . $this->get_tag() . ']' )
 		) {
 			return;
 		}
