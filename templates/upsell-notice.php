@@ -2,7 +2,7 @@
 /**
  * The Template for displaying upsell admin notice.
  *
- * @since 1.0.0
+ * @since 1.3.8
  *
  * @package woo-store-vacation
  */
@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 defined( 'WC_VERSION' ) || exit;
 
 ?>
-<div id="<?php echo esc_attr( $args['slug'] ); ?>-dismiss-upsell" class="notice woocommerce-message notice-alt is-dismissible">
+<div id="<?php echo esc_attr( woo_store_vacation()->get_slug() ); ?>-dismiss-upsell" class="notice woocommerce-message notice-alt is-dismissible">
 	<p>
 		<i class="dashicons dashicons-palmtree"></i>
 		<strong>
