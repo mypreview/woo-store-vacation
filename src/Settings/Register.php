@@ -40,6 +40,7 @@ class Register {
 	 */
 	public function settings( $settings ) {
 
+		// Add our settings page.
 		$settings[] = woo_store_vacation()->service( 'settings' );
 		return $settings;
 	}

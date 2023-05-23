@@ -52,6 +52,7 @@ class Vacation {
 
 		$vacation_mode = woo_store_vacation()->service( 'options' )->get( 'vacation_mode', 'no' );
 
+		// Bail early, in case vacation mode is not enabled.
 		if ( ! wc_string_to_bool( $vacation_mode ) ) {
 			return;
 		}
@@ -59,6 +60,7 @@ class Vacation {
 		$start_date = woo_store_vacation()->service( 'options' )->get( 'start_date' );
 		$end_date   = woo_store_vacation()->service( 'options' )->get( 'end_date' );
 
+		// Bail early, in case start or end date is empty.
 		if ( empty( $start_date ) || empty( $end_date ) ) {
 			return;
 		}
@@ -68,6 +70,7 @@ class Vacation {
 		$start_date = date_create( $start_date, $timezone );
 		$end_date   = date_create( $end_date, $timezone );
 
+		// Bail early, in case start or end date is invalid.
 		if ( ! $start_date || ! $end_date ) {
 			return;
 		}
@@ -78,6 +81,7 @@ class Vacation {
 		// The current time as an object using the site’s timezone.
 		$today = current_datetime();
 
+		// Bail early, in case today is not between start and end date.
 		if ( $today < $start_date || $today > $end_date ) {
 			return;
 		}
@@ -131,6 +135,7 @@ class Vacation {
 			return;
 		}
 
+		// Register a new node.
 		$admin_bar->add_menu(
 			array(
 				'parent' => null,

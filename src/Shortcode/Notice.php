@@ -50,6 +50,7 @@ class Notice extends Shortcode {
 	 */
 	public function init() {
 
+		// Unregister the shortcode.
 		$this->unregister();
 
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'print' ), 5 );
@@ -58,6 +59,7 @@ class Notice extends Shortcode {
 		add_action( 'woocommerce_before_checkout_form', array( $this, 'print' ), 5 );
 		add_action( 'wp_print_styles', array( $this, 'inline_css' ), 99 );
 
+		// Register the shortcode with the new callback.
 		$this->register( array( $this, 'retrieve' ) );
 	}
 
@@ -83,6 +85,7 @@ class Notice extends Shortcode {
 
 		printf( '<div id="%s">', esc_attr( woo_store_vacation()->get_slug() ) );
 
+		// If the button text or URL is empty, or the URL is set to `#`, then don't print the button.
 		if ( empty( $btn_txt ) || empty( $btn_url ) || '#' === $btn_url ) {
 			$message = wp_kses_post( nl2br( $notice ) );
 		} else {
@@ -95,6 +98,7 @@ class Notice extends Shortcode {
 			);
 		}
 
+		// Print the notice.
 		wc_print_notice( $message, apply_filters( 'woo_store_vacation_notice_type', 'notice' ) );
 
 		echo '</div>';

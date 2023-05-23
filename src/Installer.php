@@ -75,6 +75,7 @@ class Installer {
 
 		$activation_timestamp = get_site_option( self::TIMESTAMP_OPTION_NAME );
 
+		// Store the activation timestamp if it doesn't exist.
 		if ( ! $activation_timestamp ) {
 			add_site_option( self::TIMESTAMP_OPTION_NAME, time() );
 		}
@@ -104,6 +105,7 @@ class Installer {
 			'</a>'
 		);
 
+		// Store the welcome notice transient.
 		set_transient( self::WELCOME_NOTICE_TRANSIENT_NAME, $welcome_notice, MINUTE_IN_SECONDS );
 	}
 }

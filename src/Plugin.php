@@ -117,18 +117,19 @@ class Plugin extends Container {
 
 		foreach ( $this->get_classes() as $class => $args ) {
 
-			// Check if the class is has condition.
+			// Skip if the condition is not met.
 			if ( ! isset( $args['condition'] ) || ! $args['condition'] ) {
 				continue;
 			}
 
+			// Initialize the class with parameters.
 			if ( isset( $args['params'] ) ) {
 				( new $class() )->setup( ...$args['params'] );
 				continue;
 			}
 
+			// Initialize the class.
 			( new $class() )->setup();
-
 		}
 
 		add_action( 'before_woocommerce_init', array( 'Woo_Store_Vacation\\I18n', 'textdomain' ) );

@@ -29,6 +29,7 @@ abstract class I18n {
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
+		// Load the translation file for current language.
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . "{$domain}/{$domain}-{$locale}.mo" );
 		load_plugin_textdomain( $domain, false, woo_store_vacation()->service( 'file' )->dirname() . '/languages/' );
 	}

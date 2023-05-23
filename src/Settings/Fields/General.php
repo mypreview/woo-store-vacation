@@ -29,6 +29,7 @@ class General {
 	 */
 	public function get_fields( $slug ) {
 
+		// Inline styles for the invalid end date.
 		$invalid_end_date_style = $this->is_invalid_end_date() ? 'border:1px solid red;' : '';
 
 		return array(
@@ -203,12 +204,14 @@ class General {
 
 		$end_date_string = woo_store_vacation()->service( 'options' )->get( 'end_date', false );
 
+		// Bail early if the end date is not set.
 		if ( empty( $end_date_string ) ) {
 			return false;
 		}
 
 		$end_date = date_create( $end_date_string, wp_timezone() );
 
+		// Bail early if the end date is invalid.
 		if ( ! $end_date ) {
 			return false;
 		}

@@ -47,6 +47,7 @@ class WooCommerce {
 			return;
 		}
 
+		// Declare compatibility with HPOS.
 		FeaturesUtil::declare_compatibility( 'custom_order_tables', woo_store_vacation()->service( 'file' )->plugin_file() );
 	}
 }

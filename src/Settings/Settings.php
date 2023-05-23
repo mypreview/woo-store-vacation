@@ -71,6 +71,7 @@ class Settings extends WC_Settings_Page {
 			return;
 		}
 
+		// Enqueue the settings assets.
 		wp_enqueue_style( 'woo-store-vacation-admin' );
 		wp_enqueue_script( 'woo-store-vacation-admin' );
 	}

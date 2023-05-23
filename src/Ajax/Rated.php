@@ -43,6 +43,7 @@ class Rated extends Ajax {
 	 */
 	public function setup() {
 
+		// Register the AJAX action.
 		$this->register_admin();
 	}
 

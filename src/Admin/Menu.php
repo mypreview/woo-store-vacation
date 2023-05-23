@@ -41,6 +41,7 @@ class Menu {
 	 */
 	public function add_submenu_page() {
 
+		// Add the submenu page.
 		add_submenu_page(
 			'woocommerce',
 			esc_html_x( 'Woo Store Vacation', 'plugin name', 'woo-store-vacation' ),
