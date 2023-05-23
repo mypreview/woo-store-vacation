@@ -11,6 +11,7 @@
 
 namespace Woo_Store_Vacation;
 
+use Woo_Store_Vacation\Enhancements;
 use Woo_Store_Vacation\Helper;
 
 /**
@@ -58,9 +59,9 @@ class Installer {
 	 */
 	public static function deactivate() {
 
-		delete_transient( 'woo_store_vacation_rate' );
-		delete_transient( 'woo_store_vacation_upsell' );
-		delete_transient( 'woo_store_vacation_welcome_notice' );
+		delete_transient( Enhancements\Rate::TRANSIENT_NAME );
+		delete_transient( Enhancements\Upsell::TRANSIENT_NAME );
+		delete_transient( self::WELCOME_NOTICE_TRANSIENT_NAME );
 	}
 
 	/**
