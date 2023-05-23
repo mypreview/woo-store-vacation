@@ -45,7 +45,7 @@
 				onClose( selectedDate ) {
 					const minDate = new Date( Date.parse( selectedDate ) );
 					minDate.setDate( minDate.getDate() + 1 );
-					wsvAdmin.els.$endDate.datepicker( 'option', 'minDate', minDate );
+					admin.els.$endDate.datepicker( 'option', 'minDate', minDate );
 				},
 			} );
 
@@ -57,11 +57,11 @@
 				onClose( selectedDate ) {
 					const maxDate = new Date( Date.parse( selectedDate ) );
 					maxDate.setDate( maxDate.getDate() - 1 );
-					wsvAdmin.els.$startDate.datepicker( 'option', 'maxDate', maxDate );
+					admin.els.$startDate.datepicker( 'option', 'maxDate', maxDate );
 				},
 			} );
 
-			// Override the _goToToday method outside of the library itself.
+			// Override the _goToToday method outside the library itself.
 			const oldGoToToday = $.datepicker._gotoToday;
 			$.datepicker._gotoToday = function ( id ) {
 				oldGoToToday.call( this, id );
