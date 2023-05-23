@@ -148,8 +148,7 @@ class Plugin extends Container {
 		$is_ajax     = wp_doing_ajax();
 		$is_admin    = is_admin();
 		$is_frontend = ! $is_admin;
-
-		$classes = array(
+		$classes     = array(
 			'Ajax\\Rate' => array(
 				'condition' => $is_ajax,
 			),
