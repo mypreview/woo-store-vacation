@@ -34,8 +34,9 @@ class PluginServiceProvider implements ServiceProviderInterface {
 	public function register( Container $pimple ): void {
 
 		// Plugin settings.
-		$pimple['settings'] = fn() => new Settings\Settings();
-		$pimple['options']  = fn() => new Settings\Options();
+		$pimple['settings']         = fn() => new Settings\Settings();
+		$pimple['settings_general'] = fn() => new Settings\Fields\General();
+		$pimple['options']          = fn() => new Settings\Options();
 
 		// Shortcodes.
 		$pimple['notice'] = fn() => new Shortcode\Notice();
