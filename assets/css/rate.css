@@ -1,0 +1,19 @@
+/* Upsell styles.
+ * The following will apply all rate (review on wp.org) plugin-wide.
+----------------------------------------------------------------------------- */
+#woo-store-vacation-dismiss-rate {
+	border-left-color: #00818a;
+}
+
+#woo-store-vacation-dismiss-rate .dashicons-star-filled {
+	color: #c62a88;
+	vertical-align: sub;
+}
+
+#woo-store-vacation-dismiss-rate .button-primary {
+	margin-top: 10px;
+}
+
+#woo-store-vacation-dismiss-rate .button-link {
+	margin-left: 10px;
+}
