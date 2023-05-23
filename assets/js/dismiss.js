@@ -7,7 +7,7 @@
 		return;
 	}
 
-	const upsell = {
+	const dismiss = {
 		/**
 		 * Cache.
 		 *
@@ -72,5 +72,5 @@
 		},
 	};
 
-	upsell.init();
+	dismiss.init();
 } )( window.wp, jQuery, ajaxurl, woo_store_vacation_params );
