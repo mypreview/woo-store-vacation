@@ -4,7 +4,7 @@
  *
  * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
  *
- * @since 1.0.0
+ * @since 1.3.8
  *
  * @package woo-store-vacation
  */
@@ -19,7 +19,7 @@ class Upsell {
 	/**
 	 * The PRO version upsell URI.
 	 *
-	 * @since 1.0.0
+	 * @since 1.3.8
 	 *
 	 * @var string
 	 */
@@ -28,7 +28,7 @@ class Upsell {
 	/**
 	 * Upsell transient name.
 	 *
-	 * @since 1.0.0
+	 * @since 1.3.8
 	 *
 	 * @var string
 	 */
@@ -37,7 +37,7 @@ class Upsell {
 	/**
 	 * Setup hooks and filters.
 	 *
-	 * @since 1.0.0
+	 * @since 1.3.8
 	 *
 	 * @param string $slug The plugin slug.
 	 *
@@ -60,25 +60,22 @@ class Upsell {
 	 */
 	public function admin_notice() {
 
-		// Bail early if the transient is set and the usage timestamp is less than a day.
+		// Bail early if the transient is set or the usage timestamp is less than a day.
 		if (
 			get_transient( self::TRANSIENT_NAME )
-			&& ( time() - woo_store_vacation()->service( 'options' )->get_usage_timestamp() ) > DAY_IN_SECONDS
+			|| ( time() - woo_store_vacation()->service( 'options' )->get_usage_timestamp() ) < DAY_IN_SECONDS
 		) {
 			return;
 		}
 
 		// Enqueue the upsell notice assets.
 		wp_enqueue_style( 'woo-store-vacation-upsell' );
-		wp_enqueue_script( 'woo-store-vacation-upsell' );
+		wp_enqueue_script( 'woo-store-vacation-dismiss' );
 
 		// Display the upsell notice.
 		wc_get_template(
 			'upsell-notice.php',
-			array(
-				'slug' => $this->slug,
-				'uri'  => self::PRO_URI,
-			),
+			array( 'uri' => self::PRO_URI ),
 			'',
 			trailingslashit( woo_store_vacation()->service( 'file' )->plugin_path( 'templates' ) )
 		);
