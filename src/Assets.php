@@ -31,7 +31,7 @@ abstract class Assets {
 			'woo-store-vacation-block',
 			woo_store_vacation()->service( 'file' )->asset_path( 'block.js' ),
 			array( 'react', 'wp-components', 'wp-element', 'wp-i18n' ),
-			$version,
+			woo_store_vacation()->get_version(),
 			true
 		);
 	}

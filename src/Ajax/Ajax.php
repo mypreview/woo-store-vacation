@@ -23,7 +23,7 @@ abstract class Ajax {
 	 *
 	 * @var string
 	 */
-	private $action = '';
+	private $action;
 
 	/**
 	 * The nonce name.
@@ -32,7 +32,7 @@ abstract class Ajax {
 	 *
 	 * @var string
 	 */
-	private $nonce = '';
+	private $nonce;
 
 	/**
 	 * Constructor.

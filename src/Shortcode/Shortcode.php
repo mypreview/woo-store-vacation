@@ -86,7 +86,7 @@ abstract class Shortcode {
 	 *
 	 * @since 1.9.0
 	 *
-	 * @param function $callback Callback function.
+	 * @param callable $callback Callback function.
 	 *
 	 * @return void
 	 */

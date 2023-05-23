@@ -20,6 +20,15 @@ use Woo_Store_Vacation\Helper;
 class Settings extends WC_Settings_Page {
 
 	/**
+	 * The settings slug.
+	 *
+	 * @since 1.8.0
+	 *
+	 * @var string
+	 */
+	private $slug;
+
+	/**
 	 * Setup settings class.
 	 *
 	 * @since 1.8.0

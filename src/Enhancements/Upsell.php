@@ -45,10 +45,8 @@ class Upsell {
 	 */
 	public function setup( $slug ) {
 
-		$this->slug = $slug;
-
 		add_action( 'woo_store_vacation_admin_notices', array( $this, 'admin_notice' ) );
-		add_action( "woocommerce_after_settings_{$this->slug}", array( $this, 'content_block' ) );
+		add_action( "woocommerce_after_settings_{$slug}", array( $this, 'content_block' ) );
 	}
 
 	/**
