@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Woo Store Vacation 1.8.1\n"
+"Project-Id-Version: Woo Store Vacation 1.9.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woo-store-vacation\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-17T12:43:32+00:00\n"
+"POT-Creation-Date: 2023-05-23T20:25:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -31,349 +31,331 @@ msgstr ""
 msgid "MyPreview"
 msgstr ""
 
-#: includes/class-woo-store-vacation-elementor-widget.php:49
-#: assets/js/block.js:14
-#: assets/js/minified/block.js:1
-msgid "Store Vacation Notice"
-msgstr ""
-
-#: includes/class-woo-store-vacation-elementor-widget.php:164
-#: assets/js/block.js:28
-#: assets/js/minified/block.js:1
-msgid "⚠ This alert-box is a placeholder that is displayed in place of the actual vacation notice message."
-msgstr ""
-
-#: woo-store-vacation.php:183
-msgctxt "clone"
-msgid "Cloning instances of this class is forbidden."
-msgstr ""
-
-#: woo-store-vacation.php:195
-msgctxt "wakeup"
-msgid "Unserializing instances of this class is forbidden."
-msgstr ""
-
-#. translators: 1: Dashicon, 2: Open anchor tag, 3: Close anchor tag.
-#: woo-store-vacation.php:251
-msgctxt "admin notice"
-msgid "%1$s requires the following plugin: %2$sWooCommerce%3$s"
-msgstr ""
-
-#: woo-store-vacation.php:287
-msgctxt "admin notice"
-msgid "Upgrade to Woo Store Vacation PRO"
-msgstr ""
-
-#: woo-store-vacation.php:291
-msgctxt "admin notice"
-msgid "Unlock a whole new world of customization! Enjoy unlimited vacation scheduling, automated weekday closing times, smart conditional logic, and more."
-msgstr ""
-
-#: woo-store-vacation.php:294
-msgctxt "admin notice"
-msgid "Upgrade now to experience the full potential of the plugin!"
-msgstr ""
-
-#: woo-store-vacation.php:298
-msgctxt "admin notice"
-msgid "Go PRO for More Options"
-msgstr ""
-
-#. translators: 1: Activation duration, 2: Plugin name
-#: woo-store-vacation.php:315
-msgctxt "admin notice"
-msgid "%1$s have passed since you started using %2$s."
-msgstr ""
-
-#: woo-store-vacation.php:323
-msgctxt "admin notice"
-msgid " Would you kindly consider leaving a review and letting us know how the plugin has helped your business? Your feedback is greatly appreciated!"
-msgstr ""
-
-#: woo-store-vacation.php:328
-msgctxt "admin notice"
-msgid "Give 5 Stars"
-msgstr ""
-
-#: woo-store-vacation.php:331
-msgctxt "admin notice"
-msgid "Maybe later"
-msgstr ""
-
-#: woo-store-vacation.php:334
-msgctxt "admin notice"
-msgid "I already did!"
-msgstr ""
-
-#: woo-store-vacation.php:420
-msgctxt "page title"
+#: src/Admin/Menu.php:47
+#: src/Enhancements/Rate.php:102
+#: src/Installer.php:99
+#: templates/rate-notice.php:23
+msgctxt "plugin name"
 msgid "Woo Store Vacation"
 msgstr ""
 
-#: woo-store-vacation.php:421
+#: src/Admin/Menu.php:48
 msgctxt "menu title"
 msgid "Store Vacation"
 msgstr ""
 
-#: woo-store-vacation.php:453
-msgctxt "tab title"
-msgid "Store Vacation"
-msgstr ""
-
-#: woo-store-vacation.php:501
-msgctxt "upsell"
-msgid "Upgrade to Woo Store Vacation PRO for Even More Powerful Features"
-msgstr ""
-
-#: woo-store-vacation.php:504
-msgctxt "upsell"
-msgid "Looking for more vacation options for your online store? Upgrade to Woo Store Vacation PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools."
-msgstr ""
-
-#: woo-store-vacation.php:507
-msgctxt "upsell"
-msgid "Here’s a summary of the features you’ll get with Woo Store Vacation PRO:"
-msgstr ""
-
-#: woo-store-vacation.php:512
-msgctxt "upsell"
-msgid "Schedule an unlimited number of vacation periods"
-msgstr ""
-
-#: woo-store-vacation.php:516
-msgctxt "upsell"
-msgid "Schedule specific weekdays to close shop recurring"
-msgstr ""
-
-#: woo-store-vacation.php:520
-msgctxt "upsell"
-msgid "Close your store immediately without prior notice"
-msgstr ""
-
-#: woo-store-vacation.php:524
-msgctxt "upsell"
-msgid "Keep your shop open for specific user roles"
-msgstr ""
-
-#: woo-store-vacation.php:528
-msgctxt "upsell"
-msgid "Create complex conditional logic to alter a vacation mode"
-msgstr ""
-
-#: woo-store-vacation.php:532
-msgctxt "upsell"
-msgid "Exclude product types from vacation mode"
-msgstr ""
-
-#: woo-store-vacation.php:536
-msgctxt "upsell"
-msgid "Allow certain Products to be purchased during vacation"
-msgstr ""
-
-#: woo-store-vacation.php:540
-msgctxt "upsell"
-msgid "Restrict a vacation mode by Categories"
-msgstr ""
-
-#: woo-store-vacation.php:544
-msgctxt "upsell"
-msgid "Restrict vacation mode by Tags"
-msgstr ""
-
-#: woo-store-vacation.php:548
-msgctxt "upsell"
-msgid "Restrict vacation mode by Shipping classes"
-msgstr ""
-
-#: woo-store-vacation.php:552
-msgctxt "upsell"
-msgid "Restrict vacation mode by WooCommerce Brands"
-msgstr ""
-
-#: woo-store-vacation.php:556
-msgctxt "upsell"
-msgid "Import and export your plugin settings and content"
-msgstr ""
-
-#: woo-store-vacation.php:560
-msgctxt "upsell"
-msgid "Upgrade now and take advantage of all these features to grow your online store."
-msgstr ""
-
-#: woo-store-vacation.php:564
-msgctxt "upsell"
-msgid "Go PRO for More Options"
-msgstr ""
-
-#. translators: 1: Open paragraph tag, 2: Plugin name, 3: Five stars, 4: Close paragraph tag.
-#: woo-store-vacation.php:888
-msgid "%1$sIf you like %2$s please leave us a %3$s rating to help us spread the word!%4$s"
-msgstr ""
-
-#: woo-store-vacation.php:891
-msgid "five star"
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: src/Enhancements/Meta.php:67
+msgctxt "plugin link"
+msgid "%1$sCommunity support%2$s"
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: woo-store-vacation.php:913
+#: src/Enhancements/Meta.php:92
 msgctxt "plugin link"
 msgid "%1$sGet PRO%2$s"
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: woo-store-vacation.php:925
+#: src/Enhancements/Meta.php:100
 msgctxt "plugin settings page"
 msgid "%1$sSettings%2$s"
 msgstr ""
 
-#. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: woo-store-vacation.php:949
-msgctxt "plugin link"
-msgid "%1$sCommunity support%2$s"
-msgstr ""
-
 #. translators: 1: Dashicon, 2: Plugin name, 3: Open anchor tag, 4: Close anchor tag.
-#: woo-store-vacation.php:967
+#: src/Installer.php:95
 msgctxt "admin notice"
 msgid "%1$s Thanks for installing %2$s plugin! To get started, visit the %3$splugin’s settings page%4$s."
 msgstr ""
 
-#. translators: 1: Open span tag, 2: Local time, 3: Close span tag.
-#: woo-store-vacation.php:1013
-msgid "%1$sLocal time is %2$s.%3$s"
-msgstr ""
-
-#. translators: 1: The timezone of the site as a string.
-#: woo-store-vacation.php:1017
-msgid "Your timezone is currently in %s time."
-msgstr ""
-
-#: woo-store-vacation.php:1023
+#: src/Settings/Fields/General.php:39
 msgctxt "settings section name"
 msgid "Woo Store Vacation"
 msgstr ""
 
-#: woo-store-vacation.php:1024
+#: src/Settings/Fields/General.php:40
 msgctxt "settings field description"
 msgid "Close your store temporarily by scheduling your vacation time. While your shop will remain online and accessible to visitors, new order operations will pause, and your checkout will be disabled."
 msgstr ""
 
-#: woo-store-vacation.php:1027
+#: src/Settings/Fields/General.php:43
 msgctxt "settings field name"
 msgid "Enable Vacation Mode"
 msgstr ""
 
-#: woo-store-vacation.php:1028
+#: src/Settings/Fields/General.php:44
 msgctxt "settings field name"
 msgid "Check to enable vacation mode and vacation settings. Uncheck to deactivate the vacation functionality."
 msgstr ""
 
-#: woo-store-vacation.php:1035
+#: src/Settings/Fields/General.php:51
 msgctxt "settings field name"
 msgid "Disable Purchase"
 msgstr ""
 
-#: woo-store-vacation.php:1036
+#: src/Settings/Fields/General.php:52
 msgctxt "settings field description"
 msgid "This will disable eCommerce functionality and takes out the cart, checkout process and add to cart buttons."
 msgstr ""
 
-#: woo-store-vacation.php:1043
+#: src/Settings/Fields/General.php:59
 msgctxt "settings field name"
 msgid "Start Date"
 msgstr ""
 
-#: woo-store-vacation.php:1044
+#: src/Settings/Fields/General.php:60
 msgctxt "settings field description"
 msgid "The database will store a time of 00:00:00 by default."
 msgstr ""
 
-#: woo-store-vacation.php:1053
+#: src/Settings/Fields/General.php:69
 msgctxt "settings field name"
 msgid "End Date"
 msgstr ""
 
-#: woo-store-vacation.php:1054
+#: src/Settings/Fields/General.php:70
 msgctxt "settings field description"
 msgid "The validity of the date range begins at midnight on the \"Start Date\" and lasts until the start of the day on the \"End Date\"."
 msgstr ""
 
-#: woo-store-vacation.php:1067
+#: src/Settings/Fields/General.php:83
 msgctxt "settings field name"
 msgid "Button Text"
 msgstr ""
 
-#: woo-store-vacation.php:1068
+#: src/Settings/Fields/General.php:84
 msgctxt "settings field description"
 msgid "Use this field to add a call-to-action button alongside your message."
 msgstr ""
 
-#: woo-store-vacation.php:1069
+#: src/Settings/Fields/General.php:85
 msgctxt "settings field placeholder"
 msgid "Contact me &#8594;"
 msgstr ""
 
-#: woo-store-vacation.php:1076
+#: src/Settings/Fields/General.php:92
 msgctxt "settings field name"
 msgid "Button URL"
 msgstr ""
 
-#: woo-store-vacation.php:1077
+#: src/Settings/Fields/General.php:93
 msgctxt "settings field description"
 msgid "If a CTA button text has been added, you can use this field to specify the URL that the button should direct your buyers to, such as contact page."
 msgstr ""
 
-#: woo-store-vacation.php:1085
+#: src/Settings/Fields/General.php:101
 msgctxt "settings field name"
 msgid "Vacation Notice"
 msgstr ""
 
-#: woo-store-vacation.php:1086
+#: src/Settings/Fields/General.php:102
 msgctxt "settings field description"
 msgid "If specified, this text will be displayed as a notice on your shop and single product pages during your defined vacation dates."
 msgstr ""
 
-#: woo-store-vacation.php:1087
-#: woo-store-vacation.php:1088
+#: src/Settings/Fields/General.php:103
+#: src/Settings/Fields/General.php:104
 msgctxt "settings field placeholder"
 msgid "I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience."
 msgstr ""
 
 #. translators: 1: Open paragraph tag, 2: Shortcode, 3: Close paragraph tag.
-#: woo-store-vacation.php:1103
+#: src/Settings/Fields/General.php:119
 msgctxt "settings field text"
 msgid "%1$sThe %2$s shortcode allows you to display the vacation notification on pages and posts at the scheduled times.%3$s"
 msgstr ""
 
 #. translators: 1: Open paragraph tag, 2: Start date smart tag, 3: End date smart tag, 4: Close paragraph tag.
-#: woo-store-vacation.php:1110
+#: src/Settings/Fields/General.php:126
 msgctxt "settings field text"
 msgid "%1$sYou may utilize the %2$s and %3$s smart tags to automatically populate the vacation dates in your notice message.%4$s"
 msgstr ""
 
-#: woo-store-vacation.php:1118
+#: src/Settings/Fields/General.php:134
 msgctxt "settings field name"
 msgid "Text Color"
 msgstr ""
 
-#: woo-store-vacation.php:1119
+#: src/Settings/Fields/General.php:135
 msgctxt "settings field description"
 msgid "If specified, it will change the text color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#: woo-store-vacation.php:1129
+#: src/Settings/Fields/General.php:145
 msgctxt "settings field name"
 msgid "Background Color"
 msgstr ""
 
-#: woo-store-vacation.php:1130
+#: src/Settings/Fields/General.php:146
 msgctxt "settings field description"
 msgid "If specified, it will change the background color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#: assets/js/admin.js:65
+#. translators: 1: Open span tag, 2: Local time, 3: Close span tag.
+#: src/Settings/Fields/General.php:179
+msgid "%1$sLocal time is %2$s.%3$s"
+msgstr ""
+
+#. translators: 1: The timezone of the site as a string.
+#: src/Settings/Fields/General.php:186
+msgid "Your timezone is currently in %s time."
+msgstr ""
+
+#: src/Settings/Settings.php:57
+msgctxt "settings tab label"
+msgid "Store Vacation"
+msgstr ""
+
+#. translators: %s: HTML `Warning` symbol.
+#: src/WooCommerce/Vacation.php:145
+msgctxt "admin bar"
+msgid "%s Shop Closed!"
+msgstr ""
+
+#: src/WooCommerce/Vacation.php:148
+msgctxt "admin bar"
+msgid "Vacation mode is activated! Click here to navigate to the plugin’s settings page."
+msgstr ""
+
+#. translators: 1: Activation duration, 2: Plugin name
+#: templates/rate-notice.php:21
+msgctxt "admin notice"
+msgid "%1$s have passed since you started using %2$s."
+msgstr ""
+
+#: templates/rate-notice.php:29
+msgctxt "admin notice"
+msgid " Would you kindly consider leaving a review and letting us know how the plugin has helped your business? Your feedback is greatly appreciated!"
+msgstr ""
+
+#: templates/rate-notice.php:34
+msgctxt "admin notice"
+msgid "Give 5 Stars"
+msgstr ""
+
+#: templates/rate-notice.php:37
+msgctxt "admin notice"
+msgid "Maybe later"
+msgstr ""
+
+#: templates/rate-notice.php:40
+msgctxt "admin notice"
+msgid "I already did!"
+msgstr ""
+
+#: templates/upsell-block.php:16
+msgctxt "upsell"
+msgid "Upgrade to Woo Store Vacation PRO for Even More Powerful Features"
+msgstr ""
+
+#: templates/upsell-block.php:19
+msgctxt "upsell"
+msgid "Looking for more vacation options for your online store? Upgrade to Woo Store Vacation PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools."
+msgstr ""
+
+#: templates/upsell-block.php:22
+msgctxt "upsell"
+msgid "Here’s a summary of the features you’ll get with Woo Store Vacation PRO:"
+msgstr ""
+
+#: templates/upsell-block.php:27
+msgctxt "upsell"
+msgid "Schedule an unlimited number of vacation periods"
+msgstr ""
+
+#: templates/upsell-block.php:31
+msgctxt "upsell"
+msgid "Schedule specific weekdays to close shop recurring"
+msgstr ""
+
+#: templates/upsell-block.php:35
+msgctxt "upsell"
+msgid "Close your store immediately without prior notice"
+msgstr ""
+
+#: templates/upsell-block.php:39
+msgctxt "upsell"
+msgid "Keep your shop open for specific user roles"
+msgstr ""
+
+#: templates/upsell-block.php:43
+msgctxt "upsell"
+msgid "Create complex conditional logic to alter a vacation mode"
+msgstr ""
+
+#: templates/upsell-block.php:47
+msgctxt "upsell"
+msgid "Exclude product types from vacation mode"
+msgstr ""
+
+#: templates/upsell-block.php:51
+msgctxt "upsell"
+msgid "Allow certain Products to be purchased during vacation"
+msgstr ""
+
+#: templates/upsell-block.php:55
+msgctxt "upsell"
+msgid "Restrict a vacation mode by Categories"
+msgstr ""
+
+#: templates/upsell-block.php:59
+msgctxt "upsell"
+msgid "Restrict vacation mode by Tags"
+msgstr ""
+
+#: templates/upsell-block.php:63
+msgctxt "upsell"
+msgid "Restrict vacation mode by Shipping classes"
+msgstr ""
+
+#: templates/upsell-block.php:67
+msgctxt "upsell"
+msgid "Restrict vacation mode by WooCommerce Brands"
+msgstr ""
+
+#: templates/upsell-block.php:71
+msgctxt "upsell"
+msgid "Import and export your plugin settings and content"
+msgstr ""
+
+#: templates/upsell-block.php:75
+msgctxt "upsell"
+msgid "Upgrade now and take advantage of all these features to grow your online store."
+msgstr ""
+
+#: templates/upsell-block.php:79
+msgctxt "upsell"
+msgid "Go PRO for More Options"
+msgstr ""
+
+#: templates/upsell-notice.php:18
+msgctxt "admin notice"
+msgid "Upgrade to Woo Store Vacation PRO"
+msgstr ""
+
+#: templates/upsell-notice.php:22
+msgctxt "admin notice"
+msgid "Unlock a whole new world of customization! Enjoy unlimited vacation scheduling, automated weekday closing times, smart conditional logic, and more."
+msgstr ""
+
+#: templates/upsell-notice.php:25
+msgctxt "admin notice"
+msgid "Upgrade now to experience the full potential of the plugin!"
+msgstr ""
+
+#: templates/upsell-notice.php:29
+msgctxt "admin notice"
+msgid "Go PRO for More Options"
+msgstr ""
+
+#: assets/js/admin.js:85
 #: assets/js/minified/admin.js:1
 msgid "Delete"
+msgstr ""
+
+#: assets/js/block.js:14
+#: assets/js/minified/block.js:1
+msgid "Store Vacation Notice"
 msgstr ""
 
 #: assets/js/block.js:15
@@ -384,4 +366,9 @@ msgstr ""
 #: assets/js/block.js:19
 #: assets/js/minified/block.js:1
 msgid "shortcode"
+msgstr ""
+
+#: assets/js/block.js:28
+#: assets/js/minified/block.js:1
+msgid "⚠ This alert-box is a placeholder that is displayed in place of the actual vacation notice message."
 msgstr ""
