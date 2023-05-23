@@ -63,21 +63,30 @@ abstract class Assets {
 		);
 
 		wp_register_style(
+			'woo-store-vacation-rate',
+			woo_store_vacation()->service( 'file' )->asset_path( 'rate.css' ),
+			array(),
+			$version,
+			'screen'
+		);
+
+		wp_register_style(
 			'woo-store-vacation-upsell',
 			woo_store_vacation()->service( 'file' )->asset_path( 'upsell.css' ),
 			array(),
 			$version,
 			'screen'
 		);
+
 		wp_register_script(
-			'woo-store-vacation-upsell',
-			woo_store_vacation()->service( 'file' )->asset_path( 'upsell.js' ),
+			'woo-store-vacation-dismiss',
+			woo_store_vacation()->service( 'file' )->asset_path( 'dismiss.js' ),
 			array( 'jquery' ),
 			$version,
 			true
 		);
 		wp_localize_script(
-			'woo-store-vacation-upsell',
+			'woo-store-vacation-dismiss',
 			'woo_store_vacation_params',
 			array(
 				'dismiss_nonce' => wp_create_nonce( Notices::DISMISS_NONCE_NAME ),
