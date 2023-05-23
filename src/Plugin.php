@@ -12,12 +12,6 @@
 namespace Woo_Store_Vacation;
 
 use Pimple\Container;
-use Woo_Store_Vacation\Ajax;
-use Woo_Store_Vacation\Compatibility;
-use Woo_Store_Vacation\Enhancements;
-use Woo_Store_Vacation\Shortcode;
-use Woo_Store_Vacation\Settings;
-use Woo_Store_Vacation\WooCommerce;
 
 /**
  * The plugin class.
@@ -121,43 +115,91 @@ class Plugin extends Container {
 	 */
 	private function load(): void {
 
-		// Register the AJAX action for the upsell admin notice.
-		$upsell_ajax = new Ajax\Upsell();
-		$upsell_ajax->setup();
+		foreach ( $this->get_classes() as $class => $args ) {
 
-		if ( is_admin() ) {
-			// Add compatibility with WooCommerce (core) features.
-			$hpos = new Compatibility\WooCommerce();
-			$hpos->setup();
+			// Check if the class is has condition.
+			if ( ! isset( $args['condition'] ) || ! $args['condition'] ) {
+				continue;
+			}
 
-			// Add plugin action links.
-			$meta = new Enhancements\Meta();
-			$meta->setup( $this['file']->plugin_basename() );
+			if ( isset( $args['params'] ) ) {
+				( new $class() )->setup( ...$args['params'] );
+				continue;
+			}
 
-			// Add plugin notices.
-			$notices = new Enhancements\Notices();
-			$notices->setup();
+			( new $class() )->setup();
 
-			// Add plugin upsell.
-			$upsell = new Enhancements\Upsell();
-			$upsell->setup( $this->get_slug() );
-
-			// Register plugin settings.
-			$settings = new Settings\Register();
-			$settings->setup();
-		} else {
-
-			// Register the shortcode.
-			$notice = new Shortcode\Notice();
-			$notice->setup();
-
-			// WooCommerce close store.
-			$wc_close = new WooCommerce\Vacation();
-			$wc_close->setup();
 		}
 
 		add_action( 'before_woocommerce_init', array( 'Woo_Store_Vacation\\I18n', 'textdomain' ) );
 		add_action( 'enqueue_block_editor_assets', array( 'Woo_Store_Vacation\\Assets', 'enqueue_editor' ) );
 		add_action( 'admin_enqueue_scripts', array( 'Woo_Store_Vacation\\Assets', 'enqueue_admin' ) );
+	}
+
+	/**
+	 * Get the classes to load.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @return array
+	 */
+	private function get_classes() {
+
+		$is_ajax     = wp_doing_ajax();
+		$is_admin    = is_admin();
+		$is_frontend = ! $is_admin;
+
+		$classes = array(
+			'Ajax\\Rate' => array(
+				'condition' => $is_ajax,
+			),
+			'Ajax\\Rated' => array(
+				'condition' => $is_ajax,
+			),
+			'Ajax\\Upsell' => array(
+				'condition' => $is_ajax,
+			),
+			'Admin\\Menu' => array(
+				'condition' => $is_admin,
+			),
+			'Compatibility\\WooCommerce' => array(
+				'condition' => $is_admin,
+			),
+			'Enhancements\\Meta' => array(
+				'condition' => $is_admin,
+				'params'    => array(
+					$this['file']->plugin_basename(),
+				),
+			),
+			'Enhancements\\Notices' => array(
+				'condition' => $is_admin,
+			),
+			'Enhancements\\Rate' => array(
+				'condition' => $is_admin,
+			),
+			'Enhancements\\Upsell' => array(
+				'condition' => $is_admin,
+				'params'    => array(
+					$this->get_slug(),
+				),
+			),
+			'Settings\\Register' => array(
+				'condition' => $is_admin,
+			),
+			'Shortcode\\Notice' => array(
+				'condition' => $is_frontend,
+			),
+			'WooCommerce\Vacation' => array(
+				'condition' => $is_frontend,
+			),
+		);
+
+		return array_combine(
+			array_map(
+				fn ( $key ) => __NAMESPACE__ . '\\' . $key,
+				array_keys( $classes )
+			),
+			$classes
+		);
 	}
 }
