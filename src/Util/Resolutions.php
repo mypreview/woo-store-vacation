@@ -28,7 +28,8 @@ class Resolutions {
 	 */
 	public function products( $products, $product_id ) {
 
-		return ! in_array( $product_id, $products, true );
+		// phpcs:ignore WordPress.PHP.StrictInArray.FoundNonStrictFalse
+		return ! in_array( $product_id, $products, false );
 	}
 
 	/**
