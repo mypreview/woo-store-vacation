@@ -17,6 +17,15 @@ namespace Woo_Store_Vacation\Shortcode;
 class Notice extends Shortcode {
 
 	/**
+	 * Shortcode name.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string
+	 */
+	const SHORTCODE_NAME = 'woo_store_vacation';
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0.0
@@ -26,7 +35,7 @@ class Notice extends Shortcode {
 	public function __construct() {
 
 		// Parent constructor.
-		parent::__construct( 'woo_store_vacation', true );
+		parent::__construct( self::SHORTCODE_NAME, true );
 	}
 
 	/**
@@ -98,7 +107,16 @@ class Notice extends Shortcode {
 			);
 		}
 
-		// Print the notice.
+		/**
+		 * Print the notice.
+		 *
+		 * Filters the notice type.
+		 * Possible values: `notice`, `error`, `success`.
+		 *
+		 * @since 1.7.0
+		 *
+		 * @param string $notice_type Notice type.
+		 */
 		wc_print_notice( $message, apply_filters( 'woo_store_vacation_notice_type', 'notice' ) );
 
 		echo '</div>';
