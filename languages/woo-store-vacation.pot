@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-23T20:25:25+00:00\n"
+"POT-Creation-Date: 2023-05-24T08:48:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -66,6 +66,17 @@ msgstr ""
 #: src/Installer.php:95
 msgctxt "admin notice"
 msgid "%1$s Thanks for installing %2$s plugin! To get started, visit the %3$splugin’s settings page%4$s."
+msgstr ""
+
+#: src/Integration/Elementor/Widget.php:44
+msgctxt "elementor widget"
+msgid "Store Vacation Notice"
+msgstr ""
+
+#: src/Integration/Elementor/Widget.php:159
+#: assets/js/block.js:28
+#: assets/js/minified/block.js:1
+msgid "⚠ This alert-box is a placeholder that is displayed in place of the actual vacation notice message."
 msgstr ""
 
 #: src/Settings/Fields/General.php:39
@@ -366,9 +377,4 @@ msgstr ""
 #: assets/js/block.js:19
 #: assets/js/minified/block.js:1
 msgid "shortcode"
-msgstr ""
-
-#: assets/js/block.js:28
-#: assets/js/minified/block.js:1
-msgid "⚠ This alert-box is a placeholder that is displayed in place of the actual vacation notice message."
 msgstr ""
