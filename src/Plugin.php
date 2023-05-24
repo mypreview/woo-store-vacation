@@ -115,6 +115,7 @@ class Plugin extends Container {
 	 */
 	private function load(): void {
 
+		// Iterate through the classes and initialize them.
 		foreach ( $this->get_classes() as $class => $args ) {
 
 			// Skip if the condition is not met.
@@ -163,7 +164,7 @@ class Plugin extends Container {
 				'condition' => $is_admin,
 			),
 			'Compatibility\\WooCommerce' => array(
-				'condition' => $is_admin,
+				'condition' => $is_admin && class_exists( 'Automattic\\WooCommerce\\Utilities\\FeaturesUtil' ),
 			),
 			'Enhancements\\Meta' => array(
 				'condition' => $is_admin,
@@ -182,6 +183,9 @@ class Plugin extends Container {
 				'params'    => array(
 					$this->get_slug(),
 				),
+			),
+			'Integration\\Elementor\\Register' => array(
+				'condition' => class_exists( 'Elementor\\Plugin' ),
 			),
 			'Settings\\Register' => array(
 				'condition' => $is_admin,
