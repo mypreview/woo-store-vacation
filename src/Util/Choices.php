@@ -228,12 +228,12 @@ class Choices {
 			'fields'     => 'all',
 		);
 
+		$terms = get_terms( $args );
+
 		// Bail early if no terms found.
 		if ( ! $terms ) {
 			return array();
 		}
-
-		$terms = get_terms( $args );
 
 		// Iterate through the terms.
 		foreach ( $terms as $term ) {
