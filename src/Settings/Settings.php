@@ -77,6 +77,21 @@ class Settings extends WC_Settings_Page {
 	}
 
 	/**
+	 * Get own sections.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @return array
+	 */
+	protected function get_own_sections() {
+
+		return array(
+			''           => _x( 'General', 'settings tab', 'woo-store-vacation' ),
+			'conditions' => _x( 'Conditions', 'settings tab', 'woo-store-vacation' ),
+		);
+	}
+
+	/**
 	 * Get settings array.
 	 *
 	 * @since 1.8.0
@@ -89,6 +104,22 @@ class Settings extends WC_Settings_Page {
 			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			'woocommerce_' . $this->id . '_settings',
 			woo_store_vacation()->service( 'settings_general' )->get_fields( $this->slug )
+		);
+	}
+
+	/**
+	 * Get settings for the conditional logic section.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @return array
+	 */
+	protected function get_settings_for_conditions_section() {
+
+		return apply_filters(
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
+			'woocommerce_' . $this->id . '_settings',
+			woo_store_vacation()->service( 'settings_conditions' )->get_fields( $this->slug )
 		);
 	}
 }
