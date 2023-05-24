@@ -44,7 +44,7 @@ abstract class Settings {
 	 */
 	public static function page_uri() {
 
-		// e.g, http://example.com/wp-admin/admin.php?page=wc-settings&tab=woo-store-vacation
+		// e.g, "http://example.com/wp-admin/admin.php?page=wc-settings&tab=woo-store-vacation".
 		return add_query_arg(
 			array(
 				'page' => 'wc-settings',
