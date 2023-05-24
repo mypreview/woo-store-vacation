@@ -27,7 +27,7 @@ class WooCommerce {
 	 */
 	public function setup() {
 
-		add_action( 'before_woocommerce_init', array( $this, 'add_compatibility' ) );
+		add_action( 'before_woocommerce_init', array( $this, 'add_hpos_compatibility' ) );
 	}
 
 	/**
@@ -40,12 +40,7 @@ class WooCommerce {
 	 *
 	 * @return void
 	 */
-	public function add_compatibility() {
-
-		// Check if the class exists.
-		if ( ! class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
-			return;
-		}
+	public function add_hpos_compatibility() {
 
 		// Declare compatibility with HPOS.
 		FeaturesUtil::declare_compatibility( 'custom_order_tables', woo_store_vacation()->service( 'file' )->plugin_file() );
