@@ -13,6 +13,7 @@ namespace Woo_Store_Vacation;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+use Woo_Store_Vacation\Integration;
 use Woo_Store_Vacation\Settings;
 use Woo_Store_Vacation\Shortcode;
 
@@ -32,6 +33,9 @@ class PluginServiceProvider implements ServiceProviderInterface {
 	 * @param Container $pimple Container instance.
 	 */
 	public function register( Container $pimple ): void {
+
+		// Plugin integrations.
+		$pimple['elementor'] = fn() => new Integration\Elementor\Widget();
 
 		// Plugin settings.
 		$pimple['settings']         = fn() => new Settings\Settings();
