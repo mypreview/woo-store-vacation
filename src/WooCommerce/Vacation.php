@@ -29,6 +29,15 @@ class Vacation {
 	const DATETIME_FORMAT = 'Y-m-d H:i:s';
 
 	/**
+	 * Conditions to check before disabling the purchase.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @var array
+	 */
+	private $conditions = array();
+
+	/**
 	 * Setup hooks and filters.
 	 *
 	 * @since 1.0.0
@@ -89,6 +98,10 @@ class Vacation {
 		$disable_purchase = woo_store_vacation()->service( 'options' )->get( 'disable_purchase', 'no' );
 
 		if ( wc_string_to_bool( $disable_purchase ) ) {
+
+			// Get active conditions.
+			$this->conditions = woo_store_vacation()->service( 'conditions' )->get_active_conditions();
+
 			/**
 			 * Disable purchase.
 			 *
@@ -115,8 +128,47 @@ class Vacation {
 	public function disable_purchase() {
 
 		add_action( 'admin_bar_menu', array( $this, 'admin_bar_node' ), 999 );
-		add_filter( 'woocommerce_is_purchasable', '__return_false', PHP_INT_MAX );
+		add_filter( 'woocommerce_is_purchasable', array( $this, 'is_purchasable' ), PHP_INT_MAX );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
+	}
+
+	/**
+	 * Determine if the product is purchasable.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool $purchasable Whether the product is purchasable.
+	 *
+	 * @return bool
+	 */
+	public function is_purchasable( $purchasable, $product ) {
+
+		// Bail early, in case product is not purchasable.
+		if ( empty( $this->conditions ) ) {
+			return false;
+		}
+
+		if ( $product->is_type( 'variation' ) ) {
+			// Get parent product.
+			$product = wc_get_product( $product->get_parent_id() );
+		}
+
+		$resolutions = array();
+		$product_id  = $product->get_id();
+
+		// Iterate through each condition.
+		foreach ( $this->conditions as $condition => $ids ) {
+
+			// Get the resolution.
+			$resolutions[] = woo_store_vacation()->service( 'resolutions' )->$condition( $ids, $product_id );
+		}
+
+		// Check if any of the resolution is false.
+		if ( in_array( false, array_unique( $resolutions ), true ) ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
