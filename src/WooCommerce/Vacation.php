@@ -100,7 +100,7 @@ class Vacation {
 		if ( wc_string_to_bool( $disable_purchase ) ) {
 
 			// Get active conditions.
-			$this->conditions = woo_store_vacation()->service( 'conditions' )->get_active_conditions();
+			$this->conditions = woo_store_vacation()->service( 'settings_conditions' )->get_active();
 
 			/**
 			 * Disable purchase.
@@ -128,7 +128,7 @@ class Vacation {
 	public function disable_purchase() {
 
 		add_action( 'admin_bar_menu', array( $this, 'admin_bar_node' ), 999 );
-		add_filter( 'woocommerce_is_purchasable', array( $this, 'is_purchasable' ), PHP_INT_MAX );
+		add_filter( 'woocommerce_is_purchasable', array( $this, 'is_purchasable' ), PHP_INT_MAX, 2 );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
 	}
 
