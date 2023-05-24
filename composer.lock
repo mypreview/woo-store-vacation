@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b3dea6d38691d0ee2066c48f0f4e5d9",
+    "content-hash": "0f29b45716422fa809bbf5cd6a3ebe03",
     "packages": [
         {
             "name": "mahdiyazdani/wc-install-notice",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mahdiyazdani/wc-install-notice.git",
-                "reference": "00b7a93b2f2f3257748a5eed0396eb4c96d6083b"
+                "reference": "1a917285199f7430b25b6ec997977b461600ddfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mahdiyazdani/wc-install-notice/zipball/00b7a93b2f2f3257748a5eed0396eb4c96d6083b",
-                "reference": "00b7a93b2f2f3257748a5eed0396eb4c96d6083b",
+                "url": "https://api.github.com/repos/mahdiyazdani/wc-install-notice/zipball/1a917285199f7430b25b6ec997977b461600ddfb",
+                "reference": "1a917285199f7430b25b6ec997977b461600ddfb",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
                 "issues": "https://github.com/mahdiyazdani/wc-install-notice/issues",
                 "source": "https://github.com/mahdiyazdani/wc-install-notice/tree/1.0.0"
             },
-            "time": "2023-05-21T11:31:44+00:00"
+            "time": "2023-05-24T14:32:42+00:00"
         },
         {
             "name": "mahdiyazdani/wp-footer-rate",
