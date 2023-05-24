@@ -91,48 +91,57 @@ class Conditions {
 	}
 
 	/**
-	 * Retrun the conditions to exclude.
-	 *
-	 * @since 1.9.0
-	 *
-	 * @return array
-	 */
-	public function get_conditions() {
-
-		return array(
-			'products',
-			'categories',
-			'tags',
-			'types',
-			'shipping_classes',
-		);
-	}
-
-	/**
 	 * Retrun the active conditions to exclude.
 	 *
 	 * @since 1.9.0
 	 *
 	 * @return array
 	 */
-	public function get_active_conditions() {
+	public function get_active() {
+
+		// If the conditions are empty, return an empty array.
+		if ( empty( $this->get() ) ) {
+			return array();
+		}
 
 		$active_conditions = array();
 
 		// Loop through the conditions.
-		foreach ( $this->get_conditions() as $condition ) {
+		foreach ( $this->get() as $condition ) {
 
-			$option = woo_store_vacation()->service( 'option' )->get( $condition );
+			$option_value = woo_store_vacation()->service( 'options' )->get( $condition );
 
 			// If the condition is empty, skip it.
-			if ( empty( $option ) ) {
+			if ( empty( $option_value ) ) {
 				continue;
 			}
 
 			// Add the condition to the active conditions array.
-			$active_conditions[ $condition ] = $option;
+			$active_conditions[ $condition ] = $option_value;
 		}
 
 		return $active_conditions;
+	}
+
+	/**
+	 * Compile a list of the available condition keys.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @return array
+	 */
+	private function get() {
+
+		static $conditions = array();
+
+		if ( empty( $conditions ) ) {
+			$conditions = array_filter(
+				array_keys( $this->get_fields( '' ) ),
+				static fn( $key) => mb_strpos( $key, 'section_' ) !== 0
+			);
+		}
+
+		return $conditions;
+
 	}
 }
