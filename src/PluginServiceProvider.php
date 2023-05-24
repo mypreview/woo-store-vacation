@@ -16,6 +16,7 @@ use Pimple\ServiceProviderInterface;
 use Woo_Store_Vacation\Integration;
 use Woo_Store_Vacation\Settings;
 use Woo_Store_Vacation\Shortcode;
+use Woo_Store_Vacation\Util;
 
 /**
  * Class PluginServiceProvider.
@@ -38,11 +39,16 @@ class PluginServiceProvider implements ServiceProviderInterface {
 		$pimple['elementor'] = fn() => new Integration\Elementor\Widget();
 
 		// Plugin settings.
-		$pimple['settings']         = fn() => new Settings\Settings();
-		$pimple['settings_general'] = fn() => new Settings\Fields\General();
-		$pimple['options']          = fn() => new Settings\Options();
+		$pimple['settings']            = fn() => new Settings\Settings();
+		$pimple['settings_general']    = fn() => new Settings\Fields\General();
+		$pimple['settings_conditions'] = fn() => new Settings\Fields\Conditions();
+		$pimple['options']             = fn() => new Settings\Options();
 
 		// Shortcodes.
 		$pimple['notice'] = fn() => new Shortcode\Notice();
+
+		// Plugin utilities.
+		$pimple['choices']     = fn() => new Util\Choices();
+		$pimple['resolutions'] = fn() => new Util\Resolutions();
 	}
 }
