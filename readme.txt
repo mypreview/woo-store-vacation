@@ -5,7 +5,7 @@ Donate link: https://mypreview.one/woo-store-vacation
 Requires at least: 5.3
 Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.8.1
+Stable tag: 1.9.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -125,6 +125,10 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
+= 1.9.0 =
+* Feature: Exclude certain products, categories, tags, types, and shipping classes.
+* Refactor: Optimized underlying code structure.
+
 = 1.8.1 =
 * Feature: Add support for {{start_date}} and {{end_date}} smart tags.
 * Feature: Add "Store Vacation Notice" widget for Elementor.
