@@ -11,6 +11,7 @@
 
 namespace Woo_Store_Vacation\WooCommerce;
 
+use WC_Product;
 use WP_Admin_Bar;
 use Woo_Store_Vacation\Helper;
 
@@ -137,7 +138,8 @@ class Vacation {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param bool $purchasable Whether the product is purchasable.
+	 * @param bool       $purchasable Whether the product is purchasable.
+	 * @param WC_Product $product     Product data.
 	 *
 	 * @return bool
 	 */
