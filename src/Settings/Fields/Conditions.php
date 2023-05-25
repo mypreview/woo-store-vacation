@@ -31,12 +31,12 @@ class Conditions {
 			'section_title' => array(
 				'id'   => $slug,
 				'type' => 'title',
-				'name' => _x( 'Woo Store Vacation', 'settings section name', 'woo-store-vacation' ),
-				'desc' => _x( 'Close your store temporarily by scheduling your vacation time. While your shop will remain online and accessible to visitors, new order operations will pause, and your checkout will be disabled.', 'settings field description', 'woo-store-vacation' ),
+				'name' => _x( 'Set Conditions', 'settings section name', 'woo-store-vacation' ),
+				'desc' => _x( 'If you have enabled the “Disable Purchase” option in the General settings, you can further customize the availability of your shop using the settings provided here. These options allow you to select specific products that will remain available for purchase while your shop is in vacation mode.', 'settings field description', 'woo-store-vacation' ),
 			),
 			'products' => array(
 				'name'     => _x( 'Products', 'settings field name', 'woo-store-vacation' ),
-				'desc'     => _x( 'Select the products to exclude during the vacation mode.', 'settings field description', 'woo-store-vacation' ),
+				'desc'     => _x( 'Choose which products you want to keep available for purchase while your shop is closed for vacation.', 'settings field description', 'woo-store-vacation' ),
 				'type'     => 'multiselect',
 				'class'    => 'wc-enhanced-select',
 				'id'       => 'woo_store_vacation_options[products]',
@@ -46,7 +46,7 @@ class Conditions {
 			),
 			'categories' => array(
 				'name'     => _x( 'Categories', 'settings field name', 'woo-store-vacation' ),
-				'desc'     => _x( 'Select the categories to exclude during the vacation mode.', 'settings field description', 'woo-store-vacation' ),
+				'desc'     => _x( 'Choose the categories that you want to make available for purchase while your shop is closed for vacation.', 'settings field description', 'woo-store-vacation' ),
 				'type'     => 'multiselect',
 				'class'    => 'wc-enhanced-select',
 				'id'       => 'woo_store_vacation_options[categories]',
@@ -56,7 +56,7 @@ class Conditions {
 			),
 			'tags' => array(
 				'name'     => _x( 'Tags', 'settings field name', 'woo-store-vacation' ),
-				'desc'     => _x( 'Select the tags to exclude during the vacation mode.', 'settings field description', 'woo-store-vacation' ),
+				'desc'     => _x( 'Choose the tags that you want to make available for purchase while your shop is closed for vacation.', 'settings field description', 'woo-store-vacation' ),
 				'type'     => 'multiselect',
 				'class'    => 'wc-enhanced-select',
 				'id'       => 'woo_store_vacation_options[tags]',
@@ -66,7 +66,7 @@ class Conditions {
 			),
 			'types' => array(
 				'name'     => _x( 'Types', 'settings field name', 'woo-store-vacation' ),
-				'desc'     => _x( 'Select the product types to exclude during the vacation mode.', 'settings field description', 'woo-store-vacation' ),
+				'desc'     => _x( 'Choose the product types you want to keep available for purchase while your shop is closed for vacation.', 'settings field description', 'woo-store-vacation' ),
 				'type'     => 'multiselect',
 				'class'    => 'wc-enhanced-select',
 				'id'       => 'woo_store_vacation_options[types]',
@@ -76,7 +76,7 @@ class Conditions {
 			),
 			'shipping_classes' => array(
 				'name'     => _x( 'Shipping Classes', 'settings field name', 'woo-store-vacation' ),
-				'desc'     => _x( 'Select the shipping classes to exclude during the vacation mode.', 'settings field description', 'woo-store-vacation' ),
+				'desc'     => _x( 'Choose the shipping classes you want to keep available for purchase while your shop is closed for vacation.', 'settings field description', 'woo-store-vacation' ),
 				'type'     => 'multiselect',
 				'class'    => 'wc-enhanced-select',
 				'id'       => 'woo_store_vacation_options[shipping_classes]',
