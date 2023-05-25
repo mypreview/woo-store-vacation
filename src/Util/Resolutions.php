@@ -89,6 +89,6 @@ class Resolutions {
 	 */
 	public function shipping_classes( $shipping_classes, $product_id ) {
 
-		return ! has_term( $tags, 'product_shipping_class', $product_id );
+		return ! has_term( $shipping_classes, 'product_shipping_class', $product_id );
 	}
 }
