@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mahdiyazdani/wc-install-notice.git",
-                "reference": "1a917285199f7430b25b6ec997977b461600ddfb"
+                "reference": "6a921025c28e42fcfda7c7d467bd513a1cab7b85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mahdiyazdani/wc-install-notice/zipball/1a917285199f7430b25b6ec997977b461600ddfb",
-                "reference": "1a917285199f7430b25b6ec997977b461600ddfb",
+                "url": "https://api.github.com/repos/mahdiyazdani/wc-install-notice/zipball/6a921025c28e42fcfda7c7d467bd513a1cab7b85",
+                "reference": "6a921025c28e42fcfda7c7d467bd513a1cab7b85",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
                 "issues": "https://github.com/mahdiyazdani/wc-install-notice/issues",
                 "source": "https://github.com/mahdiyazdani/wc-install-notice/tree/1.0.0"
             },
-            "time": "2023-05-24T14:32:42+00:00"
+            "time": "2023-05-25T11:05:24+00:00"
         },
         {
             "name": "mahdiyazdani/wp-footer-rate",
