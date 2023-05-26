@@ -12,21 +12,11 @@
 namespace Woo_Store_Vacation;
 
 use Woo_Store_Vacation\Enhancements;
-use Woo_Store_Vacation\Helper;
 
 /**
  * The plugin installer class.
  */
 class Installer {
-
-	/**
-	 * The welcome notice transient name.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @var string
-	 */
-	const WELCOME_NOTICE_TRANSIENT_NAME = 'woo_store_vacation_welcome_notice';
 
 	/**
 	 * The activation timestamp option name.
@@ -47,7 +37,6 @@ class Installer {
 	public static function activate() {
 
 		self::store_timestamp();
-		self::store_nux_notice();
 	}
 
 	/**
@@ -61,7 +50,6 @@ class Installer {
 
 		delete_transient( Enhancements\Rate::TRANSIENT_NAME );
 		delete_transient( Enhancements\Upsell::TRANSIENT_NAME );
-		delete_transient( self::WELCOME_NOTICE_TRANSIENT_NAME );
 	}
 
 	/**
@@ -79,33 +67,5 @@ class Installer {
 		if ( ! $activation_timestamp ) {
 			add_site_option( self::TIMESTAMP_OPTION_NAME, time() );
 		}
-	}
-
-	/**
-	 * Store a welcome notice transient on plugin activation.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	private static function store_nux_notice() {
-
-		$welcome_notice = sprintf(
-			/* translators: 1: Dashicon, 2: Plugin name, 3: Open anchor tag, 4: Close anchor tag. */
-			esc_html_x( '%1$s Thanks for installing %2$s plugin! To get started, visit the %3$splugin’s settings page%4$s.', 'admin notice', 'woo-store-vacation' ),
-			'<i class="dashicons dashicons-admin-settings"></i>',
-			sprintf(
-				'<strong>%s</strong>',
-				_x( 'Woo Store Vacation', 'plugin name', 'woo-store-vacation' )
-			),
-			sprintf(
-				'<a href="%s" target="_self">',
-				esc_url( Helper\Settings::page_uri() )
-			),
-			'</a>'
-		);
-
-		// Store the welcome notice transient.
-		set_transient( self::WELCOME_NOTICE_TRANSIENT_NAME, $welcome_notice, MINUTE_IN_SECONDS );
 	}
 }
