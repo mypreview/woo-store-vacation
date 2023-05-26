@@ -15,10 +15,8 @@
 		 */
 		cache() {
 			this.vars = {};
-			this.vars.rate = '#woo-store-vacation-dismiss-rate .notice-dismiss';
-			this.vars.rate += ', #woo-store-vacation-dismiss-rate .notice-dismiss-later';
-			this.vars.rated = '#woo-store-vacation-dismiss-rate .notice-dismiss-rated';
-			this.vars.upsell = '#woo-store-vacation-dismiss-upsell .notice-dismiss';
+			this.vars.dismiss = '.notice[id^="woo-store-vacation"] [class*="notice-dismiss"]';
+			this.vars.rated = '#woo-store-vacation-dismiss-rate .already-rated';
 		},
 
 		/**
@@ -38,9 +36,8 @@
 		 */
 		bindEvents() {
 			$( document.body )
-				.on( 'click', this.vars.rate, ( event ) => this.handleOnDismiss( event, 'rate' ) )
-				.on( 'click', this.vars.rated, ( event ) => this.handleOnDismiss( event, 'rated' ) )
-				.on( 'click', this.vars.upsell, ( event ) => this.handleOnDismiss( event, 'upsell' ) );
+				.on( 'click', this.vars.dismiss, this.handleOnDismiss )
+				.on( 'click', this.vars.rated, ( event ) => this.handleOnDismiss( event, 'rated' ) );
 		},
 
 		/**
@@ -51,7 +48,7 @@
 		 * @param {Object} event  Event object.
 		 * @param {string} action Action to perform.
 		 */
-		handleOnDismiss( event, action ) {
+		handleOnDismiss( event, action = '' ) {
 			const $this = $( event.target );
 
 			if ( ! $this.attr( 'href' ) ) {
@@ -64,10 +61,10 @@
 				dataType: 'json',
 				data: {
 					_ajax_nonce: l10n.dismiss_nonce,
-					action: `woo_store_vacation_dismiss_${ action }`,
+					action: `woo_store_vacation_dismiss_${ action || $this.closest( '.notice' ).data( 'action' ) }`,
 				},
 			} ).always( () => {
-				$this.closest( 'div.notice:visible' ).slideUp();
+				$this.closest( 'div.notice:visible' ).hide();
 			} );
 		},
 	};
