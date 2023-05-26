@@ -11,8 +11,6 @@
 
 namespace Woo_Store_Vacation\Enhancements;
 
-use Woo_Store_Vacation\Installer;
-
 /**
  * The plugin notices class.
  */
@@ -47,23 +45,6 @@ class Notices {
 	 * @return void
 	 */
 	public function print() {
-
-		$welcome_notice = get_transient( Installer::WELCOME_NOTICE_TRANSIENT_NAME );
-
-		// Check if the welcome notice transient is set.
-		if ( ! empty( $welcome_notice ) ) {
-
-			// Delete the welcome notice transient.
-			delete_transient( Installer::WELCOME_NOTICE_TRANSIENT_NAME );
-
-			// Display the welcome notice.
-			woo_store_vacation()->service( 'template_manager' )->echo_template(
-				'welcome-notice.php',
-				array( 'content' => $welcome_notice )
-			);
-
-			return;
-		}
 
 		/**
 		 * Fires after the welcome admin notice.
