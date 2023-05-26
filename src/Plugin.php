@@ -151,6 +151,9 @@ class Plugin extends Container {
 		$is_admin    = is_admin();
 		$is_frontend = ! $is_admin;
 		$classes     = array(
+			'Ajax\\OnBoarding' => array(
+				'condition' => $is_ajax,
+			),
 			'Ajax\\Rate' => array(
 				'condition' => $is_ajax,
 			),
@@ -173,6 +176,9 @@ class Plugin extends Container {
 				),
 			),
 			'Enhancements\\Notices' => array(
+				'condition' => $is_admin,
+			),
+			'Enhancements\\OnBoarding' => array(
 				'condition' => $is_admin,
 			),
 			'Enhancements\\Rate' => array(
