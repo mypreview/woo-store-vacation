@@ -57,11 +57,9 @@ class Notices {
 			delete_transient( Installer::WELCOME_NOTICE_TRANSIENT_NAME );
 
 			// Display the welcome notice.
-			wc_get_template(
+			woo_store_vacation()->service( 'template_manager' )->echo_template(
 				'welcome-notice.php',
-				array( 'content' => $welcome_notice ),
-				'',
-				trailingslashit( woo_store_vacation()->service( 'file' )->plugin_path( 'templates' ) )
+				array( 'content' => $welcome_notice )
 			);
 
 			return;

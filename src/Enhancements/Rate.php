@@ -79,12 +79,7 @@ class Rate {
 		wp_enqueue_script( 'woo-store-vacation-dismiss' );
 
 		// Display the notice.
-		wc_get_template(
-			'rate-notice.php',
-			array(),
-			'',
-			trailingslashit( woo_store_vacation()->service( 'file' )->plugin_path( 'templates' ) )
-		);
+		woo_store_vacation()->service( 'template_manager' )->echo_template( 'rate-notice.php' );
 	}
 
 	/**

@@ -71,11 +71,9 @@ class Upsell {
 		wp_enqueue_script( 'woo-store-vacation-dismiss' );
 
 		// Display the upsell notice.
-		wc_get_template(
+		woo_store_vacation()->service( 'template_manager' )->echo_template(
 			'upsell-notice.php',
-			array( 'uri' => self::PRO_URI ),
-			'',
-			trailingslashit( woo_store_vacation()->service( 'file' )->plugin_path( 'templates' ) )
+			array( 'uri' => self::PRO_URI )
 		);
 	}
 
@@ -88,11 +86,9 @@ class Upsell {
 	 */
 	public function content_block() {
 
-		wc_get_template(
+		woo_store_vacation()->service( 'template_manager' )->echo_template(
 			'upsell-block.php',
-			array( 'uri' => self::PRO_URI ),
-			'',
-			trailingslashit( woo_store_vacation()->service( 'file' )->plugin_path( 'templates' ) )
+			array( 'uri' => self::PRO_URI )
 		);
 	}
 }
