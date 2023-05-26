@@ -35,6 +35,9 @@ class PluginServiceProvider implements ServiceProviderInterface {
 	 */
 	public function register( Container $pimple ): void {
 
+		// Plugin core.
+		$pimple['template_manager'] = fn() => new TemplateManager();
+
 		// Plugin integrations.
 		$pimple['elementor'] = fn() => new Integration\Elementor\Widget();
 
