@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 defined( 'WC_VERSION' ) || exit;
 
 ?>
-<div id="<?php echo esc_attr( woo_store_vacation()->get_slug() ); ?>-dismiss-upsell" class="notice woocommerce-message notice-alt is-dismissible">
+<div id="<?php echo esc_attr( woo_store_vacation()->get_slug() ); ?>-dismiss-upsell" class="notice notice-alt is-dismissible" data-action="upsell">
 	<p>
 		<i class="dashicons dashicons-palmtree"></i>
 		<strong>

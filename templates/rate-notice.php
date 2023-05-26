@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 defined( 'WC_VERSION' ) || exit;
 
 ?>
-<div id="<?php echo esc_attr( woo_store_vacation()->get_slug() ); ?>-dismiss-rate" class="notice notice-alt is-dismissible">
+<div id="<?php echo esc_attr( woo_store_vacation()->get_slug() ); ?>-dismiss-rate" class="notice notice-alt is-dismissible" data-action="rate">
 	<p>
 		<i class="dashicons dashicons-star-filled"></i>
 		<strong>
@@ -36,7 +36,7 @@ defined( 'WC_VERSION' ) || exit;
 		<button class="button-link notice-dismiss-later">
 			<?php echo esc_html_x( 'Maybe later', 'admin notice', 'woo-store-vacation' ); ?>
 		</button>
-		<button class="button-link notice-dismiss-rated">
+		<button class="button-link already-rated">
 			<?php echo esc_html_x( 'I already did!', 'admin notice', 'woo-store-vacation' ); ?>
 		</button>
 	</p>
