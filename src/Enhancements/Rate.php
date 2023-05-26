@@ -20,7 +20,7 @@ use Woo_Store_Vacation\Helper;
 class Rate {
 
 	/**
-	 * Rated (already) transient name.
+	 * Rated (already) option name.
 	 *
 	 * @since 1.3.8
 	 *
@@ -52,7 +52,7 @@ class Rate {
 	}
 
 	/**
-	 * Display the upsell notice.
+	 * Display the rate the plugin notice.
 	 *
 	 * @since 1.3.8
 	 *
@@ -60,7 +60,7 @@ class Rate {
 	 */
 	public function admin_notice() {
 
-		// Bail early if the upsell notice hasn't been dismissed.
+		// Bail early if the rate notice has been dismissed.
 		if ( ! get_transient( Upsell::TRANSIENT_NAME ) ) {
 			return;
 		}
