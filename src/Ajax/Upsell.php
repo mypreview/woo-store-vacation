@@ -48,7 +48,7 @@ class Upsell extends Ajax {
 	}
 
 	/**
-	 * AJAX dismiss up-sell admin notice.
+	 * AJAX dismiss the admin notice.
 	 *
 	 * @since 1.3.8
 	 *

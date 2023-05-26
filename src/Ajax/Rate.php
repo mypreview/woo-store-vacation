@@ -48,7 +48,7 @@ class Rate extends Ajax {
 	}
 
 	/**
-	 * AJAX dismiss rate admin notice.
+	 * AJAX dismiss the admin notice.
 	 *
 	 * @since 1.6.1
 	 *
