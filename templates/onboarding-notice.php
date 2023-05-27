@@ -18,8 +18,7 @@ defined( 'WC_VERSION' ) || exit;
 		<?php
 		printf(
 			/* translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag. */
-			esc_html_x( 'Thanks for installing %2$s plugin! To get started, visit the %3$splugin’s settings page%4$s.', 'admin notice', 'woo-store-vacation' ),
-			'<i class="dashicons dashicons-admin-settings"></i>',
+			esc_html_x( 'Thanks for installing %1$s plugin! To get started, visit the %2$splugin’s settings page%3$s.', 'admin notice', 'woo-store-vacation' ),
 			sprintf(
 				'<strong>%s</strong>',
 				esc_html_x( 'Woo Store Vacation', 'plugin name', 'woo-store-vacation' )
