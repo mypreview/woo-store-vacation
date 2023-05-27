@@ -9,27 +9,25 @@
  * @package woo-store-vacation
  */
 
-namespace Woo_Store_Vacation\Settings\Fields;
+namespace Woo_Store_Vacation\Settings\Sections;
 
 /**
  * Class Settings fields.
  */
-class Conditions {
+class Conditions extends Section {
 
 	/**
-	 * Retrieve the settings fields for the general (default) settings tab.
+	 * Retrieve the settings fields for the "Conditions" settings section.
 	 *
 	 * @since 1.8.0
 	 *
-	 * @param string $slug The settings tab slug.
-	 *
 	 * @return array
 	 */
-	public function get_fields( $slug ) {
+	public function get_fields() {
 
 		return array(
 			'section_title' => array(
-				'id'   => $slug,
+				'id'   => 'woo-store-vacation-conditions',
 				'type' => 'title',
 				'name' => _x( 'Set Conditions', 'settings section name', 'woo-store-vacation' ),
 				'desc' => _x( 'If you have enabled the “Disable Purchase” option in the General settings, you can further customize the availability of your shop using the settings provided here. These options allow you to select specific products that will remain available for purchase while your shop is in vacation mode.', 'settings field description', 'woo-store-vacation' ),
@@ -100,14 +98,14 @@ class Conditions {
 	public function get_active() {
 
 		// If the conditions are empty, return an empty array.
-		if ( empty( $this->get() ) ) {
+		if ( empty( $this->get_field_keys() ) ) {
 			return array();
 		}
 
 		$active_conditions = array();
 
 		// Loop through the conditions.
-		foreach ( $this->get() as $condition ) {
+		foreach ( $this->get_field_keys() as $condition ) {
 
 			$option_value = woo_store_vacation()->service( 'options' )->get( $condition );
 
@@ -121,27 +119,5 @@ class Conditions {
 		}
 
 		return $active_conditions;
-	}
-
-	/**
-	 * Compile a list of the available condition keys.
-	 *
-	 * @since 1.9.0
-	 *
-	 * @return array
-	 */
-	private function get() {
-
-		static $conditions = array();
-
-		if ( empty( $conditions ) ) {
-			$conditions = array_filter(
-				array_keys( $this->get_fields( '' ) ),
-				static fn( $key) => mb_strpos( $key, 'section_' ) !== 0
-			);
-		}
-
-		return $conditions;
-
 	}
 }
