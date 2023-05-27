@@ -65,11 +65,13 @@ class Rate {
 			return;
 		}
 
+		$usage_timestamp = woo_store_vacation()->service( 'options' )->get_usage_timestamp();
+
 		// Bail early if the plugin has been rated.
 		if (
 			get_option( self::OPTION_NAME )
 			|| get_transient( self::TRANSIENT_NAME )
-			|| ( time() - woo_store_vacation()->service( 'options' )->get_usage_timestamp() ) < WEEK_IN_SECONDS
+			|| time() < ( $usage_timestamp + WEEK_IN_SECONDS )
 		) {
 			return;
 		}
@@ -79,7 +81,12 @@ class Rate {
 		wp_enqueue_script( 'woo-store-vacation-dismiss' );
 
 		// Display the notice.
-		woo_store_vacation()->service( 'template_manager' )->echo_template( 'rate-notice.php' );
+		woo_store_vacation()->service( 'template_manager' )->echo_template(
+			'rate-notice.php',
+			array(
+				'usage_timestamp' => human_time_diff( $usage_timestamp ),
+			)
+		);
 	}
 
 	/**
