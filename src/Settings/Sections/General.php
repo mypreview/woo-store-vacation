@@ -9,32 +9,30 @@
  * @package woo-store-vacation
  */
 
-namespace Woo_Store_Vacation\Settings\Fields;
+namespace Woo_Store_Vacation\Settings\Sections;
 
 use Woo_Store_Vacation\WooCommerce;
 
 /**
  * Class Settings fields.
  */
-class General {
+class General extends Section {
 
 	/**
 	 * Retrieve the settings fields for the general (default) settings tab.
 	 *
 	 * @since 1.8.0
 	 *
-	 * @param string $slug The settings tab slug.
-	 *
 	 * @return array
 	 */
-	public function get_fields( $slug ) {
+	public function get_fields() {
 
 		// Inline styles for the invalid end date.
 		$invalid_end_date_style = $this->is_invalid_end_date() ? 'border:1px solid red;' : '';
 
 		return array(
 			'section_title'        => array(
-				'id'   => $slug,
+				'id'   => 'woo-store-vacation-general',
 				'type' => 'title',
 				'name' => _x( 'Woo Store Vacation', 'settings section name', 'woo-store-vacation' ),
 				'desc' => _x( 'Close your store temporarily by scheduling your vacation time. While your shop will remain online and accessible to visitors, new order operations will pause, and your checkout will be disabled.', 'settings field description', 'woo-store-vacation' ),
@@ -59,7 +57,7 @@ class General {
 				'name'              => _x( 'Start Date', 'settings field name', 'woo-store-vacation' ),
 				'desc'              => _x( 'The database will store a time of 00:00:00 by default.', 'settings field description', 'woo-store-vacation' ),
 				'type'              => 'text',
-				'class'             => "{$slug}-start-datepicker",
+				'class'             => 'woo-store-vacation-start-datepicker',
 				'id'                => 'woo_store_vacation_options[start_date]',
 				'css'               => 'background:#fff;',
 				'autoload'          => false,
@@ -69,7 +67,7 @@ class General {
 				'name'              => _x( 'End Date', 'settings field name', 'woo-store-vacation' ),
 				'desc'              => _x( 'The validity of the date range begins at midnight on the "Start Date" and lasts until the start of the day on the "End Date".', 'settings field description', 'woo-store-vacation' ),
 				'type'              => 'text',
-				'class'             => "{$slug}-end-datepicker",
+				'class'             => 'woo-store-vacation-end-datepicker',
 				'id'                => 'woo_store_vacation_options[end_date]',
 				'css'               => "background:#fff;{$invalid_end_date_style}",
 				'autoload'          => false,
