@@ -12,7 +12,7 @@ defined( 'WC_VERSION' ) || exit;
 
 ?>
 
-<div id="<?php echo esc_attr( woo_store_vacation()->get_slug() ); ?>-dismiss-onboarding" class="notice notice-info is-dismissible" data-action="onboarding">
+<div id="woo-store-vacation-dismiss-onboarding" class="notice notice-info is-dismissible" data-action="onboarding">
 	<p>
 		<i class="dashicons dashicons-admin-settings"></i>
 		<?php
