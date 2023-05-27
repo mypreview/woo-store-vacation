@@ -29,7 +29,7 @@ class OnBoarding extends Ajax {
 
 		// Parent constructor.
 		parent::__construct(
-			'woo_store_vacation_dismiss_onboarding',
+			'dismiss_onboarding',
 			Enhancements\Notices::DISMISS_NONCE_NAME
 		);
 	}

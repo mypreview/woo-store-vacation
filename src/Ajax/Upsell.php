@@ -29,7 +29,7 @@ class Upsell extends Ajax {
 
 		// Parent constructor.
 		parent::__construct(
-			'woo_store_vacation_dismiss_upsell',
+			'dismiss_upsell',
 			Enhancements\Notices::DISMISS_NONCE_NAME
 		);
 	}

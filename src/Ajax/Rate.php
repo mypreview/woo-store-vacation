@@ -29,7 +29,7 @@ class Rate extends Ajax {
 
 		// Parent constructor.
 		parent::__construct(
-			'woo_store_vacation_dismiss_rate',
+			'dismiss_rate',
 			Enhancements\Notices::DISMISS_NONCE_NAME
 		);
 	}

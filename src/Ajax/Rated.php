@@ -29,7 +29,7 @@ class Rated extends Ajax {
 
 		// Parent constructor.
 		parent::__construct(
-			'woo_store_vacation_dismiss_rated',
+			'dismiss_rated',
 			Enhancements\Notices::DISMISS_NONCE_NAME
 		);
 	}
