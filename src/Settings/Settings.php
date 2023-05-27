@@ -20,15 +20,6 @@ use Woo_Store_Vacation\Helper;
 class Settings extends WC_Settings_Page {
 
 	/**
-	 * The settings slug.
-	 *
-	 * @since 1.8.0
-	 *
-	 * @var string
-	 */
-	private $slug;
-
-	/**
 	 * Setup settings class.
 	 *
 	 * @since 1.8.0
@@ -53,7 +44,6 @@ class Settings extends WC_Settings_Page {
 	private function assign() {
 
 		$this->id    = sanitize_key( woo_store_vacation()->get_slug() );
-		$this->slug  = preg_replace( '/-/', '_', $this->id );
 		$this->label = _x( 'Store Vacation', 'settings tab label', 'woo-store-vacation' );
 	}
 
@@ -103,7 +93,7 @@ class Settings extends WC_Settings_Page {
 		return apply_filters(
 			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			'woocommerce_' . $this->id . '_settings',
-			woo_store_vacation()->service( 'settings_general' )->get_fields( $this->slug )
+			woo_store_vacation()->service( 'settings_general' )->get_fields()
 		);
 	}
 
@@ -119,7 +109,7 @@ class Settings extends WC_Settings_Page {
 		return apply_filters(
 			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			'woocommerce_' . $this->id . '_settings',
-			woo_store_vacation()->service( 'settings_conditions' )->get_fields( $this->slug )
+			woo_store_vacation()->service( 'settings_conditions' )->get_fields()
 		);
 	}
 }
