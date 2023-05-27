@@ -59,7 +59,7 @@ abstract class Ajax {
 	 */
 	public function register_admin() {
 
-		add_action( "wp_ajax_{$this->action}", array( $this, 'ajax_callback' ) );
+		add_action( "wp_ajax_woo_store_vacation_{$this->action}", array( $this, 'ajax_callback' ) );
 	}
 
 	/**
