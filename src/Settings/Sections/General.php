@@ -75,7 +75,7 @@ class General extends Section {
 			),
 			'timezone'             => array(
 				'type' => 'info',
-				'text' => '<p class="description">' . implode( '</p><p class="description">', $this->get_timezone_info() ) . '</p>',
+				'text' => '<p class="description">' . implode( '</p><p class="description">', woo_store_vacation()->service( 'datetime' )->get( 'timezone_info' ) ) . '</p>',
 			),
 			'btn_txt'              => array(
 				'name'        => _x( 'Button Text', 'settings field name', 'woo-store-vacation' ),
@@ -154,41 +154,6 @@ class General extends Section {
 				'type' => 'sectionend',
 			),
 		);
-	}
-
-	/**
-	 * Retrieve the timezone info. e,g: Local time is 2021-01-01 00:00:00.
-	 *
-	 * @since 1.8.0
-	 *
-	 * @return array
-	 */
-	private function get_timezone_info() {
-
-		$timezone_info  = array();
-		$current_offset = get_option( 'gmt_offset' );
-
-		// Bail early if the timezone is not set or the offset is empty.
-		if ( ! get_option( 'timezone_string' ) || empty( $current_offset ) ) {
-			return array();
-		}
-
-		$timezone_info[] = sprintf( /* translators: 1: Open span tag, 2: Local time, 3: Close span tag. */
-			esc_html__( '%1$sLocal time is %2$s.%3$s', 'woo-store-vacation' ),
-			'<time> ',
-			sprintf( '<code>%s</code>', current_datetime()->format( WooCommerce\Vacation::DATETIME_FORMAT ) ),
-			'</time>'
-		);
-
-		$timezone_info[] = sprintf( /* translators: 1: The timezone of the site as a string. */
-			esc_html__( 'Your timezone is currently in %s time.', 'woo-store-vacation' ),
-			sprintf(
-				'<code>%s</code>',
-				esc_html( wc_timezone_string() )
-			)
-		);
-
-		return $timezone_info;
 	}
 
 	/**
