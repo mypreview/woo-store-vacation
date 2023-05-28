@@ -19,13 +19,27 @@ use WC_Data_Store;
 class Choices {
 
 	/**
+	 * Get the internal function.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @param string $name The function name.
+	 *
+	 * @return mixed
+	 */
+	public function get( $name ) {
+
+		return call_user_func( array( $this, "get_{$name}" ) );
+	}
+
+	/**
 	 * Get the products.
 	 *
 	 * @since 1.9.0
 	 *
 	 * @return array
 	 */
-	public function products() {
+	private function get_products() {
 
 		// Bail early if no products found.
 		if ( ! post_type_exists( 'product' ) ) {
@@ -75,7 +89,7 @@ class Choices {
 	 *
 	 * @return array
 	 */
-	public function categories() {
+	private function get_categories() {
 
 		// Bail early if no products found.
 		if (
@@ -131,7 +145,7 @@ class Choices {
 	 *
 	 * @return array
 	 */
-	public function tags() {
+	private function get_tags() {
 
 		// Bail early if no product tags found.
 		if (
@@ -173,7 +187,7 @@ class Choices {
 	 *
 	 * @return array
 	 */
-	public function types() {
+	private function get_types() {
 
 		// Bail early if no product types found.
 		if ( ! taxonomy_exists( 'product_type' ) ) {
@@ -214,7 +228,7 @@ class Choices {
 	 *
 	 * @return array
 	 */
-	public function shipping_classes() {
+	private function get_shipping_classes() {
 
 		// Bail early if no product shipping classes found.
 		if ( ! taxonomy_exists( 'product_shipping_class' ) ) {

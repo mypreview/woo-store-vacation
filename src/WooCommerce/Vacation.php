@@ -162,7 +162,10 @@ class Vacation {
 		foreach ( $this->conditions as $condition => $ids ) {
 
 			// Get the resolution.
-			$resolutions[] = woo_store_vacation()->service( 'resolutions' )->$condition( $ids, $product_id );
+			$resolutions[] = woo_store_vacation()->service( 'resolutions' )->validate(
+				$condition,
+				array( $ids, $product_id )
+			);
 		}
 
 		// Check if any of the resolution is false.

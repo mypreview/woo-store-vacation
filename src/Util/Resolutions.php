@@ -17,6 +17,21 @@ namespace Woo_Store_Vacation\Util;
 class Resolutions {
 
 	/**
+	 * Get the internal function.
+	 *
+	 * @since 1.7.0
+	 *
+	 * @param string $name The function name.
+	 * @param array  $args The function arguments.
+	 *
+	 * @return mixed
+	 */
+	public function validate( $name, $args = array() ) {
+
+		return call_user_func( array( $this, "validate_{$name}" ), ...$args );
+	}
+
+	/**
 	 * Check if the given product id is in the array of excluded products.
 	 *
 	 * @since 1.9.0
@@ -26,7 +41,7 @@ class Resolutions {
 	 *
 	 * @return bool
 	 */
-	public function products( $products, $product_id ) {
+	private function validate_products( $products, $product_id ) {
 
 		// phpcs:ignore WordPress.PHP.StrictInArray.FoundNonStrictFalse
 		return ! in_array( $product_id, $products, false );
@@ -42,7 +57,7 @@ class Resolutions {
 	 *
 	 * @return bool
 	 */
-	public function categories( $categories, $product_id ) {
+	private function validate_categories( $categories, $product_id ) {
 
 		return ! has_term( $categories, 'product_cat', $product_id );
 	}
@@ -57,7 +72,7 @@ class Resolutions {
 	 *
 	 * @return bool
 	 */
-	public function tags( $tags, $product_id ) {
+	private function validate_tags( $tags, $product_id ) {
 
 		return ! has_term( $tags, 'product_tag', $product_id );
 	}
@@ -72,7 +87,7 @@ class Resolutions {
 	 *
 	 * @return bool
 	 */
-	public function types( $types, $product_id ) {
+	private function validate_types( $types, $product_id ) {
 
 		return ! has_term( $types, 'product_type', $product_id );
 	}
@@ -87,7 +102,7 @@ class Resolutions {
 	 *
 	 * @return bool
 	 */
-	public function shipping_classes( $shipping_classes, $product_id ) {
+	private function validate_shipping_classes( $shipping_classes, $product_id ) {
 
 		return ! has_term( $shipping_classes, 'product_shipping_class', $product_id );
 	}
