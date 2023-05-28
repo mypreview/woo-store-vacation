@@ -15,7 +15,7 @@
 		 */
 		cache() {
 			this.vars = {};
-			this.vars.dismiss = '.notice[id^="woo-store-vacation"] [class*="notice-dismiss"]';
+			this.vars.dismiss = '.notice[id^="woo-store-vacation-dismiss"] [class*="notice-dismiss"]';
 			this.vars.rated = '#woo-store-vacation-dismiss-rate .already-rated';
 		},
 
