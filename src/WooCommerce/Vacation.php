@@ -21,15 +21,6 @@ use Woo_Store_Vacation\Helper;
 class Vacation {
 
 	/**
-	 * Date time format.
-	 *
-	 * @since 1.6.4
-	 *
-	 * @var string
-	 */
-	const DATETIME_FORMAT = 'Y-m-d H:i:s';
-
-	/**
 	 * Conditions to check before disabling the purchase.
 	 *
 	 * @since 1.9.0
