@@ -90,11 +90,7 @@ class Settings extends WC_Settings_Page {
 	 */
 	protected function get_settings_for_default_section() {
 
-		return apply_filters(
-			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-			'woocommerce_' . $this->id . '_settings',
-			woo_store_vacation()->service( 'settings_general' )->get_fields()
-		);
+		return woo_store_vacation()->service( 'settings_general' )->get_fields();
 	}
 
 	/**
@@ -106,10 +102,6 @@ class Settings extends WC_Settings_Page {
 	 */
 	protected function get_settings_for_conditions_section() {
 
-		return apply_filters(
-			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
-			'woocommerce_' . $this->id . '_settings',
-			woo_store_vacation()->service( 'settings_conditions' )->get_fields()
-		);
+		return woo_store_vacation()->service( 'settings_conditions' )->get_fields();
 	}
 }
