@@ -52,6 +52,7 @@ class PluginServiceProvider implements ServiceProviderInterface {
 
 		// Plugin utilities.
 		$pimple['choices']     = fn() => new Util\Choices();
+		$pimple['datetime']    = fn() => new Util\DateTime();
 		$pimple['resolutions'] = fn() => new Util\Resolutions();
 	}
 }
