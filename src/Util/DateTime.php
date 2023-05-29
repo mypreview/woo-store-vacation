@@ -60,7 +60,7 @@ class DateTime {
 	 */
 	private function get_current_utc() {
 
-		return wp_date( self::FORMAT, time(), timezone_open( 'UTC' ) );
+		return current_datetime()->setTimezone( timezone_open( 'UTC' ) )->format( self::FORMAT );
 	}
 
 	/**
