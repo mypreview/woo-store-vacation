@@ -32,11 +32,16 @@ class DateTime {
 	 *
 	 * @param string $name The function name.
 	 *
-	 * @return mixed
+	 * @return string|bool|array
 	 */
 	public function get( $name ) {
 
-		return call_user_func( array( $this, "get_{$name}" ) );
+		// Call the internal function if exists.
+		if ( method_exists( $this, "get_{$name}" ) ) {
+			return call_user_func( array( $this, "get_{$name}" ) );
+		}
+
+		return false;
 	}
 
 	/**
