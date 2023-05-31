@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-28T10:13:16+00:00\n"
+"POT-Creation-Date: 2023-05-31T15:43:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -32,7 +32,7 @@ msgid "MyPreview"
 msgstr ""
 
 #: src/Admin/Menu.php:47
-#: src/Enhancements/Rate.php:104
+#: src/Enhancements/Rate.php:103
 #: templates/onboarding-notice.php:24
 #: templates/rate-notice.php:23
 msgctxt "plugin name"
@@ -256,16 +256,6 @@ msgctxt "settings field description"
 msgid "If specified, it will change the background color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#. translators: 1: Open span tag, 2: Local time, 3: Close span tag.
-#: src/Settings/Sections/General.php:177
-msgid "%1$sLocal time is %2$s.%3$s"
-msgstr ""
-
-#. translators: 1: The timezone of the site as a string.
-#: src/Settings/Sections/General.php:184
-msgid "Your timezone is currently in %s time."
-msgstr ""
-
 #: src/Settings/Settings.php:47
 msgctxt "settings tab label"
 msgid "Store Vacation"
@@ -282,17 +272,32 @@ msgid "Conditions"
 msgstr ""
 
 #. Translators: %d stock amount
-#: src/Util/Choices.php:60
+#: src/Util/Choices.php:79
 msgid "Stock: %d"
 msgstr ""
 
+#. translators: 1: Open span tag, 2: UTC time, 3: Close span tag.
+#: src/Util/DateTime.php:82
+msgid "%1$sUniversal time is %2$s.%3$s"
+msgstr ""
+
+#. translators: 1: Open span tag, 2: Local time, 3: Close span tag.
+#: src/Util/DateTime.php:91
+msgid "%1$sLocal time is %2$s.%3$s"
+msgstr ""
+
+#. translators: 1: The timezone of the site as a string.
+#: src/Util/DateTime.php:97
+msgid "Your timezone is currently in %s time."
+msgstr ""
+
 #. translators: %s: HTML `Warning` symbol.
-#: src/WooCommerce/Vacation.php:199
+#: src/WooCommerce/Vacation.php:193
 msgctxt "admin bar"
 msgid "%s Shop Closed!"
 msgstr ""
 
-#: src/WooCommerce/Vacation.php:202
+#: src/WooCommerce/Vacation.php:196
 msgctxt "admin bar"
 msgid "Vacation mode is activated! Click here to navigate to the plugin’s settings page."
 msgstr ""
@@ -411,26 +416,6 @@ msgstr ""
 
 #: templates/upsell-block.php:79
 msgctxt "upsell"
-msgid "Go PRO for More Options"
-msgstr ""
-
-#: templates/upsell-notice.php:18
-msgctxt "admin notice"
-msgid "Upgrade to Woo Store Vacation PRO"
-msgstr ""
-
-#: templates/upsell-notice.php:22
-msgctxt "admin notice"
-msgid "Unlock a whole new world of customization! Enjoy unlimited vacation scheduling, automated weekday closing times, smart conditional logic, and more."
-msgstr ""
-
-#: templates/upsell-notice.php:25
-msgctxt "admin notice"
-msgid "Upgrade now to experience the full potential of the plugin!"
-msgstr ""
-
-#: templates/upsell-notice.php:29
-msgctxt "admin notice"
 msgid "Go PRO for More Options"
 msgstr ""
 
