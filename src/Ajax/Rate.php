@@ -59,7 +59,7 @@ class Rate extends Ajax {
 		// Bail early if the nonce is invalid.
 		$this->verify_nonce();
 
-		// Set the upsell transient.
+		// Set the rate transient.
 		set_transient( Enhancements\Rate::TRANSIENT_NAME, true, 3 * MONTH_IN_SECONDS );
 
 		exit();
