@@ -13,7 +13,7 @@ defined( 'WC_VERSION' ) || exit;
 ?>
 <div id="woo-store-vacation-dismiss-rate" class="notice notice-alt is-dismissible" data-action="rate">
 	<p>
-		<i class="dashicons dashicons-star-filled"></i>
+		<i class="dashicons dashicons-palmtree"></i>
 		<strong>
 			<?php
 			printf(
