@@ -71,7 +71,7 @@ class Widget extends Elementor\Widget_Base {
 	}
 
 	/**
-	 * Get the upsell URL.
+	 * Get the help URL.
 	 *
 	 * @since 1.8.1
 	 *
