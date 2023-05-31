@@ -61,18 +61,17 @@ class Rate {
 	public function admin_notice() {
 
 		// Bail early if the rate notice has been dismissed.
-		if ( ! get_transient( Upsell::TRANSIENT_NAME ) ) {
+		if (
+			get_option( self::OPTION_NAME )
+			|| get_transient( self::TRANSIENT_NAME )
+		) {
 			return;
 		}
 
 		$usage_timestamp = woo_store_vacation()->service( 'options' )->get_usage_timestamp();
 
-		// Bail early if the plugin has been rated.
-		if (
-			get_option( self::OPTION_NAME )
-			|| get_transient( self::TRANSIENT_NAME )
-			|| time() < ( $usage_timestamp + WEEK_IN_SECONDS )
-		) {
+		// Bail early if the plugin recently installed.
+		if ( time() < ( $usage_timestamp + WEEK_IN_SECONDS ) ) {
 			return;
 		}
 
