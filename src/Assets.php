@@ -70,14 +70,6 @@ abstract class Assets {
 			'screen'
 		);
 
-		wp_register_style(
-			'woo-store-vacation-upsell',
-			woo_store_vacation()->service( 'file' )->asset_path( 'upsell.css' ),
-			array(),
-			$version,
-			'screen'
-		);
-
 		wp_register_script(
 			'woo-store-vacation-dismiss',
 			woo_store_vacation()->service( 'file' )->asset_path( 'dismiss.js' ),

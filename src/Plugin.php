@@ -160,9 +160,6 @@ class Plugin extends Container {
 			'Ajax\\Rated' => array(
 				'condition' => $is_ajax,
 			),
-			'Ajax\\Upsell' => array(
-				'condition' => $is_ajax,
-			),
 			'Admin\\Menu' => array(
 				'condition' => $is_admin,
 			),
