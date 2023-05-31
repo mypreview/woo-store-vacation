@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 defined( 'WC_VERSION' ) || exit;
 
 ?>
-<div class="woocommerce-message woo-store-vacation-upsell-block">
+<div class="woo-store-vacation-upsell-block">
 	<h3>
 		<?php echo esc_html_x( 'Upgrade to Woo Store Vacation PRO for Even More Powerful Features', 'upsell', 'woo-store-vacation' ); ?>
 	</h3>
@@ -76,7 +76,7 @@ defined( 'WC_VERSION' ) || exit;
 	</p>
 	<p>
 		<a href="<?php echo esc_url( $args['uri'] ); ?>" class="button-primary" target="_blank" rel="noopener noreferrer nofollow">
-			<?php echo esc_html_x( 'Go PRO for More Options', 'upsell', 'woo-store-vacation' ); ?> &#8594
+			<?php echo esc_html_x( 'Go PRO for More Options', 'upsell', 'woo-store-vacation' ); ?> &#128171;
 		</a>
 	</p>
 </div>
