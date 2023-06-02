@@ -25,7 +25,7 @@ class Plugin extends Container {
 	 *
 	 * @var string
 	 */
-	private string $version;
+	private $version;
 
 	/**
 	 * Constructor.
@@ -37,7 +37,7 @@ class Plugin extends Container {
 	 *
 	 * @return void
 	 */
-	public function __construct( string $version, string $file ) {
+	public function __construct( $version, $file ) {
 
 		// Set the version.
 		$this->version = $version;
@@ -62,7 +62,7 @@ class Plugin extends Container {
 	 *
 	 * @return void
 	 */
-	private function register_services(): void {
+	private function register_services() {
 
 		$provider = new PluginServiceProvider();
 		$provider->register( $this );
@@ -77,7 +77,7 @@ class Plugin extends Container {
 	 *
 	 * @return mixed
 	 */
-	public function service( string $key ) {
+	public function service( $key ) {
 
 		return $this[ $key ];
 	}
@@ -89,7 +89,7 @@ class Plugin extends Container {
 	 *
 	 * @return string
 	 */
-	public function get_slug(): string {
+	public function get_slug() {
 
 		return 'woo-store-vacation';
 	}
@@ -101,7 +101,7 @@ class Plugin extends Container {
 	 *
 	 * @return string
 	 */
-	public function get_version(): string {
+	public function get_version() {
 
 		return $this->version;
 	}
@@ -113,7 +113,7 @@ class Plugin extends Container {
 	 *
 	 * @return void
 	 */
-	private function load(): void {
+	private function load() {
 
 		// Iterate through the classes and initialize them.
 		foreach ( $this->get_classes() as $class => $args ) {
