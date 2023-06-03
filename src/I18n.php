@@ -23,7 +23,7 @@ abstract class I18n {
 	 *
 	 * @return void
 	 */
-	public static function textdomain(): void {
+	public static function textdomain() {
 
 		$domain = 'woo-store-vacation';
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound

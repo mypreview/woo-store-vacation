@@ -48,7 +48,7 @@ class Options {
 	 *
 	 * @return array
 	 */
-	public function update( $value ): array {
+	public function update( $value ) {
 
 		// Bail early if the value is not an array or empty.
 		if ( ! is_array( $value ) || empty( $value ) ) {

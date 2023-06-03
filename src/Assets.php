@@ -25,7 +25,7 @@ abstract class Assets {
 	 *
 	 * @return void
 	 */
-	public static function enqueue_editor(): void {
+	public static function enqueue_editor() {
 
 		wp_enqueue_script(
 			'woo-store-vacation-block',
@@ -43,7 +43,7 @@ abstract class Assets {
 	 *
 	 * @return void
 	 */
-	public static function enqueue_admin(): void {
+	public static function enqueue_admin() {
 
 		$version = woo_store_vacation()->get_version();
 
