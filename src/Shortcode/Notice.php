@@ -226,7 +226,7 @@ class Notice extends Shortcode {
 		);
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		printf( '<style id="%s">%s</style>', esc_attr( woo_store_vacation()->get_slug() ), $css );
+		printf( '<style id="%s-inline-css">%s</style>', esc_attr( woo_store_vacation()->get_slug() ), $css );
 	}
 
 	/**
@@ -239,6 +239,11 @@ class Notice extends Shortcode {
 	 * @return string
 	 */
 	private function process_smart_tags( $notice ) {
+
+		// Bail-out, if there is no smart tag.
+		if ( ! preg_match( '/{{(.*?)}}/', $notice ) ) {
+			return $notice;
+		}
 
 		$timezone    = wp_timezone();
 		$date_format = get_option( 'date_format' );
