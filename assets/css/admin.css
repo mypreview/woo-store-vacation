@@ -36,16 +36,16 @@
 
 .woo-store-vacation-get-pro-cta a {
 	background-color: #c62a88;
+	border: 1px solid #c62a88;
+	border-radius: 4px;
 	color: inherit;
+	cursor: pointer;
 	font-size: 16px;
-	padding: 11px 24px;
+	font-weight: 500;
 	margin-bottom: 16px;
 	margin-top: 0;
-	border: 1px solid #c62a88;
+	padding: 11px 24px;
 	text-align: center;
-	cursor: pointer;
-	font-weight: 500;
-	border-radius: 4px;
 	text-decoration: none;
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
