@@ -29,6 +29,7 @@ class Settings extends WC_Settings_Page {
 	public function __construct() {
 
 		$this->assign();
+		$this->setup();
 		$this->enqueue();
 
 		parent::__construct();
@@ -45,6 +46,39 @@ class Settings extends WC_Settings_Page {
 
 		$this->id    = sanitize_key( woo_store_vacation()->get_slug() );
 		$this->label = _x( 'Store Vacation', 'settings tab label', 'woo-store-vacation' );
+	}
+
+	/**
+	 * Setup hooks and filters.
+	 *
+	 * @since 1.8.0
+	 *
+	 * @return void
+	 */
+	public function setup() {
+
+		add_filter( 'admin_body_class', array( $this, 'add_body_class' ) );
+	}
+
+	/**
+	 * Add plugin specific class to body.
+	 *
+	 * @since 1.8.0
+	 *
+	 * @param string $classes Classes to be added to the body element.
+	 *
+	 * @return string
+	 */
+	public function add_body_class( $classes ) {
+
+		// Bail early if the current page is not the settings page.
+		if ( ! Helper\Settings::is_page() ) {
+			return $classes;
+		}
+
+		$classes .= sprintf( ' %s-page', sanitize_html_class( $this->id ) );
+
+		return $classes;
 	}
 
 	/**
