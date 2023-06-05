@@ -49,7 +49,7 @@ class Upsell {
 	public function content_block() {
 
 		woo_store_vacation()->service( 'template_manager' )->echo_template(
-			'upsell-block.php',
+			'upsell-sidebar.php',
 			array( 'uri' => self::PRO_URI )
 		);
 	}
