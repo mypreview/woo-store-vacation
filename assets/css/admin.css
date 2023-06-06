@@ -1,6 +1,24 @@
 /* General styles.
  * The following will apply settings-wide.
 ----------------------------------------------------------------------------- */
+.woo-store-vacation-docs {
+	background: #fff;
+	border: 1px solid #dedede;
+	border-radius: 4px;
+	margin-top: 40px;
+	padding: 0 20px 5px;
+}
+
+.woo-store-vacation-docs-title {
+	font-size: 18px;
+}
+
+.woo-store-vacation-docs-cta a {
+	color: #00818a;
+	font-size: 14px;
+	font-weight: 700;
+}
+
 .woo-store-vacation-get-pro {
 	background: #181818;
 	border: 1px solid #dedede;
@@ -122,10 +140,23 @@
 		width: min(300px, 100%);
 	}
 
-	@media (max-width: 768px) {
+}
 
-		.woo-store-vacation-upsell-sidebar > div {
-			margin-inline: auto;
-		}
+@media (max-width: 1199px) and (min-width: 769px) {
+
+	.woo-store-vacation-upsell-sidebar > div {
+		vertical-align: top;
+		display: inline-block;
+	}
+
+	.woo-store-vacation-get-pro {
+		margin-right: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.woo-store-vacation-upsell-sidebar > div {
+		margin-inline: auto;
 	}
 }
