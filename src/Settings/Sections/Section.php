@@ -34,16 +34,16 @@ abstract class Section {
 	 */
 	protected function get_field_keys() {
 
-		static $conditions = array();
+		static $keys = array();
 
-		if ( empty( $conditions ) ) {
-			$conditions = array_filter(
+		if ( empty( $keys ) ) {
+			$keys = array_filter(
 				array_keys( $this->get_fields() ),
 				static fn( $key) => mb_strpos( $key, 'section_' ) !== 0
 			);
 		}
 
-		return $conditions;
+		return $keys;
 
 	}
 }
