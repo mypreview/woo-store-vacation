@@ -1,37 +1,35 @@
 /* General styles.
  * The following will apply settings-wide.
 ----------------------------------------------------------------------------- */
-.woo-store-vacation-upsell-sidebar {
-	width: 300px;
-}
-
 .woo-store-vacation-get-pro {
 	background: #181818;
-	border: 1px solid;
-	border-color: #dedede;
+	border: 1px solid #dedede;
 	border-radius: 4px;
 	color: #fff;
 	font-size: 16px;
-	margin-top: 34px;
-	padding: 24px;
+	line-height: 1.5;
+	margin-top: 40px;
+	padding: 0 24px 30px;
+	text-align: center;
 }
 
 .woo-store-vacation-get-pro-logo {
-	margin: -50px auto 16px;
-	max-height: 75px;
-	max-width: 75px;
-	position: relative;
-	z-index: 2;
+	background-image: url(../../img/logo.svg);
+	background-size: contain;
+	margin: -40px auto 0;
+	height: 85px;
+	width: 85px;
 }
 
 .woo-store-vacation-get-pro-title {
-	color: #fff;
+	color: inherit;
 	font-size: 22px;
 	font-weight: 700;
 }
 
 .woo-store-vacation-get-pro-features {
-	padding-left: 0;
+	padding-inline-start: 0;
+	opacity: 0.8;
 }
 
 .woo-store-vacation-get-pro-cta a {
@@ -40,22 +38,18 @@
 	border-radius: 4px;
 	color: inherit;
 	cursor: pointer;
+	display: block;
 	font-size: 16px;
 	font-weight: 500;
-	margin-bottom: 16px;
-	margin-top: 0;
+	margin-top: 30px;
 	padding: 11px 24px;
 	text-align: center;
 	text-decoration: none;
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.woo-store-vacation-get-pro-cta a:hover {
-	background-color: #e11d74;
-	border-color: #e11d74;
-}
-
 .woo-store-vacation-get-pro-rate {
+	font-size: 14px;
 	margin-top: 24px;
 }
 
@@ -66,4 +60,72 @@
 
 .woo-store-vacation-get-pro-rate a:hover strong {
 	text-decoration: underline;
+}
+
+.woo-store-vacation-get-pro-cta a:hover {
+	background-color: #e11d74;
+	border-color: #e11d74;
+}
+
+.woo-store-vacation-get-pro-cta a:focus {
+	box-shadow: 0 0 0 3px rgba(225, 29, 116, 0.5);
+}
+
+.woo-store-vacation-get-pro-rate div {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.woo-store-vacation-get-pro-rate .dashicons {
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+}
+
+.woo-store-vacation-get-pro-rate .dashicons-wordpress {
+	margin-inline-end: 5px;
+}
+
+.woo-store-vacation-get-pro-rating-text {
+	margin-inline-start: 5px;
+}
+
+@media (min-width: 1200px) {
+
+	.woo-store-vacation-page .form-table,
+	.woo-store-vacation-page .submit {
+		clear: left;
+		float: left;
+		width: calc(100% - 320px);
+	}
+
+	.woo-store-vacation-upsell-sidebar {
+		float: right;
+		margin-left: 20px;
+		width: 300px;
+	}
+}
+
+@media (max-width: 1199px) {
+
+	.woo-store-vacation-page #mainform {
+		display: table;
+		width: 100%;
+	}
+
+	.woo-store-vacation-upsell-sidebar {
+		display: table-footer-group;
+	}
+
+	.woo-store-vacation-upsell-sidebar > div {
+		width: min(300px, 100%);
+	}
+
+	@media (max-width: 768px) {
+
+		.woo-store-vacation-upsell-sidebar > div {
+			margin-inline: auto;
+		}
+	}
 }
