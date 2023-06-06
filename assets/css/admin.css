@@ -132,6 +132,10 @@
 		width: 100%;
 	}
 
+	.woo-store-vacation-page .woocommerce nav.woo-nav-tab-wrapper {
+		margin-top: 0;
+	}
+
 	.woo-store-vacation-upsell-sidebar {
 		display: table-footer-group;
 	}
