@@ -62,14 +62,23 @@ class Meta {
 			return $links;
 		}
 
-		$plugin_links   = array();
-		$plugin_links[] = sprintf( /* translators: 1: Open anchor tag, 2: Close anchor tag. */
-			esc_html_x( '%1$sCommunity support%2$s', 'plugin link', 'woo-store-vacation' ),
-			sprintf(
-				'<a href="https://wordpress.org/support/plugin/%s" target="_blank" rel="noopener noreferrer nofollow">',
-				esc_attr( woo_store_vacation()->get_slug() )
+		$plugin_links = array(
+			sprintf( /* translators: 1: Open anchor tag, 2: Close anchor tag. */
+				esc_html_x( '%1$sDocs%2$s', 'plugin link', 'woo-store-vacation' ),
+				sprintf(
+					'<a href="%s" target="_blank" rel="noopener noreferrer nofollow">',
+					esc_url( Helper\Links::docs_uri() )
+				),
+				'</a>'
 			),
-			'</a>'
+			sprintf( /* translators: 1: Open anchor tag, 2: Close anchor tag. */
+				esc_html_x( '%1$sCommunity support%2$s', 'plugin link', 'woo-store-vacation' ),
+				sprintf(
+					'<a href="https://wordpress.org/support/plugin/%s" target="_blank" rel="noopener noreferrer nofollow">',
+					esc_attr( woo_store_vacation()->get_slug() )
+				),
+				'</a>'
+			),
 		);
 
 		return array_merge( $links, $plugin_links );
