@@ -11,6 +11,8 @@
 
 namespace Woo_Store_Vacation\Enhancements;
 
+use Woo_Store_Vacation\Helper;
+
 /**
  * Class Upsell.
  */
@@ -50,7 +52,10 @@ class Upsell {
 
 		woo_store_vacation()->service( 'template_manager' )->echo_template(
 			'upsell-sidebar.php',
-			array( 'uri' => self::PRO_URI )
+			array(
+				'uri'  => self::PRO_URI,
+				'help' => Helper\Links::docs_uri(),
+			)
 		);
 	}
 }
