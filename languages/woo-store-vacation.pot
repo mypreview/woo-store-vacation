@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-04T16:37:39+00:00\n"
+"POT-Creation-Date: 2023-06-06T18:11:05+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -47,17 +47,23 @@ msgstr ""
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
 #: src/Enhancements/Meta.php:67
 msgctxt "plugin link"
+msgid "%1$sDocs%2$s"
+msgstr ""
+
+#. translators: 1: Open anchor tag, 2: Close anchor tag.
+#: src/Enhancements/Meta.php:75
+msgctxt "plugin link"
 msgid "%1$sCommunity support%2$s"
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: src/Enhancements/Meta.php:92
+#: src/Enhancements/Meta.php:101
 msgctxt "plugin link"
 msgid "%1$sGet PRO%2$s"
 msgstr ""
 
 #. translators: 1: Open anchor tag, 2: Close anchor tag.
-#: src/Enhancements/Meta.php:100
+#: src/Enhancements/Meta.php:109
 msgctxt "plugin settings page"
 msgid "%1$sSettings%2$s"
 msgstr ""
@@ -256,17 +262,17 @@ msgctxt "settings field description"
 msgid "If specified, it will change the background color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#: src/Settings/Settings.php:47
+#: src/Settings/Settings.php:48
 msgctxt "settings tab label"
 msgid "Store Vacation"
 msgstr ""
 
-#: src/Settings/Settings.php:79
+#: src/Settings/Settings.php:113
 msgctxt "settings tab"
 msgid "General"
 msgstr ""
 
-#: src/Settings/Settings.php:80
+#: src/Settings/Settings.php:114
 msgctxt "settings tab"
 msgid "Conditions"
 msgstr ""
@@ -334,89 +340,59 @@ msgctxt "admin notice"
 msgid "I already did!"
 msgstr ""
 
-#: templates/upsell-block.php:16
+#: templates/upsell-sidebar.php:18
 msgctxt "upsell"
-msgid "Upgrade to Woo Store Vacation PRO for Even More Powerful Features"
+msgid "Get Store Vacation Pro"
 msgstr ""
 
-#: templates/upsell-block.php:19
+#: templates/upsell-sidebar.php:22
 msgctxt "upsell"
-msgid "Looking for more vacation options for your online store? Upgrade to Woo Store Vacation PRO and get access to powerful features and customization options that are not available in the basic version. Say goodbye to limited options and elevate your online store with premium tools."
+msgid "Automate your schedules"
 msgstr ""
 
-#: templates/upsell-block.php:22
+#: templates/upsell-sidebar.php:25
 msgctxt "upsell"
-msgid "Here’s a summary of the features you’ll get with Woo Store Vacation PRO:"
+msgid "Repeat weekday closings"
 msgstr ""
 
-#: templates/upsell-block.php:27
+#: templates/upsell-sidebar.php:28
 msgctxt "upsell"
-msgid "Schedule an unlimited number of vacation periods"
+msgid "Define smart conditions"
 msgstr ""
 
-#: templates/upsell-block.php:31
+#: templates/upsell-sidebar.php:31
 msgctxt "upsell"
-msgid "Schedule specific weekdays to close shop recurring"
+msgid "Unlimited store notices"
 msgstr ""
 
-#: templates/upsell-block.php:35
+#: templates/upsell-sidebar.php:34
 msgctxt "upsell"
-msgid "Close your store immediately without prior notice"
+msgid "24/7 priority support"
 msgstr ""
 
-#: templates/upsell-block.php:39
-msgctxt "upsell"
-msgid "Keep your shop open for specific user roles"
-msgstr ""
-
-#: templates/upsell-block.php:43
-msgctxt "upsell"
-msgid "Create complex conditional logic to alter a vacation mode"
-msgstr ""
-
-#: templates/upsell-block.php:47
-msgctxt "upsell"
-msgid "Exclude product types from vacation mode"
-msgstr ""
-
-#: templates/upsell-block.php:51
-msgctxt "upsell"
-msgid "Allow certain Products to be purchased during vacation"
-msgstr ""
-
-#: templates/upsell-block.php:55
-msgctxt "upsell"
-msgid "Restrict a vacation mode by Categories"
-msgstr ""
-
-#: templates/upsell-block.php:59
-msgctxt "upsell"
-msgid "Restrict vacation mode by Tags"
-msgstr ""
-
-#: templates/upsell-block.php:63
-msgctxt "upsell"
-msgid "Restrict vacation mode by Shipping classes"
-msgstr ""
-
-#: templates/upsell-block.php:67
-msgctxt "upsell"
-msgid "Restrict vacation mode by WooCommerce Brands"
-msgstr ""
-
-#: templates/upsell-block.php:71
-msgctxt "upsell"
-msgid "Import and export your plugin settings and content"
-msgstr ""
-
-#: templates/upsell-block.php:75
-msgctxt "upsell"
-msgid "Upgrade now and take advantage of all these features to grow your online store."
-msgstr ""
-
-#: templates/upsell-block.php:79
+#: templates/upsell-sidebar.php:39
 msgctxt "upsell"
 msgid "Go PRO for More Options"
+msgstr ""
+
+#: templates/upsell-sidebar.php:45
+msgctxt "upsell"
+msgid "Read reviews from real users"
+msgstr ""
+
+#: templates/upsell-sidebar.php:61
+msgctxt "upsell"
+msgid "Learn Settings"
+msgstr ""
+
+#: templates/upsell-sidebar.php:64
+msgctxt "upsell"
+msgid "Click on the link below to explore a wealth of information about the plugin’s settings, including step-by-step tutorials, configuration options, and troubleshooting guides. Everything you need to harness the full potential of the plugin is just a click away!"
+msgstr ""
+
+#: templates/upsell-sidebar.php:68
+msgctxt "upsell"
+msgid "Visit the documentation"
 msgstr ""
 
 #: assets/js/admin.js:85
