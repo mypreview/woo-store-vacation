@@ -61,7 +61,7 @@ defined( 'WC_VERSION' ) || exit;
 			<?php echo esc_html_x( 'Learn Settings', 'upsell', 'woo-store-vacation' ); ?>
 		</h2>
 		<p>
-			<?php echo esc_html_x( 'Click on the link above to explore a wealth of information about the plugin’s settings, including step-by-step tutorials, configuration options, and troubleshooting guides. Everything you need to harness the full potential of the plugin is just a click away!', 'upsell', 'woo-store-vacation' ); ?>
+			<?php echo esc_html_x( 'Click on the link below to explore a wealth of information about the plugin’s settings, including step-by-step tutorials, configuration options, and troubleshooting guides. Everything you need to harness the full potential of the plugin is just a click away!', 'upsell', 'woo-store-vacation' ); ?>
 		</p>
 		<p class="woo-store-vacation-docs-cta">
 			<a href="<?php echo esc_url( $args['help'] ); ?>" target="_blank" rel="noopener noreferrer nofollow">
