@@ -44,6 +44,5 @@ abstract class Section {
 		}
 
 		return $keys;
-
 	}
 }
