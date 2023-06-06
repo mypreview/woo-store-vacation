@@ -36,7 +36,7 @@ class Upsell {
 	 */
 	public function setup( $slug ) {
 
-		add_action( "woocommerce_after_settings_{$slug}", array( $this, 'content_block' ) );
+		add_action( "woocommerce_settings_{$slug}", array( $this, 'content_block' ) );
 	}
 
 	/**
