@@ -118,7 +118,7 @@
 		width: calc(100% - 320px);
 	}
 
-	.woo-store-vacation-upsell-sidebar {
+	.woo-store-vacation-page-sidebar {
 		float: right;
 		margin-left: 20px;
 		width: 300px;
@@ -136,11 +136,11 @@
 		margin-top: 0;
 	}
 
-	.woo-store-vacation-upsell-sidebar {
+	.woo-store-vacation-page-sidebar {
 		display: table-footer-group;
 	}
 
-	.woo-store-vacation-upsell-sidebar > div {
+	.woo-store-vacation-page-sidebar > div {
 		width: min(300px, 100%);
 	}
 
@@ -148,7 +148,7 @@
 
 @media (max-width: 1199px) and (min-width: 769px) {
 
-	.woo-store-vacation-upsell-sidebar > div {
+	.woo-store-vacation-page-sidebar > div {
 		vertical-align: top;
 		display: inline-block;
 	}
@@ -160,7 +160,7 @@
 
 @media (max-width: 768px) {
 
-	.woo-store-vacation-upsell-sidebar > div {
+	.woo-store-vacation-page-sidebar > div {
 		margin-inline: auto;
 	}
 }
