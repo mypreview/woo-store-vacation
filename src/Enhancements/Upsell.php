@@ -19,42 +19,30 @@ use Woo_Store_Vacation\Helper;
 class Upsell {
 
 	/**
-	 * The PRO version upsell URI.
-	 *
-	 * @since 1.3.8
-	 *
-	 * @var string
-	 */
-	const PRO_URI = 'https://mypreview.one/woo-store-vacation/';
-
-	/**
 	 * Setup hooks and filters.
 	 *
 	 * @since 1.3.8
 	 *
-	 * @param string $slug The plugin slug.
-	 *
 	 * @return void
 	 */
-	public function setup( $slug ) {
+	public function setup() {
 
-		add_action( "woocommerce_settings_{$slug}", array( $this, 'content_block' ) );
+		add_action( 'woo_store_vacation_settings_sidebar', array( $this, 'sidebar' ) );
 	}
 
 	/**
-	 * Display the upsell block.
+	 * Display the upsell sidebar.
 	 *
 	 * @since 1.8.0
 	 *
 	 * @return void
 	 */
-	public function content_block() {
+	public function sidebar() {
 
 		woo_store_vacation()->service( 'template_manager' )->echo_template(
-			'upsell-sidebar.php',
+			'sidebar/upsell.php',
 			array(
-				'uri'  => self::PRO_URI,
-				'help' => Helper\Links::docs_uri(),
+				'uri' => Helper\Links::pro_uri(),
 			)
 		);
 	}
