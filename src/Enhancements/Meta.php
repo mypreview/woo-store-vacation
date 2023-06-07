@@ -101,7 +101,7 @@ class Meta {
 			esc_html_x( '%1$sGet PRO%2$s', 'plugin link', 'woo-store-vacation' ),
 			sprintf(
 				'<a href="%s" target="_blank" rel="noopener noreferrer nofollow" style="color:green;font-weight:bold;">&#127796; ',
-				esc_url( Upsell::PRO_URI )
+				esc_url( Helper\Links::pro_uri() )
 			),
 			'</a>'
 		);

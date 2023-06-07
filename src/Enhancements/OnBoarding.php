@@ -69,7 +69,7 @@ class OnBoarding {
 		wp_enqueue_script( 'woo-store-vacation-dismiss' );
 
 		woo_store_vacation()->service( 'template_manager' )->echo_template(
-			'onboarding-notice.php',
+			'notices/onboarding.php',
 			array( 'uri' => Helper\Settings::page_uri() )
 		);
 	}

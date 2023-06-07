@@ -81,7 +81,7 @@ class Rate {
 
 		// Display the notice.
 		woo_store_vacation()->service( 'template_manager' )->echo_template(
-			'rate-notice.php',
+			'notices/rate.php',
 			array(
 				'usage_timestamp' => human_time_diff( $usage_timestamp ),
 			)
