@@ -12,6 +12,7 @@
 namespace Woo_Store_Vacation\Integration\Elementor;
 
 use Elementor;
+use Woo_Store_Vacation\Helper;
 use Woo_Store_Vacation\Enhancements\Upsell;
 use Woo_Store_Vacation\Shortcode\Notice;
 
@@ -79,7 +80,7 @@ class Widget extends Elementor\Widget_Base {
 	 */
 	public function get_help_url() {
 
-		return esc_url( Upsell::PRO_URI );
+		return esc_url( Helper\Links::docs_uri() );
 	}
 
 	/**
