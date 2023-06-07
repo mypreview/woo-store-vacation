@@ -58,6 +58,7 @@ class Settings extends WC_Settings_Page {
 	public function setup() {
 
 		add_filter( 'admin_body_class', array( $this, 'add_body_class' ) );
+		add_action( "woocommerce_settings_{$this->id}", array( $this, 'sidebar' ) );
 	}
 
 	/**
@@ -79,6 +80,20 @@ class Settings extends WC_Settings_Page {
 		$classes .= sprintf( ' %s-page', sanitize_html_class( $this->id ) );
 
 		return $classes;
+	}
+
+	/**
+	 * Display the sidebar.
+	 *
+	 * @since 1.8.0
+	 *
+	 * @return void
+	 */
+	public function sidebar() {
+
+		woo_store_vacation()->service( 'template_manager' )->echo_template(
+			'sidebar/sidebar.php'
+		);
 	}
 
 	/**
