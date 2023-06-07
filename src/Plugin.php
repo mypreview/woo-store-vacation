@@ -166,6 +166,9 @@ class Plugin extends Container {
 			'Compatibility\\WooCommerce' => array(
 				'condition' => $is_admin && class_exists( 'Automattic\\WooCommerce\\Utilities\\FeaturesUtil' ),
 			),
+			'Enhancements\\Docs' => array(
+				'condition' => $is_admin,
+			),
 			'Enhancements\\Meta' => array(
 				'condition' => $is_admin,
 				'params'    => array(
@@ -183,9 +186,6 @@ class Plugin extends Container {
 			),
 			'Enhancements\\Upsell' => array(
 				'condition' => $is_admin,
-				'params'    => array(
-					$this->get_slug(),
-				),
 			),
 			'Integration\\Elementor\\Register' => array(
 				'condition' => class_exists( 'Elementor\\Plugin' ),
