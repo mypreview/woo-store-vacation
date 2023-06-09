@@ -1,79 +1,149 @@
-=== Woo Store Vacation (PRO) ===
-= 2022.09.08 - Version 1.3.0 =
-* Feature: Allow products to be excluded (individually) during site-wide vacation(s).
-* Feature: Vacation notice can be displayed using the "[wsvpro_notice]" shortcode or editor block.
-* Compatibility with WordPress 6.0
-* Compatibility with WooCommerce 6.8
+=== Woo Store Vacation ===
+= 1.9.0 =
+* Feature: Exclude certain products, categories, tags, types, and shipping classes.
+* Refactor: Optimized underlying code structure.
 
-= 2022.02.15 - Version 1.2.8 =
-* Compatibility with WordPress 5.9
-* Compatibility with WooCommerce 6.2
+= 1.8.1 =
+* Feature: Add support for {{start_date}} and {{end_date}} smart tags.
+* Feature: Add "Store Vacation Notice" widget for Elementor.
+* Compatibility: WordPress 6.2.1
+* Compatibility: WooCommerce 7.7
 
-= 2021.05.14 - Version 1.2.7 =
-* Compatibility with WordPress 5.7
-* Compatibility with WooCommerce 5.3
-* Feature: Added new hooks to allow third-party plugins to add their own functionality when the shop is closed:
-  * woo_store_vacation_pro_shop_closed
-  * woo_store_vacation_pro_shop_closed_force
-  * woo_store_vacation_pro_shop_closed_weekday
-  * woo_store_vacation_pro_shop_closed_schedule
+= 1.8.0 =
+* Feature: Allow the "Shop Manager" role to edit plugin settings page.
+* Compatibility: WordPress 6.2
+* Compatibility: WooCommerce 7.6
 
-= 2021.01.19 - Version 1.2.6 =
-* Compatibility with WordPress 5.6
-* Compatibility with WooCommerce 4.9
+= 1.7.0 =
+* Feature: Vacation notice can be displayed using the "[woo_store_vacation]" shortcode or editor block.
+* Compatibility: WooCommerce 7.4
 
-= 2020.09.01 - Version 1.2.5 =
-* Fix: Miscalculation when finding scheduled date range.
+= 1.6.4 =
+* Feature: Add "woo-store-vacation-shop-closed" class to the body element when shop is closed.
 
-= 2020.08.31 - Version 1.2.4 =
-* Update: Language file.
+= 1.6.3 =
+* Tweak: Ensure compatibility of HPOS support with PHP 7.4
+
+= 1.6.2 =
+* Feature: Add support for HPOS (High-Performance Order Storage)
+* Compatibility: WooCommerce 7.3
+
+= 1.6.1 =
+* Tweak: Improved logic in displaying admin-notices.
+
+= 1.6.0 =
+* Compatibility: WooCommerce 7.2
+
+= 1.5.1 =
+* Update author URI.
+
+= 1.5.0 =
+* Compatibility: WordPress 6.1
+* Compatibility: WooCommerce 7.1
+* Fix: Account for time when comparing dates.
+* Fix: Support local timezone.
+
+= 1.4.6 =
+* Compatibility: WooCommerce 6.8
+
+= 1.4.5 =
+* Compatibility: WordPress 6.0
+* Compatibility: WooCommerce 6.5
+
+= 1.4.4 =
+* Compatibility: WordPress 5.9
+* Compatibility: WooCommerce 6.2
+
+= 1.4.3 =
+* Compatibility: PHP 8.0
+
+= 1.4.2 =
+* Compatibility: WordPress 5.8
+* Compatibility: WooCommerce 5.5
+
+= 1.4.1 =
+* Compatibility: WordPress 5.7
+* Compatibility: WooCommerce 5.1
+
+= 1.4.0 =
+* Compatibility: WordPress 5.6
+* Compatibility: WooCommerce 4.8
+* Tweak: Improved data sanitization/escaping.
+* Tweak: Updated upsell notice markup/ID. Kudos to @nicomollet
+
+= 1.3.9 =
+* Tweak: Removed minimum date from the datepicker module.
+* Fix: Bail early, in case the store closing request is for an administrative interface page.
+
+= 1.3.8 =
+* Fix: Multiple code standards improvements.
 * Compatibility: WordPress 5.5
 * Compatibility: WooCommerce 4.4
 
-= 2020.07.09 - Version 1.2.3 =
-* Update: Language file.
-* Compatibility: WooCommerce 4.3.0
+= 1.3.7 =
+* Compatibility: WooCommerce 4.3
 
-= 2020.06.28 - Version 1.2.2 =
-* Fix: Check the list of defined functions, to make sure plugin class instance is called only once.
-* Fix: Undefined fatal error class definition in checking for automatic plugin updates.
+= 1.3.6 =
+* Compatibility: WordPress 5.4
 
-= 2020.06.21 - Version 1.2.1 =
-* Fix: Code standards improvements.
-* Fix: Error in not detecting `Sunday` in closing down the shop.
-* Update: Language file.
-* Feature: Drag and drop sorting support for submitted vacation notices and date/times.
-* Compatibility: WordPress 5.4.2
-
-= 2020.06.07 - Version 1.2.0 =
-* Update: Language file.
-* Feature: Exclude product types from being non-purchasable.
-* Feature: Added UTC and local time as a hint above the schedule tables.
-* Feature: Added language configuration file to support WPML/Polylang.
+= 1.3.5 =
+* Feature: Add language configuration file to support WPML/Polylang.
 * Compatibility: WooCommerce 4.2.0
 
-= 2020.05.14 - Version 1.1.1 =
-* Fix: Initialize core class to retrieve full translated weekday to support non-English weekday names.
-* Tweak: Display regional language in date and time pickers as per the WordPress setting.
+= 1.3.4 =
+* Compatibility: WordPress 5.4
+* Compatibility: WooCommerce 4.1
 
-= 2020.05.07 - Version 1.1.0 =
+= 1.3.3 =
 * Fix: Multiple code standards improvements.
-* Feature: Added a node (menu item) to the Admin Bar toolbar in case the vacation mode is activated.
-* Update: Language file.
-* Compatibility: WordPress 5.4.1
-* Compatibility: WooCommerce 4.1.0
-
-= 2020.04.04 - Version 1.0.2 =
-* Fix: Multiple code standards improvements.
-* Fix: Removed minimum date/time from the datepicker module.
-* Update: Language file.
-* Update: Refactored and re-organized underlying code.
-* Compatibility: WordPress 5.4.0
+* Compatibility: WordPress 5.4
 * Compatibility: WooCommerce 4.0.1
 
-= 2020.02.17 - Version 1.0.1 =
+= 1.3.2 =
 * Fix: Delay purchasable filter to run AFTER all other hooks have completed preventing from getting overridden by a third-party extension.
-* Compatibility: WooCommerce 3.9.2.
+* Compatibility: WooCommerce 3.9.2
 
-= 2020.01.28 - Version 1.0.0 =
+= 1.3.1 =
+* Compatibility: WooCommerce 3.9
+
+= 1.3.0 =
+* Fix: Fatal error while submitting store vacation dates via a non-Latin calendar.
+* Fix: Altered vacation notice `z-index` value to prevent overlap with core notifications.
+* Compatibility: WordPress 5.3
+* Compatibility: WooCommerce 3.8
+
+= 1.2.4 =
+* Tweak: Minor changes.
+
+= 1.2.3 =
+* Tweak: Update WooCommerce hook names.
+
+= 1.2.2 =
+* Fix: Miscalculation of "strtotime" method.
+
+= 1.2.1 =
+* Fix: Miscalculation of "strtotime" method.
+* Compatibility: WordPress 4.9
+
+= 1.2.0 =
+* Feature: Add custom datepicker stylesheet file.
+
+= 1.1.0 =
+* Feature: Add button text and URL fields to the plugin settings page.
+
+= 1.0.4 =
+* Feature: Add start date to close the shop immediately.
+* Feature: Add color picker controls to customizer background and text color.
+* Compatibility: WooCommerce 3.0
+
+= 1.0.3 =
+* Tweak: Update hooks for shop and single product pages.
+
+= 1.0.2 =
+* Feature: Add screenshot images.
+
+= 1.0.1 =
+* Fix: Miscalculation of "strtotime" method.
+
+= 1.0.0 =
 * Initial release.
