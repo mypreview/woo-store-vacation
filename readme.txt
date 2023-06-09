@@ -36,6 +36,8 @@ This plugin is provided to handle multilingual sites with ease. It comes fully e
 
 Overall, the Woo Store Vacation plugin is an essential tool for WooCommerce shop owners who need to take time off for personal or business reasons. By activating vacation mode, you can avoid negative reviews or damage to your reputation by providing clear communication to potential buyers about your availability and expected return date.
 
+If you’re intrigued by the plugin and eager to explore its features, allowing you to effortlessly plan your vacation and personalize your shop’s behavior, feel free to delve into the [comprehensive documentation](https://mypreview.github.io/woo-store-vacation/ "Woo Store Vacation Documentation") for a detailed guide on utilizing its settings, options, and scheduling capabilities. 
+
 ## Unlock the full potential of your online store with PRO
 
 [Upgrade now](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") and enjoy powerful features and customization options that are not available in the basic version.
