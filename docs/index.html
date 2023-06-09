@@ -1,81 +1,218 @@
 <!doctype html>
-<html lang="en-US" class="js" itemscope="itemscope" itemtype="http://schema.org/Website">
-   <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Store Vacation — WooCommerce plugin</title>
-      <meta http-equiv="refresh" content="5;URL='https://mypreview.one/woo-store-vacation'" />
-      <meta name="copyright" content="© 2015 - 2022 MyPreview. All Rights Reserved." />
-      <meta name="author" content="MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)" />
-      <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/apple-icon-57x57.png" />
-      <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/apple-icon-60x60.png" />
-      <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/apple-icon-72x72.png" />
-      <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon-76x76.png" />
-      <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/apple-icon-114x114.png" />
-      <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/apple-icon-120x120.png" />
-      <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/apple-icon-144x144.png" />
-      <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/apple-icon-152x152.png" />
-      <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-icon-180x180.png" />
-      <link rel="icon" type="image/png" sizes="192x192"  href="./assets/img/android-icon-192x192.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/favicon-96x96.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
-   </head>
-   <body>
-      <style>
-         body {
-            background-color: #f7f7f7;
-            font-family: Arial;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #181818;
-         }
-         h1 {
-            font-weight: 400;
-         }
-         .loading {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border: 2px solid #00818a;
-            border-radius: 30px;
-            border-right-color: transparent;
-            animation: spin .7s infinite linear;
-         }
-         .button {
-            text-align: center;
-            padding: 11px 24px;
-            color: #fff;
-            background-color: #c62a88;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-         }
-         .button:hover {
-            background-color: #e11d74;
-         }
-         @keyframes spin {
-            0% {
-               transform: translateZ(0) rotate(0deg);
-            }
+<html lang="en-US" class="js" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+		<title>Woo Store Vacation Documentation — WooCommerce plugin</title>
+		<meta name="keywords" content="vacation mode, holiday close, woo store vaction, plugin documentation, customize product availability" />
+		<meta name="description" content="Throughout this documentation, we will delve into the various settings provided by the Woo Store Vacation plugin." />
+		<meta name="author" content="MyPreview" />
+		<meta name="copyright" content="© 2015 - 2023 MyPreview. All Rights Reserved." />
+		<meta name="theme-color" content="#ffffff" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Woo Store Vacation" />
+		<meta property="og:title" content="Woo Store Vacation Documentation" />
+		<meta property="og:description" content="Throughout this documentation, we will delve into the various settings provided by the Woo Store Vacation plugin." />
+		<meta property="og:url" content="https://mypreview.github.io/woo-store-vacation" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+		<link rel="apple-touch-icon" sizes="57x57" href="./assetsfavicon/apple-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="./assets/favicon/apple-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="./assets/favicon/apple-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="./assets/favicon/apple-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="./assets/favicon/apple-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="./assets/favicon/apple-icon-152x152.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-icon-180x180.png" />
+		<link rel="icon" type="image/png" sizes="192x192"  href="./assets/favicon/android-icon-192x192.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__content width-large">
+				<a class="site-brand" href="./">
+					<img
+						alt="Woo Store Vacation logo"
+						width="135"
+						src="./assets/logo.svg"
+					/>
+					<span class="visually-hidden">Woo Store Vacation Documentation</span>
+				</a>
+				<a href="https://wordpress.org/support/plugin/woo-store-vacation" title="Community Forums" target="_blank" rel="noopener noreferrer nofollow">
+					Support
+				</a>
+			</div>
+		</header>
+		<main>
+			<section class="intro">
+				<div class="width-large intro__content">
+					<img class="intro__image" width="120" alt="Woo Store Vacation Plugin Downloads" src="./assets/thumbnail.gif">
+					<div class="intro__title">
+						<h1>Woo Store Vacation</h1>
+						<p class="lead">Effortlessly Manage Your Store’s Breaks.</p>
+					</div>
+					<div class="intro__action">
+						<a href="https://github.com/mypreview/woo-store-vacation" class="button button--secondary" target="_blank" rel="noopener noreferrer nofollow">
+							<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z" fill="currentColor"/></svg>
+							Github
+						</a>
+						<a href="https://wordpress.org/plugins/woo-store-vacation/" class="button button--secondary" target="_blank" rel="noopener noreferrer nofollow">
+							<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.589 0 0 3.589 0 8s3.589 8 8 8c4.41 0 8-3.589 8-8s-3.59-8-8-8Zm0 15.633C3.791 15.633.367 12.209.367 8 .367 3.79 3.79.367 8 .367c4.208 0 7.632 3.423 7.632 7.633 0 4.209-3.424 7.633-7.632 7.633Zm4.633-7.98c0-.848-.305-1.435-.566-1.892l-.08-.13c-.317-.51-.594-.958-.594-1.48 0-.63.478-1.218 1.152-1.218.014 0 .027 0 .04.002l.018.001.031.003A6.838 6.838 0 0 0 8 1.137 6.855 6.855 0 0 0 2.266 4.23c.16.005.313.009.442.009.717 0 1.828-.087 1.828-.087.37-.022.414.521.044.565 0 0-.371.044-.785.065l2.5 7.434 1.5-4.506-1.07-2.929a13.097 13.097 0 0 1-.719-.065c-.37-.022-.326-.588.043-.566 0 0 1.134.087 1.808.087.718 0 1.83-.087 1.83-.087.37-.022.413.522.043.566 0 0-.372.043-.785.065l2.48 7.377.684-2.287.054-.173c.27-.86.469-1.495.469-2.046l.001.001ZM1.137 8a6.864 6.864 0 0 0 3.868 6.176L1.73 5.206A6.837 6.837 0 0 0 1.137 8Zm4.924 6.583L8.121 8.6l2.109 5.78c.014.033.03.064.049.094a6.854 6.854 0 0 1-4.218.109Zm7.96-9.876c.03.219.047.453.047.706 0 .696-.13 1.479-.522 2.458l-2.096 6.06a6.86 6.86 0 0 0 2.572-9.224h-.001Z" fill="currentColor"/></svg>
+							Download
+						</a>
+					</div>
+				</div>
+				<div class="width-large">
+					<ul class="plugin-details">
+						<li>
+							<img width="144" height="25" alt="Woo Store Vacation Plugin Last Updated" src="https://img.shields.io/wordpress/plugin/last-updated/woo-store-vacation?style=social">
+						</li>
+						<li>
+							<img width="176" height="25" alt="Woo Store Vacation Plugin Downloads" src="https://img.shields.io/wordpress/plugin/dm/woo-store-vacation?style=social">
+						</li>
+						<li>
+							<a href="./CHANGELOG.txt" data-fancybox data-type="iframe" data-src="CHANGELOG.txt"><img width="141" height="25" alt="Woo Store Vacation Plugin Changelog" src="https://img.shields.io/wordpress/plugin/v/woo-store-vacation?label=Changelog&style=social"></a>
+						</li>
+						<li>
+							<img width="144" height="25" alt="Woo Store Vacation Plugin Rating" src="https://img.shields.io/wordpress/plugin/stars/woo-store-vacation?style=social">
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="width-large main-content">
+				<article>
+					<h2 class="title" id="getting-started">Getting Started</h2>
+					<p>
+						Welcome to the documentation for the Woo Store Vacation plugin! This powerful extension for WooCommerce allows you to effortlessly customize the behavior of your shop when you’re on vacation. Whether you’re taking a well-deserved break or need to close your store temporarily, this plugin has got you covered.
+					</p>
+					<p>
+						With the Woo Store Vacation plugin, you can easily schedule your holiday time and utilize the vacation notice feature to inform your valued customers about your absence. By doing so, you can ensure that they are aware of any delays or changes in your shop’s operations.
+					</p>
+					<p>
+						One of the key features of this plugin is the ability to disable product purchases and temporarily close your store. However, you also have the option to keep some of your products available for purchase if you prefer. This flexibility allows you to tailor the shopping experience to your specific needs during your vacation.
+					</p>
+					<p>
+						When you choose to disable product purchases, your shop will remain online and accessible to visitors. Although new order operations will be paused and the checkout functionality will be disabled, users can still explore your products and plan for future purchases. This ensures that potential customers can visit your shop, browse your offerings, and make plans for when you resume normal operations.
+					</p>
+					<p>
+						Throughout this documentation, we will delve into the various settings provided by the Woo Store Vacation plugin. You will gain a comprehensive understanding of how to configure and utilize these settings according to your personal preferences. So let’s get started and make the most of your vacation time with the Woo Store Vacation plugin!
+					</p>
+					<h2 class="title" id="schedule-vacation">Setting Up and Customizing Vacation Schedule</h2>
+					<p>
+						To ensure a seamless vacation experience, the plugin allows you to schedule your vacation in advance. Follow the steps below to schedule your vacation and personalize the vacation settings according to your holiday plans:
+					</p>
+					<figure>
+						<a href="./assets/screenshots/schedule-vacation.png" data-fancybox="images" data-caption="Schedule vacation and customize vacation settings">
+							<img src="./assets/screenshots/schedule-vacation.png" alt="schedule vacation and customize vacation settings">
+						</a>
+					  <figcaption>Schedule vacation and customize vacation settings</figcaption>
+					</figure>
 
-            100% {
-               transform: translateZ(0) rotate(360deg);
-            }
-         }
-      </style>
-      <section style="text-align:center;">
-         <a rel="noopener noreferrer nofollow" href="https://mypreview.one/woo-store-vacation">
-            <img src="./assets/img/logo.svg" width="60">
-         </a>
-         <h1>This page has moved to a new address</h1>
-         <p>This process is automatic. Your browser will redirect to mypreview.one/woo-store-vacation shortly.</p>
-         <p>If you are not automatically redirected in 5 seconds.</p>
-         <p><span class="loading"></span></p>
-         <a class="button" rel="noopener noreferrer nofollow" href="https://mypreview.one/woo-store-vacation">Please click here</a>
-      </section>
-   </body>
+					<div itemscope itemtype="https://schema.org/HowTo">
+						<span class="visually-hidden" itemprop="name">How to schedule your vacation and customize vacation settings using the Woo Store Vacation plugin?</span>
+
+						<ol>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									Navigate to <strong>WooCommerce</strong> -> <strong>Settings</strong> -> <strong>Store Vacation</strong>.
+								</span>
+							</li>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									<strong>Enable Vacation Mode</strong>: Tick the “Enable Vacation Mode” checkbox to activate the vacation functionality.
+								</span>
+							</li>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									<strong>Disable Purchase</strong>: If you wish to modify your shop’s behavior during the vacation, select the “Disable Purchase” checkbox. This action will take out the cart, checkout process, and add to cart buttons.
+								</span>
+							</li>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									<strong>Set the Start Date</strong>: Choose the desired start date for your vacation using the date picker. The vacation mode will automatically begin from the selected date. By default, the database stores a time of 00:00:00.
+								</span>
+							</li>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									<strong>Set the End Date</strong>: Choose the end date for your vacation using the date picker. Once this date is reached, the vacation mode will automatically be turned off. If you disabled purchases and closed your shop for vacation, it will automatically reopen on this date. By default, the database stores a time of 00:00:00.
+								</span>
+							</li>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									<strong>Add Vacation Notice</strong>: Enter a message in the “Vacation Notice” field. This message will be displayed on your shop during the vacation period, informing your clients about your vacation mode and any relevant details.
+								</span>
+							</li>
+							<li itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+								<span itemprop="text">
+									<strong>Save Changes</strong>: Click the “Save changes” button to save the modified vacation settings.
+								</span>
+							</li>
+						</ol>
+					</div>
+				</article>
+				<div class="widgets">
+					<div class="promotion">
+						<a href="https://mypreview.one/woo-store-vacation/" target="_blank" rel="noopener noreferrer nofollow">
+							<div class="promotion-header">
+								<img width="50" alt="Woo Store Vacation plugin Plams icon" src="./assets/palms.svg">
+								<p class="button">Get PRO →</p>
+							</div>
+							<p class="promotion-description">With the PRO version, unlock even more powerful features and customization options.</p>
+						</a>
+					</div>
+					<div class="widget">
+						<p class="widget-title"><strong>Requirements</strong></p>
+						<ul class="requirements">
+							<li>
+								<img width="77" alt="Woo Store Vacation Required PHP Version" src="https://img.shields.io/wordpress/plugin/required-php/woo-store-vacation?label=PHP&style=social">
+							</li>
+							<li>
+								<img width="111" alt="Woo Store Vacation: Required WordPress Version" src="https://img.shields.io/badge/WordPress->%3D5.3-custom?style=social">
+							</li>
+							<li>
+								<img width="135" alt="Woo Store Vacation: Required WooCommerce Version" src="https://img.shields.io/badge/WooCommerce->%3D5.0-custom?style=social">
+							</li>
+						</ul>
+					</div>
+					<input class="table-of-content-icon" type="checkbox" id="table-of-content" name="table-of-content" value="Browse">
+					<div class="widget table-of-content" for="table-of-content">
+						<p class="widget-title"><strong>Browse the Contents</strong></p>
+						<menu class="small">
+							<li>
+								<a href="#getting-started">Getting Started</a>
+							</li>
+							<li>
+								<a href="#schedule-vacation">Setting Up and Customizing Vacation Schedule</a>
+							</li>
+						</menu>
+					</div>
+				</div>
+			</section>
+			<section class="footer-bar">
+				<div class="width-large">
+					<h3 class="h1">Unlock More Vacation<br/>Management Capabilities</h3>
+					<a href="https://mypreview.one/woo-store-vacation/" target="_blank" rel="noopener noreferrer nofollow" class="button button--rocket-launch">
+						Go PRO for More Options
+						<svg width="16" width="height" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.641 6.218l-.239 2.408a2.557 2.557 0 0 1-.732 1.526L8.817 15.85a.512.512 0 0 1-.867-.433l.271-1.9c.04-.28-.014-.593-.132-.956a9.42 9.42 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.663-2.191-1.277-.615-.615-1.079-1.379-1.275-2.195l-.203-.083-.04-.016a9.462 9.462 0 0 0-.615-.232c-.363-.119-.675-.172-.955-.132l-1.896.271A.512.512 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.551 11.087.582 12.623.208c.89-.218 1.59-.232 2.08-.188a3.797 3.797 0 0 1 .73.138c.184.061.279.132.352.296.03.075.056.152.078.23.051.184.087.373.108.563.054.485.05 1.178-.16 2.065ZM9.752 6.193c.598.599 1.731.438 2.528-.362h.001c.797-.799.959-1.932.36-2.531-.598-.599-1.73-.438-2.528.361-.797.799-.959 1.932-.361 2.532Zm-2.743 5.946a7.632 7.632 0 0 1-1.804-1.352 7.585 7.585 0 0 1-1.411-1.925c-1.102.991-1.965 5.053-1.839 5.18.125.125 3.936-.896 5.054-1.903Z" fill="#fff"/></svg>
+					</a>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="footer width-large small">
+				<p class="small">© 2015 - <span id="current-year"></span> MyPreview. All Rights Reserved.</p>
+				<p class="small">Trademarks and brands are the property of their respective owners.</p>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+		<script src="./index.js"></script>
+	</body>
 </html>

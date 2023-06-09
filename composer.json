@@ -5,9 +5,7 @@
 			"!vendor/*",
 			"docs",
 			"node_modules",
-			"CONTRIBUTING.md",
 			"CODE_OF_CONDUCT.md",
-			"babel.config.js",
 			"composer.json",
 			"composer.lock",
 			"package.json",
@@ -19,21 +17,21 @@
 	},
 	"authors": [
 		{
-			"homepage": "https://mypreview.one",
-			"name": "MyPreview"
+			"homepage": "https://mypreview.one/woo-store-vacation",
+			"name": "Woo Store Vacation"
 		}
 	],
 	"autoload": {
-		"classmap": [
-			"includes"
-		]
+		"psr-4": {
+			"Woo_Store_Vacation\\": "src/"
+		}
 	},
 	"config": {
 		"allow-plugins": {
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
-	"description": "Pause your store with scheduling your vacation dates.",
+	"description": "Pause your store during vacations by scheduling specific dates and display a customizable notice to visitors.",
 	"extra": {
 		"scripts-description": {
 			"lint:wpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier",
@@ -44,12 +42,16 @@
 	"homepage": "https://wordpress.org/plugins/woo-store-vacation",
 	"keywords": [
 		"WordPress",
+		"WooCommerce",
 		"Plugin"
 	],
 	"license": "GPL-3.0",
 	"name": "mypreview/woo-store-vacation",
 	"require": {
-		"php": ">=7.4"
+		"mahdiyazdani/wc-install-notice": "^1.0",
+		"mahdiyazdani/wp-footer-rate": "^1.0",
+		"php": ">=7.4",
+		"pimple/pimple": "^3.5"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "0.7.2",
@@ -72,7 +74,7 @@
 		],
 		"lint:wpcbf": "phpcbf --extensions=php -p --runtime-set testVersion 7.4-",
 		"lint:wpcs": "phpcs --extensions=php -s -p --runtime-set testVersion 7.4-",
-		"make-pot": "wp i18n make-pot . languages/woo-store-vacation.pot"
+		"make-pot": "wp i18n make-pot . languages/woo-store-vacation.pot --domain=woo-store-vacation"
 	},
 	"type": "wordpress-plugin"
 }

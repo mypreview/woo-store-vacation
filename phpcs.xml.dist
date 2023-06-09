@@ -47,6 +47,7 @@
     <!-- Check for WordPress standards. -->
     <!-- Include the WordPress ruleset, with select exclusions. -->
     <rule ref="WordPress">
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
         <exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed" />
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
         <exclude name="Core.Commenting.CommentTags.AccessTag" />

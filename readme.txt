@@ -5,7 +5,7 @@ Donate link: https://mypreview.one/woo-store-vacation
 Requires at least: 5.3
 Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.8.1
+Stable tag: 1.9.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -24,6 +24,12 @@ The vacation notice feature lets you create a personalized automated message to 
 
 The vacation notice is initially visible on WooCommerce pages, including the shop and product pages. However, you have the option to add the notice to other pages on your site as well. If you use the core block editor or Gutenberg plugin, simply insert the Store Vacation Notice block to display the holiday message. For pages created with Elementor, use the Store Vacation Notice widget. Alternatively, in case you prefer the Classic Editor or other page builders like SeedProd or Divi Builder, you can use the `[woo_store_vacation]` shortcode to show the notice on any chosen page, such as the homepage, sidebar, or any other location.
 
+If you have enabled the “Disable Purchase” option in the General settings, the plugin provides you with extensive customization options to tailor the availability of your shop during vacation mode. Take full control over your shop’s operations by excluding certain Products, Categories, Tags, Types of products, and Shipping Classes from being affected by the vacation mode.
+
+With the intuitive interface, you can effortlessly specify which products should remain available for purchase, ensuring a seamless shopping experience for your customers even when your shop is in vacation mode. Maintain sales momentum by strategically selecting the items that will still be accessible while the rest of your inventory remains temporarily unavailable.
+
+The plugin empowers you to fine-tune your shop’s behavior, granting you the flexibility to cater to your unique business requirements. Unlock the potential to maintain business continuity and customer satisfaction throughout your vacation.
+
 To better distribute workload and responsibilities and create a collaborative environment for managing your online store, shop managers have access to the plugin settings to manage and edit vacation options.
 
 This plugin is provided to handle multilingual sites with ease. It comes fully equipped with a configuration file to support WPML and Polylang plugins, making it translation-ready and easy to use for websites that cater to a global audience.
@@ -38,7 +44,7 @@ With Woo Store Vacation PRO, you get access to the following features:
 
 * **Schedule Multiple Vacations**: You can schedule an unlimited number of vacation periods for any duration of time, so you can plan multiple breaks throughout the year and adjust vacation dates according to your schedule.
 * **Recurring Weekly Closing Days**: You can schedule specific weekdays to close your shop on a recurring basis each week, which is perfect for store owners who need to take time off regularly or want to adjust store hours on certain days.
-* **Smart Conditional Logic**: Use the Smart Conditional Logic feature to set specific conditions to a schedule that alter the vacation mode behavior to your unique needs. You can exclude or include certain products, categories, tags, shipping classes, product types, or WooCommerce brands from the vacation mode, which is particularly useful for allowing certain products to be purchased during closing time.
+* **Smart Conditional Logic**: Experience the unmatched flexibility of plugin’s Smart Conditional Logic feature, empowering you to set specific conditions and schedules that perfectly adapt the behavior of vacation mode to your unique needs. Exclude certain products, categories, tags, shipping classes, product types, or WooCommerce brands from each vacation schedule or weekday closing time effortlessly. This intelligent functionality becomes especially valuable when you want to allow specific products to be purchased during closing times. Take complete control over your shop’s availability and provide a seamless shopping experience for customers, even when you’re on vacation.
 * **Exclude User Roles**: Exclude specific user roles, such as administrators or shop managers, from the vacation mode, so you can keep your shop open for these users even when the vacation mode is activated.
 * **Exclude Product Types**: Exclude product types from vacation mode and keep selling certain types of products even when your store is closed.
 * **Force Close**: Use the force close feature to activate vacation mode without setting a specific schedule or end time, which is helpful for unexpected situations where you need to close your store immediately without prior notice.
@@ -96,6 +102,13 @@ Your store notification will display on your shop and single product page(s), le
 
 However, you can add the vacation notice on any specific page by adding the Store Vacation Notice block to the page content or using the `[woo_store_vacation]` shortcode instead.
 
+= Can I customize product availability during my vacation? =
+Yes, if you have enabled the “Disable Purchase” option in the General settings, you have the ability to customize the availability of your shop during your vacation. This can be done through the **Conditions** page, where you will find a range of options to tailor the behavior of vacation mode.
+
+On this page, you can selectively choose which items to exclude from vacation mode, allowing them to remain available for purchase even while your shop is closed. 
+
+The options include multi-select fields for **Products**, **Categories**, **Tags**, **Types of products**, and **Shipping Classes**. By selecting specific items within these fields, you can modify the Disable Purchase behavior and ensure that those chosen products are still accessible for purchase on your shop during your vacation.
+
 = How can I get help with the plugin? =
 The easiest way to receive support is to visit the [Community Forums page](https://wordpress.org/support/plugin/woo-store-vacation "Woo Store Vacation Support Forum") and create a new topic. Be sure to check the “Notify me of follow-up replies via email” checkbox to receive notifications as soon as a reply is posted to your question or inquiry.
 
@@ -117,6 +130,7 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 == Screenshots ==
 1. Plugin’s settings page
 2. User-Friendly datepicker
+3. Set conditions to customize product availability
 3. Displaying a notice at the top of shop page
 4. Displaying a notice at the top of product page
 5. Displaying a notice at the top of shop archive pages
@@ -125,6 +139,10 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
+= 1.9.0 =
+* Feature: Exclude certain products, categories, tags, types, and shipping classes.
+* Refactor: Optimized underlying code structure.
+
 = 1.8.1 =
 * Feature: Add support for {{start_date}} and {{end_date}} smart tags.
 * Feature: Add "Store Vacation Notice" widget for Elementor.
