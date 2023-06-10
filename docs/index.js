@@ -1,40 +1,58 @@
 window.addEventListener("DOMContentLoaded", () => {
-	const nav = document.querySelector(".table-of-content");
-	const titles = document.querySelectorAll(".title");
-	let activeNavIndex = -1;
+  const nav = document.querySelector(".table-of-content");
+  const titles = Array.from(document.querySelectorAll(".title"));
+  let activeNavIndex = -1;
 
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry, index) => {
-			const id = entry.target.getAttribute("id");
-			const navLink = nav.querySelector(`a[href="#${id}"]`);
+  const updateActiveNavItem = () => {
+    const scrollPosition = window.scrollY;
 
-			if (entry.isIntersecting && index !== activeNavIndex) {
-				nav.querySelectorAll("a").forEach((link) => link.classList.remove("active"));
-				navLink.classList.add("active");
-				activeNavIndex = index;
-			}
-		});
-	});
+    if (scrollPosition === 0) {
+      if (activeNavIndex !== -1) {
+        nav.querySelector("a.active").classList.remove("active");
+        activeNavIndex = -1;
+      }
+      return;
+    }
 
-	titles.forEach((title, index) => {
-		observer.observe(title);
+    let newActiveNavIndex = -1;
+    for (let i = titles.length - 1; i >= 0; i--) {
+      const title = titles[i];
+      const rect = title.getBoundingClientRect();
 
-		if (title.getBoundingClientRect().top < window.innerHeight / 2 && activeNavIndex === -1) {
-			activeNavIndex = index;
-			nav.querySelector(`a[href="#${title.id}"]`).classList.add("active");
-		}
-	});
+      if (rect.top <= window.innerHeight / 2) {
+        newActiveNavIndex = i;
+        break;
+      }
+    }
 
-	window.addEventListener("scroll", () => {
-		const scrollPosition = window.scrollY;
+    if (newActiveNavIndex !== activeNavIndex) {
+      if (activeNavIndex !== -1) {
+        nav.querySelector("a.active").classList.remove("active");
+      }
+      if (newActiveNavIndex !== -1) {
+        nav.querySelector(`a[href="#${titles[newActiveNavIndex].id}"]`).classList.add("active");
+      }
+      activeNavIndex = newActiveNavIndex;
+    }
+  };
 
-		if (scrollPosition === 0 && activeNavIndex !== -1) {
-			nav.querySelectorAll("a").forEach((link) => link.classList.remove("active"));
-			activeNavIndex = -1;
-		}
-	});
+  const throttledUpdateActiveNavItem = () => {
+    if (!throttledUpdateActiveNavItem.isTicking) {
+      requestAnimationFrame(() => {
+        updateActiveNavItem();
+        throttledUpdateActiveNavItem.isTicking = false;
+      });
+      throttledUpdateActiveNavItem.isTicking = true;
+    }
+  };
+  throttledUpdateActiveNavItem.isTicking = false;
 
-	const currentYear = document.getElementById('current-year');
+  window.addEventListener("scroll", throttledUpdateActiveNavItem);
+  window.addEventListener("resize", throttledUpdateActiveNavItem);
+
+  updateActiveNavItem();
+
+  const currentYear = document.getElementById('current-year');
 	if (currentYear) {
 		currentYear.textContent = new Date().getFullYear();
 	}

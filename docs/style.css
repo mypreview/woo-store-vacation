@@ -82,10 +82,23 @@ a:focus-visible {
 
 .small {
 	font-size: 14px;
+	line-height: 1.37;
 }
 
 strong {
 	font-weight: var(--font-weight--bold);
+}
+
+code {
+	font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+	tab-size: 4;
+	white-space: pre;
+	padding: 4px 6px;
+
+	:not(pre) > & {
+		background-color: var(--color--tile);
+		color: var(--color--secondary);
+	}
 }
 
 /* width  */
@@ -304,7 +317,8 @@ ol li {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
-	padding-block: 30px;
+	padding-top: 30px;
+	padding-bottom: 70px;
 }
 
 article {
@@ -347,6 +361,10 @@ article {
 
 .widget a:hover {
 	color: var(--color--light);
+}
+
+.table-of-content a:not(.active) {
+	padding-right: 10px;
 }
 
 .table-of-content .active {
