@@ -32,3 +32,6 @@ defined( 'WC_VERSION' ) || exit;
 		?>
 	</p>
 </div>
+
+<?php
+/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
