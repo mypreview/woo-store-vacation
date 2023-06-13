@@ -231,9 +231,11 @@ class Notice extends Shortcode {
 			$inline_css[] = sprintf(
 				'
 				#%1$s,
-				#%1$s svg,
 				#%1$s .wc-block-components-notice-banner {
 					background-color:%2$s !important;
+				}
+				#%1$s svg {
+					background-color:%3$s !important;
 				}
 				#%1$s .wc-block-components-notice-banner {
 					border-color:%3$s !important;
