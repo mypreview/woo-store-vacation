@@ -93,6 +93,8 @@ strong {
 	font-weight: var(--font-weight--bold);
 }
 
+/* Code */
+
 code {
 	background-color: var(--color--tile);
 	color: var(--color--secondary);
@@ -100,6 +102,25 @@ code {
 	padding: 4px 6px;
 	tab-size: 4;
 	white-space: pre;
+}
+
+pre {
+	background-color: var(--color--slate);
+    border-radius: var(--radius--medium);
+    margin-top: 30px;
+    overflow: auto;
+    padding: 20px;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre code {
+	background-color: transparent;
+	color: #2B2730;
+	line-height: 2;
+	padding: 0;
 }
 
 /* width  */
@@ -254,6 +275,10 @@ ol li {
 	margin-bottom: 10px;
 }
 
+ol ul {
+	padding-block: 10px;
+}
+
 menu ul {
 	display: flex;
 	flex-direction: column;
@@ -341,6 +366,7 @@ article {
 	background-color: var(--color--tile);
 	border: 1px solid var(--color--border);
 	border-radius: var(--radius--medium);
+    overflow: hidden;
 }
 
 .widget-title {
@@ -357,6 +383,10 @@ article {
 	max-height: calc(100vh - 100px);
 	overflow-y: auto;
 	padding: 20px;
+}
+
+.widget menu::-webkit-scrollbar {
+  display: none;
 }
 
 .widget li {
@@ -426,6 +456,10 @@ article {
 }
 
 @media (min-width: 1050px) {
+	article {
+    	max-width: calc(100% - 350px);
+	}
+
 	.widgets {
 		align-content: baseline;
 		flex-basis: 320px;
@@ -443,6 +477,7 @@ article {
 }
 
 @media (max-width: 1049px) {
+	article,
 	.widgets {
 		width: 100%;
 	}
@@ -471,10 +506,8 @@ article {
 		border: 1px solid var(--color--border);
 		border-radius: var(--radius--medium);
 		bottom: calc(3vw + 50px);
-		max-height: calc(100vh - 6vw);
+		max-height: calc(100vh - 6vw - 50px);
 		opacity: 0;
-		overflow-y: auto;
-		padding: 20px;
 		position: fixed;
 		right: 3vw;
 		transition: opacity 0.2s ease, bottom 0.4s ease;

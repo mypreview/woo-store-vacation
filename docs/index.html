@@ -94,13 +94,13 @@
 						With the Woo Store Vacation plugin, you can easily schedule your holiday time and utilize the vacation notice feature to inform your valued customers about your absence. By doing so, you can ensure that they are aware of any delays or changes in your shop’s operations.
 					</p>
 					<p>
-						One of the key features of this plugin is the ability to disable product purchases and temporarily close your store. However, you also have the option to keep some of your products available for purchase if you prefer. This flexibility allows you to tailor the shopping experience to your specific needs during your vacation.
+						One of the plugin’s key features is the ability to disable product purchases and temporarily close your store. However, you also have the option to keep some of your products available for purchase if you prefer. This flexibility allows you to tailor the shopping experience to your specific needs during your vacation.
 					</p>
 					<p>
 						When you choose to disable product purchases, your shop will remain online and accessible to visitors. Although new order operations will be paused and the checkout functionality will be disabled, users can still explore your products and plan for future purchases. This ensures that potential customers can visit your shop, browse your offerings, and make plans for when you resume normal operations.
 					</p>
 					<p>
-						Throughout this documentation, we will delve into the various settings provided by the Woo Store Vacation plugin. You will gain a comprehensive understanding of how to configure and utilize these settings according to your personal preferences. So let’s get started and make the most of your vacation time with the Woo Store Vacation plugin!
+						Throughout this documentation, we will delve into the various settings provided by the Woo Store Vacation plugin. You will understanding how to configure and utilize these settings according to your personal preferences. So let’s get started and make the most of your vacation time with the Woo Store Vacation plugin!
 					</p>
 					<h2 class="title" id="schedule-vacation">Setting Up and Customizing Vacation Schedule</h2>
 					<p>
@@ -454,7 +454,7 @@
 					<p>
 						While using the Woo Store Vacation plugin, you may encounter some issues or difficulties. Here are a few common problems and their potential solutions:
 					</p>
-					<h3 class="title" id="notice-not-displaying">Vacation notice not displaying:</h3>
+					<h3 class="title" id="notice-not-displaying">Vacation Notice Not Displaying:</h3>
 					<ol>
 						<li>
 							Check if the <a href="#schedule-vacation">Enable Vacation Mode</a> checkbox is selected in the General settings. If not, enable it and save the changes.
@@ -481,7 +481,7 @@
 							Disable any conflicting plugins or extensions that might be affecting product availability.
 						</li>
 					</ol>
-					<h3 class="title" id="custom-page-notice">Vacation notice not visible on custom pages:</h3>
+					<h3 class="title" id="custom-page-notice">Vacation Notice Not Visible on Custom Pages:</h3>
 					<ol>
 						<li>
 							Confirm that you have correctly added the <a href="#store-vacation-notice-block">Store Vacation Notice block</a>, <a href="#store-vacation-notice-elementor-widget">Elementor widget</a>, or <a href="#store-vacation-notice-shortcode">shortcode</a> to the desired page or post.
@@ -528,6 +528,93 @@
 						To display a notice while keeping your shop open, uncheck the <strong>Disable Purchase</strong> checkbox in the settings. This allows all of your products to remain purchasable during the vacation period while still displaying the vacation notice to your customers.
 					</p>
 					<p>If you have any additional questions or need further assistance, please refer to the plugin documentation or contact our <a href="https://wordpress.org/support/plugin/woo-store-vacation" title="Community Forums" target="_blank" rel="noopener noreferrer nofollow">support</a> for help.</p>
+					<h2 class="title" id="developers">Developers Guides</h2>
+					<h3 class="title" id="css-javascript-customization">Customizing Closed Store with CSS and JavaScript</h3>
+					<p>
+						When your store is closed for vacation using the Store Vacation plugin, an additional class called <code>woo-store-vacation-shop-closed</code> is automatically added to the <code>&lt;body&gt;</code> tag of your website. This class serves as a helpful identifier for implementing specific styles or behaviors when your store is in vacation mode. By leveraging this class, you can apply customizations to enhance the visual appearance or functionality of your closed store.
+					</p>
+					<p>
+						To make use of the <code>woo-store-vacation-shop-closed</code> class, follow these steps:
+					</p>
+					<ol>
+						<li>
+							<strong>Identifying the Class:</strong>
+							<ul>
+								<li>
+									When your store is closed, inspect the HTML code of your website using the browser’s developer tools.
+								</li>
+								<li>
+									Locate the <code>&lt;body&gt;</code> tag and check if the “woo-store-vacation-shop-closed” class is present.
+								</li>
+								<li>
+									If the class is found, you can proceed with applying customizations.
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Applying CSS Styles:</strong>
+							<ul>
+								<li>
+									Open your CSS stylesheet or the custom CSS editor.
+								</li>
+								<li>
+									Use the <code>woo-store-vacation-shop-closed</code> class as a selector to target specific elements or sections of your closed store.
+								</li>
+								<li>
+									Apply custom styles to modify the appearance, layout, or behavior of the targeted elements.
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Utilizing JavaScript:</strong>
+							<ul>
+								<li>
+									If you need to add specific behaviors or functionality to your closed store, you can use JavaScript in combination with the <code>woo-store-vacation-shop-closed</code> class.
+								</li>
+								<li>
+									Include your JavaScript code in a separate script file.
+								</li>
+								<li>
+									Use the <code>woo-store-vacation-shop-closed</code> class as a selector or check if it exists before applying your custom JavaScript logic.
+								</li>
+								<li>
+									Implement the desired actions or modifications based on your requirements.
+								</li>
+							</ul>
+						</li>
+					</ol>
+					<h3 class="title" id="action-hooks">Action Hooks</h3>
+					<h4 id="disable-purchase-action">woo_store_vacation_disable_purchase</h4>
+					<p>
+						The <code>woo_store_vacation_disable_purchase</code> action hook allows you to add custom functionality when the purchase is disabled due to a store vacation. You can use the <code>add_action</code> function to hook your custom function to this action.
+					</p>
+					<p>
+						Here’s an example of how you can use the <code>add_action</code> function to hook your custom function to the <code>woo_store_vacation_disable_purchase</code> action:
+					</p>
+<pre><code>// Define your custom function
+function my_custom_disable_purchase_function() {
+    // Add your custom logic here
+    echo "Purchases are currently disabled.";
+}
+
+// Hook your custom function to the disable purchase action
+add_action( 'woo_store_vacation_disable_purchase', 'my_custom_disable_purchase_function' );</code></pre>
+					<h4 id="vacation-mode-action">woo_store_vacation_vacation_mode</h4>
+					<p>
+						The <code>woo_store_vacation_vacation_mode</code> action hook is triggered when the store is in vacation mode. It allows you to add custom functionality when the vacation mode is activated. You can use the <code>add_action</code> function to hook your custom function to the action.
+					</p>
+					<p>
+						Here’s an example of how you can use the <code>add_action</code> function to hook your custom function to the <code>woo_store_vacation_vacation_mode</code> action:
+					</p>
+<pre><code>// Define your custom function
+function my_custom_vacation_mode_function() {
+    // Add your custom logic here
+    // This code will be executed when the vacation mode is activated
+    echo "Vacation mode is active!";
+}
+
+// Hook your custom function to the vacation mode action
+add_action( 'woo_store_vacation_vacation_mode', 'my_custom_vacation_mode_function' );</code></pre>
 				</article>
 				<div class="widgets">
 					<div class="promotion">
@@ -616,7 +703,7 @@
 										<a href="#products-behavior">Inconsistent Behavior of Products</a>
 									</li>
 									<li>
-										<a href="#custom-page-notice">Vacation notice not visible on pages</a>
+										<a href="#custom-page-notice">Vacation Notice Not Visible on Pages</a>
 									</li>
 								</ul>
 							</li>
@@ -631,6 +718,17 @@
 									</li>
 									<li>
 										<a href="#enable-purchase">How can I display a notice but keep my shop open?</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#developers">Developers Guides</a>
+								<ul>
+									<li>
+										<a href="#css-javascript-customization">Customizing with CSS and JavaScript</a>
+									</li>
+									<li>
+										<a href="#action-hooks">Action Hooks</a>
 									</li>
 								</ul>
 							</li>
