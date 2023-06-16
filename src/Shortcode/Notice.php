@@ -174,18 +174,11 @@ class Notice extends Shortcode {
 			return;
 		}
 
-		$text_color       = woo_store_vacation()->service( 'options' )->get( 'text_color', '#ffffff' );
-		$background_color = woo_store_vacation()->service( 'options' )->get( 'background_color', '#3d9cd2' );
-		$css              = sprintf(
+		$slug             = woo_store_vacation()->get_slug();
+		$text_color       = woo_store_vacation()->service( 'options' )->get( 'text_color' );
+		$background_color = woo_store_vacation()->service( 'options' )->get( 'background_color' );
+		$inline_css[]     = sprintf(
 			'
-			#%1$s .woocommerce-info,
-			#%1$s .wc-block-components-notice-banner {
-				background-color:%2$s !important;
-				color:%4$s !important;
-			}
-			#%1$s .wc-block-components-notice-banner {
-				border-color:%3$s !important;
-			}
 			#%1$s .woocommerce-info {
 				text-align:left;
 				list-style:none;
@@ -195,9 +188,6 @@ class Notice extends Shortcode {
 				padding:1em 1.618em;
 				margin:1.617924em 0 2.617924em 0;
 			}
-			#%1$s svg {
-				background-color:%3$s !important;
-			}
 			#%1$s .woocommerce-info::before {
 				content:none;
 			}
@@ -205,8 +195,6 @@ class Notice extends Shortcode {
 				display:table-cell;
 			}
 			.%1$s__btn {
-				color:%4$s !important;
-				background-color:%2$s !important;
 				display:table-cell;
 				float:right;
 				padding:0 0 0 1em;
@@ -219,14 +207,54 @@ class Notice extends Shortcode {
 				box-shadow:none!important;
 				text-decoration:none;
 			}',
-			esc_attr( woo_store_vacation()->get_slug() ),
-			sanitize_hex_color( $background_color ),
-			sanitize_hex_color( wc_hex_darker( $background_color ) ),
-			sanitize_hex_color( $text_color )
+			esc_attr( $slug )
 		);
 
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		printf( '<style id="%s-inline-css">%s</style>', esc_attr( woo_store_vacation()->get_slug() ), $css );
+		// If text color is specified, then add it to the inline CSS.
+		if ( ! empty( $text_color ) ) {
+			$inline_css[] = sprintf(
+				'
+				#%1$s,
+				#%1$s .wc-block-components-notice-banner {
+					color:%2$s !important;
+				}
+				#%1$s * {
+					color:inherit !important;
+				}',
+				esc_attr( $slug ),
+				sanitize_hex_color( $text_color )
+			);
+		}
+
+		// If background color is specified, then add it to the inline CSS.
+		if ( ! empty( $background_color ) ) {
+			$inline_css[] = sprintf(
+				'
+				#%1$s,
+				#%1$s .wc-block-components-notice-banner {
+					background-color:%2$s !important;
+				}
+				#%1$s svg {
+					background-color:%3$s !important;
+				}
+				#%1$s .wc-block-components-notice-banner {
+					border-color:%3$s !important;
+				}
+				#%1$s * {
+					background-color:inherit !important;
+				}',
+				esc_attr( $slug ),
+				sanitize_hex_color( $background_color ),
+				sanitize_hex_color( wc_hex_darker( $background_color ) )
+			);
+		}
+
+		printf(
+			'<style id="%s-inline-css">%s</style>',
+			esc_attr( $slug ),
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			implode( '', $inline_css )
+		);
 	}
 
 	/**
