@@ -19,15 +19,6 @@ use Woo_Store_Vacation\Enhancements;
 class Installer {
 
 	/**
-	 * The activation timestamp option name.
-	 *
-	 * @since 1.6.1
-	 *
-	 * @var string
-	 */
-	const TIMESTAMP_OPTION_NAME = 'woo_store_vacation_activation_timestamp';
-
-	/**
 	 * Activate the plugin.
 	 *
 	 * @since 1.0.0
@@ -36,7 +27,8 @@ class Installer {
 	 */
 	public static function activate() {
 
-		self::store_timestamp();
+		// Add the activation timestamp, if not already added.
+		woo_store_vacation()->service( 'options' )->add_usage_timestamp();
 	}
 
 	/**
@@ -49,22 +41,5 @@ class Installer {
 	public static function deactivate() {
 
 		delete_transient( Enhancements\Rate::TRANSIENT_NAME );
-	}
-
-	/**
-	 * Store a timestamp option on plugin activation.
-	 *
-	 * @since 1.6.1
-	 *
-	 * @return void
-	 */
-	private static function store_timestamp() {
-
-		$activation_timestamp = get_site_option( self::TIMESTAMP_OPTION_NAME );
-
-		// Store the activation timestamp if it doesn't exist.
-		if ( ! $activation_timestamp ) {
-			add_site_option( self::TIMESTAMP_OPTION_NAME, time() );
-		}
 	}
 }

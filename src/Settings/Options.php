@@ -19,6 +19,24 @@ use Woo_Store_Vacation\Installer;
 class Options {
 
 	/**
+	 * The plugin options name.
+	 *
+	 * @since 1.9.0
+	 *
+	 * @var string
+	 */
+	const OPTION_NAME = 'woo_store_vacation_options';
+
+	/**
+	 * The activation timestamp option name.
+	 *
+	 * @since 1.6.1
+	 *
+	 * @var string
+	 */
+	const TIMESTAMP_OPTION_NAME = 'woo_store_vacation_activation_timestamp';
+
+	/**
 	 * Get the plugin options.
 	 *
 	 * @since 1.9.0
@@ -30,7 +48,7 @@ class Options {
 	 */
 	public function get( $key = '', $default = null ) {
 
-		$options = (array) get_option( 'woo_store_vacation_options', array() );
+		$options = (array) get_option( self::OPTION_NAME, array() );
 
 		if ( empty( $key ) ) {
 			return $options;
@@ -55,7 +73,7 @@ class Options {
 			return array();
 		}
 
-		update_option( 'woo_store_vacation_options', $value );
+		update_option( self::OPTION_NAME, $value );
 
 		return $value;
 	}
@@ -69,6 +87,23 @@ class Options {
 	 */
 	public function get_usage_timestamp() {
 
-		return (int) get_site_option( Installer::TIMESTAMP_OPTION_NAME, 0 );
+		return (int) get_site_option( self::TIMESTAMP_OPTION_NAME, 0 );
+	}
+
+	/**
+	 * Store a timestamp option on plugin activation.
+	 *
+	 * @since 1.6.1
+	 *
+	 * @return void
+	 */
+	public function add_usage_timestamp() {
+
+		$activation_timestamp = get_site_option( self::TIMESTAMP_OPTION_NAME );
+
+		// Store the activation timestamp if it doesn't exist.
+		if ( ! $activation_timestamp ) {
+			add_site_option( self::TIMESTAMP_OPTION_NAME, time() );
+		}
 	}
 }
