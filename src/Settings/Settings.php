@@ -12,6 +12,7 @@
 namespace Woo_Store_Vacation\Settings;
 
 use WC_Settings_Page;
+use WC_Admin_Settings;
 use Woo_Store_Vacation\Helper;
 
 /**
@@ -152,5 +153,38 @@ class Settings extends WC_Settings_Page {
 	protected function get_settings_for_conditions_section() {
 
 		return woo_store_vacation()->service( 'settings_conditions' )->get_fields();
+	}
+
+	/**
+	 * Save settings.
+	 *
+	 * @since 1.8.0
+	 *
+	 * @return void
+	 */
+	public function save() {
+
+		// Ensures intent by verifying that a user was referred from another admin page with the correct security nonce.
+		check_admin_referer( 'woocommerce-settings' );
+
+		// phpcs:disable WordPress.Security.NonceVerification.Missing
+		if ( isset( $_POST['woo_store_vacation_options']['start_date'] ) && isset( $_POST['woo_store_vacation_options']['end_date'] ) ) {
+			$start_date = sanitize_text_field( wp_unslash( $_POST['woo_store_vacation_options']['start_date'] ) );
+			$end_date   = sanitize_text_field( wp_unslash( $_POST['woo_store_vacation_options']['end_date'] ) );
+
+			$timezone       = wp_timezone();
+			$start_date_obj = date_create( $start_date, $timezone );
+			$end_date_obj   = date_create( $end_date, $timezone );
+
+			if ( $start_date_obj >= $end_date_obj ) {
+				WC_Admin_Settings::add_error(
+					_x( 'The start date must be less than the end date. Please ensure that the selected start date is earlier than the end date to avoid any conflicts with the vacation scheduling.', 'error message', 'woo-store-vacation' )
+				);
+				return;
+			}
+		}
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
+
+		parent::save();
 	}
 }
