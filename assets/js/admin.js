@@ -42,6 +42,17 @@
 				changeMonth: true,
 				showButtonPanel: true,
 				dateFormat: 'yy-mm-dd',
+				beforeShow() {
+					if ( ! admin.els.$endDate.val() ) {
+						return;
+					}
+					const maxDate = new Date( Date.parse( admin.els.$endDate.val() ) );
+					maxDate.setDate( maxDate.getDate() - 1 );
+
+					if ( maxDate ) {
+						$( this ).datepicker( 'option', 'maxDate', maxDate );
+					}
+				},
 				onClose( selectedDate ) {
 					const minDate = new Date( Date.parse( selectedDate ) );
 					minDate.setDate( minDate.getDate() + 1 );
@@ -54,6 +65,16 @@
 				changeMonth: true,
 				showButtonPanel: true,
 				dateFormat: 'yy-mm-dd',
+				beforeShow() {
+					if ( ! admin.els.$startDate.val() ) {
+						return;
+					}
+					const minDate = new Date( Date.parse( admin.els.$startDate.val() ) );
+					minDate.setDate( minDate.getDate() + 1 );
+					if ( minDate ) {
+						$( this ).datepicker( 'option', 'minDate', minDate );
+					}
+				},
 				onClose( selectedDate ) {
 					const maxDate = new Date( Date.parse( selectedDate ) );
 					maxDate.setDate( maxDate.getDate() - 1 );
