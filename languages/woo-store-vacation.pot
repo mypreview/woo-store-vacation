@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Woo Store Vacation 1.9.0\n"
+"Project-Id-Version: Woo Store Vacation 1.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woo-store-vacation\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-07T12:52:46+00:00\n"
+"POT-Creation-Date: 2023-06-20T14:16:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -32,7 +32,7 @@ msgid "MyPreview"
 msgstr ""
 
 #: src/Admin/Menu.php:47
-#: src/Enhancements/Rate.php:103
+#: src/Enhancements/Rate.php:111
 #: templates/notices/onboarding.php:24
 #: templates/notices/rate.php:23
 msgctxt "plugin name"
@@ -262,19 +262,24 @@ msgctxt "settings field description"
 msgid "If specified, it will change the background color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#: src/Settings/Settings.php:48
+#: src/Settings/Settings.php:49
 msgctxt "settings tab label"
 msgid "Store Vacation"
 msgstr ""
 
-#: src/Settings/Settings.php:128
+#: src/Settings/Settings.php:129
 msgctxt "settings tab"
 msgid "General"
 msgstr ""
 
-#: src/Settings/Settings.php:129
+#: src/Settings/Settings.php:130
 msgctxt "settings tab"
 msgid "Conditions"
+msgstr ""
+
+#: src/Settings/Settings.php:181
+msgctxt "error message"
+msgid "The start date must be less than the end date. Please ensure that the selected start date is earlier than the end date to avoid any conflicts with the vacation scheduling."
 msgstr ""
 
 #. Translators: %d stock amount
@@ -308,10 +313,10 @@ msgctxt "admin bar"
 msgid "Vacation mode is activated! Click here to navigate to the plugin’s settings page."
 msgstr ""
 
-#. translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag.
+#. translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag, 4: Open anchor tag, 5: Close anchor tag.
 #: templates/notices/onboarding.php:21
 msgctxt "admin notice"
-msgid "Thanks for installing %1$s plugin! To get started, visit the %2$splugin’s settings page%3$s."
+msgid "Thanks for installing %1$s plugin! To get started, visit the %2$sdocumentation%3$s or %4$splugin’s settings page%5$s."
 msgstr ""
 
 #. translators: 1: Activation duration, 2: Plugin name
@@ -395,7 +400,7 @@ msgctxt "upsell"
 msgid "Read reviews from real users"
 msgstr ""
 
-#: assets/js/admin.js:85
+#: assets/js/admin.js:106
 #: assets/js/minified/admin.js:1
 msgid "Delete"
 msgstr ""
