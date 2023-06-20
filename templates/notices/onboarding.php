@@ -17,15 +17,20 @@ defined( 'WC_VERSION' ) || exit;
 		<i class="dashicons dashicons-admin-settings"></i>
 		<?php
 		printf(
-			/* translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag. */
-			esc_html_x( 'Thanks for installing %1$s plugin! To get started, visit the %2$splugin’s settings page%3$s.', 'admin notice', 'woo-store-vacation' ),
+			/* translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag, 4: Open anchor tag, 5: Close anchor tag. */
+			esc_html_x( 'Thanks for installing %1$s plugin! To get started, visit the %2$sdocumentation%3$s or %4$splugin’s settings page%5$s.', 'admin notice', 'woo-store-vacation' ),
 			sprintf(
 				'<strong>%s</strong>',
 				esc_html_x( 'Woo Store Vacation', 'plugin name', 'woo-store-vacation' )
 			),
 			sprintf(
+				'<a href="%s" target="_blank" rel="noopener noreferrer nofollow">',
+				esc_url( $args['help_uri'] )
+			),
+			'</a>',
+			sprintf(
 				'<a href="%s" class="notice-dismiss-later" target="_self">',
-				esc_url( $args['uri'] )
+				esc_url( $args['settings_uri'] )
 			),
 			'</a>'
 		);
