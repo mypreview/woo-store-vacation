@@ -109,6 +109,19 @@
 	margin-inline-start: 5px;
 }
 
+.ui-datepicker .highlight a,
+.ui-datepicker .highlight span {
+	background: var(--wc-blue, #2ea2cc);
+	border-color: var(--wc-blue, #2ea2cc);
+	color: var(--wc-primary-text, #fff);
+}
+
+.ui-datepicker .highlight.ui-datepicker-today a,
+.ui-datepicker .highlight.ui-datepicker-today span {
+	border-color: var(--wc-orange, #ffba00);
+	box-shadow: inset 0 0 0 1px var(--wc-orange, #ffba00);
+}
+
 @media (min-width: 1200px) {
 
 	.woo-store-vacation-page .form-table,
