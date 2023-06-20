@@ -16,8 +16,10 @@
 		 */
 		cache() {
 			this.els = {};
+			this.vars = {};
 			this.els.$startDate = $( '[name="woo_store_vacation_options[start_date]"]' );
 			this.els.$endDate = $( '[name="woo_store_vacation_options[end_date]"]' );
+			this.vars.dayInSeconds = 24 * 60 * 60 * 1000;
 		},
 
 		/**
@@ -36,48 +38,61 @@
 		 * @since 1.0.0
 		 */
 		datePickers() {
+			// Add delete button to datepicker.
 			this.addDeleteButtonDatepicker();
 
-			this.els.$startDate.datepicker( {
+			// Common options for datepickers.
+			const commonDatepickerOptions = {
 				changeMonth: true,
+				changeYear: true,
 				showButtonPanel: true,
+				buttonImageOnly: true,
+				numberOfMonths: 1,
+				showOn: 'focus',
 				dateFormat: 'yy-mm-dd',
-				beforeShow() {
-					if ( ! admin.els.$endDate.val() ) {
-						return;
+				beforeShowDay( date ) {
+					const startDate = admin.els.$startDate.datepicker( 'getDate' );
+					const endDate = admin.els.$endDate.datepicker( 'getDate' );
+					if ( startDate && endDate && date >= startDate && date <= endDate ) {
+						return [ true, 'highlight', '' ];
 					}
-					const maxDate = new Date( Date.parse( admin.els.$endDate.val() ) );
-					maxDate.setDate( maxDate.getDate() - 1 );
+					return [ true, '', '' ];
+				},
+			};
 
+			this.els.$startDate.datepicker( {
+				...commonDatepickerOptions,
+				beforeShow() {
+					const maxDate = admin.els.$endDate.val();
 					if ( maxDate ) {
-						$( this ).datepicker( 'option', 'maxDate', maxDate );
+						$( this ).datepicker(
+							'option',
+							'maxDate',
+							new Date( Date.parse( maxDate ) - admin.vars.dayInSeconds )
+						);
 					}
 				},
 				onClose( selectedDate ) {
-					const minDate = new Date( Date.parse( selectedDate ) );
-					minDate.setDate( minDate.getDate() + 1 );
+					const minDate = new Date( Date.parse( selectedDate ) + admin.vars.dayInSeconds );
 					admin.els.$endDate.datepicker( 'option', 'minDate', minDate );
 				},
 			} );
 
 			this.els.$endDate.datepicker( {
+				...commonDatepickerOptions,
 				minDate: '+1D',
-				changeMonth: true,
-				showButtonPanel: true,
-				dateFormat: 'yy-mm-dd',
 				beforeShow() {
-					if ( ! admin.els.$startDate.val() ) {
-						return;
-					}
-					const minDate = new Date( Date.parse( admin.els.$startDate.val() ) );
-					minDate.setDate( minDate.getDate() + 1 );
+					const minDate = admin.els.$startDate.val();
 					if ( minDate ) {
-						$( this ).datepicker( 'option', 'minDate', minDate );
+						$( this ).datepicker(
+							'option',
+							'minDate',
+							new Date( Date.parse( minDate ) + admin.vars.dayInSeconds )
+						);
 					}
 				},
 				onClose( selectedDate ) {
-					const maxDate = new Date( Date.parse( selectedDate ) );
-					maxDate.setDate( maxDate.getDate() - 1 );
+					const maxDate = new Date( Date.parse( selectedDate ) - admin.vars.dayInSeconds );
 					admin.els.$startDate.datepicker( 'option', 'maxDate', maxDate );
 				},
 			} );
