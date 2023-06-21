@@ -94,6 +94,20 @@
 				onClose( selectedDate ) {
 					const maxDate = new Date( Date.parse( selectedDate ) - admin.vars.dayInSeconds );
 					admin.els.$startDate.datepicker( 'option', 'maxDate', maxDate );
+
+					// Check if endDate has passed today's date
+					const today = new Date();
+					today.setHours( 0, 0, 0, 0 );
+
+					const endDate = new Date( selectedDate );
+
+					// If endDate is less than today's date, show error border.
+					if ( endDate && endDate < today ) {
+						$( this ).css( 'border', '1px solid red' );
+						return;
+					}
+
+					$( this ).css( 'border', '' );
 				},
 			} );
 
