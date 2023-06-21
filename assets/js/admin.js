@@ -101,13 +101,8 @@
 
 					const endDate = new Date( selectedDate );
 
-					// If endDate is less than today's date, show error border.
-					if ( endDate && endDate < today ) {
-						$( this ).css( 'border', '1px solid red' );
-						return;
-					}
-
-					$( this ).css( 'border', '' );
+					// If endDate is less than today's date, show error color.
+					$( this ).toggleClass( 'iris-error', endDate && endDate < today );
 				},
 			} );
 
