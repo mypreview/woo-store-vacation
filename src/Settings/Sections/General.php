@@ -66,7 +66,7 @@ class General extends Section {
 				'type'              => 'text',
 				'class'             => 'woo-store-vacation-end-datepicker',
 				'id'                => 'woo_store_vacation_options[end_date]',
-				'css'               => "background:#fff;",
+				'css'               => 'background:#fff;',
 				'autoload'          => false,
 				'custom_attributes' => array( 'readonly' => true ),
 			),
