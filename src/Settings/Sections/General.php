@@ -27,9 +27,6 @@ class General extends Section {
 	 */
 	public function get_fields() {
 
-		// Inline styles for the invalid end date.
-		$invalid_end_date_style = $this->is_invalid_end_date() ? 'border:1px solid red;' : '';
-
 		return array(
 			'section_title'        => array(
 				'id'   => 'woo-store-vacation-general',
@@ -69,7 +66,7 @@ class General extends Section {
 				'type'              => 'text',
 				'class'             => 'woo-store-vacation-end-datepicker',
 				'id'                => 'woo_store_vacation_options[end_date]',
-				'css'               => "background:#fff;{$invalid_end_date_style}",
+				'css'               => "background:#fff;",
 				'autoload'          => false,
 				'custom_attributes' => array( 'readonly' => true ),
 			),
@@ -154,35 +151,5 @@ class General extends Section {
 				'type' => 'sectionend',
 			),
 		);
-	}
-
-	/**
-	 * Determine whether the end date has passed.
-	 *
-	 * @since 1.8.0
-	 *
-	 * @return bool
-	 */
-	private function is_invalid_end_date() {
-
-		$end_date_string = woo_store_vacation()->service( 'options' )->get( 'end_date', false );
-
-		// Bail early if the end date is not set.
-		if ( empty( $end_date_string ) ) {
-			return false;
-		}
-
-		$end_date = date_create( $end_date_string, wp_timezone() );
-
-		// Bail early if the end date is invalid.
-		if ( ! $end_date ) {
-			return false;
-		}
-
-		$end_date->setTime( 0, 0 );
-
-		$today = current_datetime();
-
-		return $today > $end_date;
 	}
 }
