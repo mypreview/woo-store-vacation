@@ -191,11 +191,7 @@ class Notice extends Shortcode {
 			#%1$s .woocommerce-info::before {
 				content:none;
 			}
-			.%1$s__msg {
-				display:table-cell;
-			}
 			.%1$s__btn {
-				display:table-cell;
 				float:right;
 				padding:0 0 0 1em;
 				background:0 0;
