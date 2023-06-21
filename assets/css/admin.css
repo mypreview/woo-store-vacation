@@ -109,6 +109,11 @@
 	margin-inline-start: 5px;
 }
 
+.woo-store-vacation-start-datepicker.hasDatepicker,
+.woo-store-vacation-end-datepicker.hasDatepicker {
+	background: var(--wc-primary-text, #fff);
+}
+
 .ui-datepicker .highlight a,
 .ui-datepicker .highlight span {
 	background: var(--wc-blue, #2ea2cc);
