@@ -29,7 +29,7 @@
  * Version:              1.9.1
  * Author:               MyPreview
  * Author URI:           https://mypreview.one/woo-store-vacation
- * Requires at least:    5.5
+ * Requires at least:    5.9
  * Requires PHP:         7.4
  * License:              GPL-3.0
  * License URI:          http://www.gnu.org/licenses/gpl-3.0.txt

@@ -2,7 +2,7 @@
 Contributors: mahdiyazdani, mypreview, gookaani
 Tags: vacation,holiday,calendar,close shop,catalog mode,disable cart,woocommerce
 Donate link: https://mypreview.one/woo-store-vacation
-Requires at least: 5.3
+Requires at least: 5.9
 Tested up to: 6.2
 Requires PHP: 7.4
 Stable tag: 1.9.1
