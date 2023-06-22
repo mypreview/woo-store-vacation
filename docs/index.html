@@ -31,6 +31,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rainbow-code@2.1.7/themes/css/github.min.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css">
 		<link rel="stylesheet" href="./style.css">
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRQ912Q1CE"></script>
@@ -591,7 +592,7 @@
 					<p>
 						Here’s an example of how you can use the <code>add_action</code> function to hook your custom function to the <code>woo_store_vacation_disable_purchase</code> action:
 					</p>
-<pre><code>// Define your custom function
+<pre><code data-language="php">// Define your custom function
 function my_custom_disable_purchase_function() {
     // Add your custom logic here
     echo "Purchases are currently disabled.";
@@ -606,7 +607,7 @@ add_action( 'woo_store_vacation_disable_purchase', 'my_custom_disable_purchase_f
 					<p>
 						Here’s an example of how you can use the <code>add_action</code> function to hook your custom function to the <code>woo_store_vacation_vacation_mode</code> action:
 					</p>
-<pre><code>// Define your custom function
+<pre><code data-language="php">// Define your custom function
 function my_custom_vacation_mode_function() {
     // Add your custom logic here
     // This code will be executed when the vacation mode is activated
@@ -753,6 +754,7 @@ add_action( 'woo_store_vacation_vacation_mode', 'my_custom_vacation_mode_functio
 			</div>
 		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/rainbow-code@2.1.7/dist/rainbow.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 		<script src="./index.js"></script>
 	</body>
