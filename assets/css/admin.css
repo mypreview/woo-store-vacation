@@ -127,6 +127,10 @@
 	box-shadow: inset 0 0 0 1px var(--wc-orange, #ffba00);
 }
 
+.woo-store-vacation-page .end-date-error {
+	background-color: #ffafaf;
+}
+
 @media (min-width: 1200px) {
 
 	.woo-store-vacation-page .form-table,
