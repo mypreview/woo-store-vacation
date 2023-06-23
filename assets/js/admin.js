@@ -97,13 +97,12 @@
 
 					// Check if endDate has passed today's date
 					const today = new Date();
-					today.setHours( 0, 0, 0, 0 );
 
 					const endDate = new Date( selectedDate );
 					endDate.setHours( 0, 0, 0, 0 );
 
 					// If endDate is less than today's date, show error color.
-					$( this ).toggleClass( 'end-date-error', endDate && endDate <= today );
+					$( this ).toggleClass( 'end-date-error', endDate && today > endDate );
 				},
 			} );
 
