@@ -70,7 +70,10 @@ class OnBoarding {
 
 		woo_store_vacation()->service( 'template_manager' )->echo_template(
 			'notices/onboarding.php',
-			array( 'uri' => Helper\Settings::page_uri() )
+			array(
+				'help_uri'     => Helper\Links::docs_uri(),
+				'settings_uri' => Helper\Settings::page_uri(),
+			)
 		);
 	}
 }

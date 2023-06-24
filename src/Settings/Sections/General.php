@@ -27,8 +27,8 @@ class General extends Section {
 	 */
 	public function get_fields() {
 
-		// Inline styles for the invalid end date.
-		$invalid_end_date_style = $this->is_invalid_end_date() ? 'border:1px solid red;' : '';
+		// CSS class name for the invalid end date.
+		$invalid_end_date_class = $this->is_invalid_end_date() ? 'end-date-error' : '';
 
 		return array(
 			'section_title'        => array(
@@ -59,7 +59,6 @@ class General extends Section {
 				'type'              => 'text',
 				'class'             => 'woo-store-vacation-start-datepicker',
 				'id'                => 'woo_store_vacation_options[start_date]',
-				'css'               => 'background:#fff;',
 				'autoload'          => false,
 				'custom_attributes' => array( 'readonly' => true ),
 			),
@@ -67,9 +66,8 @@ class General extends Section {
 				'name'              => _x( 'End Date', 'settings field name', 'woo-store-vacation' ),
 				'desc'              => _x( 'The validity of the date range begins at midnight on the "Start Date" and lasts until the start of the day on the "End Date".', 'settings field description', 'woo-store-vacation' ),
 				'type'              => 'text',
-				'class'             => 'woo-store-vacation-end-datepicker',
+				'class'             => "woo-store-vacation-end-datepicker {$invalid_end_date_class}",
 				'id'                => 'woo_store_vacation_options[end_date]',
-				'css'               => "background:#fff;{$invalid_end_date_style}",
 				'autoload'          => false,
 				'custom_attributes' => array( 'readonly' => true ),
 			),

@@ -70,6 +70,14 @@ class Rate {
 
 		$usage_timestamp = woo_store_vacation()->service( 'options' )->get_usage_timestamp();
 
+		// If the usage timestamp is empty, add it and bail.
+		if ( empty( $usage_timestamp ) ) {
+			// Add the activation timestamp.
+			woo_store_vacation()->service( 'options' )->add_usage_timestamp();
+
+			return;
+		}
+
 		// Bail early if the plugin recently installed.
 		if ( time() < ( $usage_timestamp + WEEK_IN_SECONDS ) ) {
 			return;

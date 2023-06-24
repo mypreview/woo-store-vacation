@@ -2,10 +2,10 @@
 Contributors: mahdiyazdani, mypreview, gookaani
 Tags: vacation,holiday,calendar,close shop,catalog mode,disable cart,woocommerce
 Donate link: https://mypreview.one/woo-store-vacation
-Requires at least: 5.3
+Requires at least: 5.9
 Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,7 +36,7 @@ This plugin is provided to handle multilingual sites with ease. It comes fully e
 
 Overall, the Woo Store Vacation plugin is an essential tool for WooCommerce shop owners who need to take time off for personal or business reasons. By activating vacation mode, you can avoid negative reviews or damage to your reputation by providing clear communication to potential buyers about your availability and expected return date.
 
-If you’re intrigued by the plugin and eager to explore its features, allowing you to effortlessly plan your vacation and personalize your shop’s behavior, feel free to delve into the [comprehensive documentation](https://mypreview.github.io/woo-store-vacation/ "Woo Store Vacation Documentation") for a detailed guide on utilizing its settings, options, and scheduling capabilities. 
+If you’re intrigued by the plugin and eager to explore its features, allowing you to effortlessly plan your vacation and personalize your shop’s behavior, feel free to delve into the [comprehensive documentation](https://mypreview.github.io/woo-store-vacation/ "Woo Store Vacation Documentation") for a detailed guide on utilizing its settings, options, and scheduling capabilities.
 
 ## Unlock the full potential of your online store with PRO
 
@@ -107,7 +107,7 @@ However, you can add the vacation notice on any specific page by adding the Stor
 = Can I customize product availability during my vacation? =
 Yes, if you have enabled the “Disable Purchase” option in the General settings, you have the ability to customize the availability of your shop during your vacation. This can be done through the **Conditions** page, where you will find a range of options to tailor the behavior of vacation mode.
 
-On this page, you can selectively choose which items to exclude from vacation mode, allowing them to remain available for purchase even while your shop is closed. 
+On this page, you can selectively choose which items to exclude from vacation mode, allowing them to remain available for purchase even while your shop is closed.
 
 The options include multi-select fields for **Products**, **Categories**, **Tags**, **Types of products**, and **Shipping Classes**. By selecting specific items within these fields, you can modify the Disable Purchase behavior and ensure that those chosen products are still accessible for purchase on your shop during your vacation.
 
@@ -141,6 +141,10 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
+= 1.9.1 =
+* Fix: Allow specifying empty values for the text and background color options.
+* Compatibility: WooCommerce 7.8
+
 = 1.9.0 =
 * Feature: Exclude certain products, categories, tags, types, and shipping classes.
 * Refactor: Optimized underlying code structure.

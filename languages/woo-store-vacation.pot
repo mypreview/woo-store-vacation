@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Woo Store Vacation 1.9.0\n"
+"Project-Id-Version: Woo Store Vacation 1.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woo-store-vacation\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-07T12:52:46+00:00\n"
+"POT-Creation-Date: 2023-06-21T09:24:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: woo-store-vacation\n"
@@ -32,7 +32,7 @@ msgid "MyPreview"
 msgstr ""
 
 #: src/Admin/Menu.php:47
-#: src/Enhancements/Rate.php:103
+#: src/Enhancements/Rate.php:111
 #: templates/notices/onboarding.php:24
 #: templates/notices/rate.php:23
 msgctxt "plugin name"
@@ -139,142 +139,147 @@ msgctxt "settings field description"
 msgid "Choose the shipping classes you want to keep available for purchase while your shop is closed for vacation."
 msgstr ""
 
-#: src/Settings/Sections/General.php:37
+#: src/Settings/Sections/General.php:34
 msgctxt "settings section name"
 msgid "Woo Store Vacation"
 msgstr ""
 
-#: src/Settings/Sections/General.php:38
+#: src/Settings/Sections/General.php:35
 msgctxt "settings field description"
 msgid "Close your store temporarily by scheduling your vacation time. While your shop will remain online and accessible to visitors, new order operations will pause, and your checkout will be disabled."
 msgstr ""
 
-#: src/Settings/Sections/General.php:41
+#: src/Settings/Sections/General.php:38
 msgctxt "settings field name"
 msgid "Enable Vacation Mode"
 msgstr ""
 
-#: src/Settings/Sections/General.php:42
+#: src/Settings/Sections/General.php:39
 msgctxt "settings field name"
 msgid "Check to enable vacation mode and vacation settings. Uncheck to deactivate the vacation functionality."
 msgstr ""
 
-#: src/Settings/Sections/General.php:49
+#: src/Settings/Sections/General.php:46
 msgctxt "settings field name"
 msgid "Disable Purchase"
 msgstr ""
 
-#: src/Settings/Sections/General.php:50
+#: src/Settings/Sections/General.php:47
 msgctxt "settings field description"
 msgid "This will disable eCommerce functionality and takes out the cart, checkout process and add to cart buttons."
 msgstr ""
 
-#: src/Settings/Sections/General.php:57
+#: src/Settings/Sections/General.php:54
 msgctxt "settings field name"
 msgid "Start Date"
 msgstr ""
 
-#: src/Settings/Sections/General.php:58
+#: src/Settings/Sections/General.php:55
 msgctxt "settings field description"
 msgid "The database will store a time of 00:00:00 by default."
 msgstr ""
 
-#: src/Settings/Sections/General.php:67
+#: src/Settings/Sections/General.php:63
 msgctxt "settings field name"
 msgid "End Date"
 msgstr ""
 
-#: src/Settings/Sections/General.php:68
+#: src/Settings/Sections/General.php:64
 msgctxt "settings field description"
 msgid "The validity of the date range begins at midnight on the \"Start Date\" and lasts until the start of the day on the \"End Date\"."
 msgstr ""
 
-#: src/Settings/Sections/General.php:81
+#: src/Settings/Sections/General.php:76
 msgctxt "settings field name"
 msgid "Button Text"
 msgstr ""
 
-#: src/Settings/Sections/General.php:82
+#: src/Settings/Sections/General.php:77
 msgctxt "settings field description"
 msgid "Use this field to add a call-to-action button alongside your message."
 msgstr ""
 
-#: src/Settings/Sections/General.php:83
+#: src/Settings/Sections/General.php:78
 msgctxt "settings field placeholder"
 msgid "Contact me &#8594;"
 msgstr ""
 
-#: src/Settings/Sections/General.php:90
+#: src/Settings/Sections/General.php:85
 msgctxt "settings field name"
 msgid "Button URL"
 msgstr ""
 
-#: src/Settings/Sections/General.php:91
+#: src/Settings/Sections/General.php:86
 msgctxt "settings field description"
 msgid "If a CTA button text has been added, you can use this field to specify the URL that the button should direct your buyers to, such as contact page."
 msgstr ""
 
-#: src/Settings/Sections/General.php:99
+#: src/Settings/Sections/General.php:94
 msgctxt "settings field name"
 msgid "Vacation Notice"
 msgstr ""
 
-#: src/Settings/Sections/General.php:100
+#: src/Settings/Sections/General.php:95
 msgctxt "settings field description"
 msgid "If specified, this text will be displayed as a notice on your shop and single product pages during your defined vacation dates."
 msgstr ""
 
-#: src/Settings/Sections/General.php:101
-#: src/Settings/Sections/General.php:102
+#: src/Settings/Sections/General.php:96
+#: src/Settings/Sections/General.php:97
 msgctxt "settings field placeholder"
 msgid "I am currently on vacation and products from my shop will be unavailable for next few days. Thank you for your patience and apologize for any inconvenience."
 msgstr ""
 
 #. translators: 1: Open paragraph tag, 2: Shortcode, 3: Close paragraph tag.
-#: src/Settings/Sections/General.php:117
+#: src/Settings/Sections/General.php:112
 msgctxt "settings field text"
 msgid "%1$sThe %2$s shortcode allows you to display the vacation notification on pages and posts at the scheduled times.%3$s"
 msgstr ""
 
 #. translators: 1: Open paragraph tag, 2: Start date smart tag, 3: End date smart tag, 4: Close paragraph tag.
-#: src/Settings/Sections/General.php:124
+#: src/Settings/Sections/General.php:119
 msgctxt "settings field text"
 msgid "%1$sYou may utilize the %2$s and %3$s smart tags to automatically populate the vacation dates in your notice message.%4$s"
 msgstr ""
 
-#: src/Settings/Sections/General.php:132
+#: src/Settings/Sections/General.php:127
 msgctxt "settings field name"
 msgid "Text Color"
 msgstr ""
 
-#: src/Settings/Sections/General.php:133
+#: src/Settings/Sections/General.php:128
 msgctxt "settings field description"
 msgid "If specified, it will change the text color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#: src/Settings/Sections/General.php:143
+#: src/Settings/Sections/General.php:138
 msgctxt "settings field name"
 msgid "Background Color"
 msgstr ""
 
-#: src/Settings/Sections/General.php:144
+#: src/Settings/Sections/General.php:139
 msgctxt "settings field description"
 msgid "If specified, it will change the background color of the WooCommerce info notice to a custom color of your choice."
 msgstr ""
 
-#: src/Settings/Settings.php:48
+#: src/Settings/Settings.php:49
 msgctxt "settings tab label"
 msgid "Store Vacation"
 msgstr ""
 
-#: src/Settings/Settings.php:128
+#: src/Settings/Settings.php:129
 msgctxt "settings tab"
 msgid "General"
 msgstr ""
 
-#: src/Settings/Settings.php:129
+#: src/Settings/Settings.php:130
 msgctxt "settings tab"
 msgid "Conditions"
+msgstr ""
+
+#: src/Settings/Settings.php:181
+msgctxt "error message"
+msgid "The start date must be less than the end date. Please ensure that the selected start date is earlier than the end date to avoid any conflicts with the vacation scheduling."
 msgstr ""
 
 #. Translators: %d stock amount
@@ -308,10 +313,10 @@ msgctxt "admin bar"
 msgid "Vacation mode is activated! Click here to navigate to the plugin’s settings page."
 msgstr ""
 
-#. translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag.
+#. translators: 1: Plugin name, 2: Open anchor tag, 3: Close anchor tag, 4: Open anchor tag, 5: Close anchor tag.
 #: templates/notices/onboarding.php:21
 msgctxt "admin notice"
-msgid "Thanks for installing %1$s plugin! To get started, visit the %2$splugin’s settings page%3$s."
+msgid "Thanks for installing %1$s plugin! To get started, visit the %2$sdocumentation%3$s or %4$splugin’s settings page%5$s."
 msgstr ""
 
 #. translators: 1: Activation duration, 2: Plugin name
@@ -395,7 +400,7 @@ msgctxt "upsell"
 msgid "Read reviews from real users"
 msgstr ""
 
-#: assets/js/admin.js:85
+#: assets/js/admin.js:130
 #: assets/js/minified/admin.js:1
 msgid "Delete"
 msgstr ""

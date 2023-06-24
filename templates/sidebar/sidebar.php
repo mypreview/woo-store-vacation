@@ -21,3 +21,6 @@ defined( 'WC_VERSION' ) || exit;
 	do_action( 'woo_store_vacation_settings_sidebar' );
 	?>
 </div>
+
+<?php
+/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

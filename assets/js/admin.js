@@ -16,8 +16,10 @@
 		 */
 		cache() {
 			this.els = {};
+			this.vars = {};
 			this.els.$startDate = $( '[name="woo_store_vacation_options[start_date]"]' );
 			this.els.$endDate = $( '[name="woo_store_vacation_options[end_date]"]' );
+			this.vars.dayInSeconds = 24 * 60 * 60 * 1000;
 		},
 
 		/**
@@ -36,28 +38,71 @@
 		 * @since 1.0.0
 		 */
 		datePickers() {
+			// Add delete button to datepicker.
 			this.addDeleteButtonDatepicker();
 
-			this.els.$startDate.datepicker( {
+			// Common options for datepickers.
+			const commonDatepickerOptions = {
 				changeMonth: true,
+				changeYear: true,
 				showButtonPanel: true,
+				buttonImageOnly: true,
+				numberOfMonths: 1,
+				showOn: 'focus',
 				dateFormat: 'yy-mm-dd',
+				beforeShowDay( date ) {
+					const startDate = admin.els.$startDate.datepicker( 'getDate' );
+					const endDate = admin.els.$endDate.datepicker( 'getDate' );
+					if ( startDate && endDate && date >= startDate && date <= endDate ) {
+						return [ true, 'highlight', '' ];
+					}
+					return [ true, '', '' ];
+				},
+			};
+
+			this.els.$startDate.datepicker( {
+				...commonDatepickerOptions,
+				beforeShow() {
+					const maxDate = admin.els.$endDate.val();
+					if ( maxDate ) {
+						$( this ).datepicker(
+							'option',
+							'maxDate',
+							new Date( Date.parse( maxDate ) - admin.vars.dayInSeconds )
+						);
+					}
+				},
 				onClose( selectedDate ) {
-					const minDate = new Date( Date.parse( selectedDate ) );
-					minDate.setDate( minDate.getDate() + 1 );
+					const minDate = new Date( Date.parse( selectedDate ) + admin.vars.dayInSeconds );
 					admin.els.$endDate.datepicker( 'option', 'minDate', minDate );
 				},
 			} );
 
 			this.els.$endDate.datepicker( {
+				...commonDatepickerOptions,
 				minDate: '+1D',
-				changeMonth: true,
-				showButtonPanel: true,
-				dateFormat: 'yy-mm-dd',
+				beforeShow() {
+					const minDate = admin.els.$startDate.val();
+					if ( minDate ) {
+						$( this ).datepicker(
+							'option',
+							'minDate',
+							new Date( Date.parse( minDate ) + admin.vars.dayInSeconds )
+						);
+					}
+				},
 				onClose( selectedDate ) {
-					const maxDate = new Date( Date.parse( selectedDate ) );
-					maxDate.setDate( maxDate.getDate() - 1 );
+					const maxDate = new Date( Date.parse( selectedDate ) - admin.vars.dayInSeconds );
 					admin.els.$startDate.datepicker( 'option', 'maxDate', maxDate );
+
+					// Check if endDate has passed today's date
+					const today = new Date();
+
+					const endDate = new Date( selectedDate );
+					endDate.setHours( 0, 0, 0, 0 );
+
+					// If endDate is less than today's date, show error color.
+					$( this ).toggleClass( 'end-date-error', endDate && today > endDate );
 				},
 			} );
 
