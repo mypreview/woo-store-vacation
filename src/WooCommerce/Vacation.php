@@ -187,8 +187,15 @@ class Vacation {
 	 */
 	public function is_purchasable( $purchasable, $product ) {
 
-		// Bail early, in case product is not purchasable.
+		// Bail early, in case the conditions are empty.
 		if ( empty( $this->conditions ) ) {
+			/**
+			 * Disable purchase for the product.
+			 *
+			 * @since 1.9.1
+			 */
+			do_action( 'woo_store_vacation_disable_purchase_product', $product );
+
 			return false;
 		}
 
@@ -197,12 +204,11 @@ class Vacation {
 			$product = wc_get_product( $product->get_parent_id() );
 		}
 
-		$resolutions = array();
 		$product_id  = $product->get_id();
+		$resolutions = array();
 
 		// Iterate through each condition.
 		foreach ( $this->conditions as $condition => $ids ) {
-
 			// Get the resolution.
 			$resolutions[] = woo_store_vacation()->service( 'resolutions' )->validate(
 				$condition,
@@ -210,7 +216,7 @@ class Vacation {
 			);
 		}
 
-		// Check if any of the resolution is false.
+		// Check if any of the resolutions are false.
 		if ( in_array( false, array_unique( $resolutions ), true ) ) {
 			return true;
 		}
