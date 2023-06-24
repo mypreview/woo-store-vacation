@@ -143,6 +143,7 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 == Changelog ==
 = 1.9.1 =
 * Fix: Allow specifying empty values for the text and background color options.
+* Fix: Hide add to cart button from the single variable product page.
 * Compatibility: WooCommerce 7.8
 
 = 1.9.0 =
