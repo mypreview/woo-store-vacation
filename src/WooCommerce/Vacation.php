@@ -230,9 +230,17 @@ class Vacation {
 	 *
 	 * @since 1.9.1
 	 *
+	 * @param WC_Product $product Product data.
+	 *
 	 * @return void
 	 */
-	public function remove_add_to_cart_button() {
+	public function remove_add_to_cart_button( $product ) {
+
+		// For variable products, we need to remove the add to cart button from the variation product page.
+		// Otherwise, the add to cart button will be removed from the parent product page by default.
+		if ( ! $product->is_type( 'variable' ) ) {
+			return;
+		}
 
 		// We are all set, let’s remove the add to cart button from the variation product page.
 		remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20 );
