@@ -120,51 +120,9 @@ class Vacation {
 	public function disable_purchase() {
 
 		add_action( 'admin_bar_menu', array( $this, 'admin_bar_node' ), 999 );
-		add_filter( 'woocommerce_is_purchasable', array( $this, 'is_purchasable' ), PHP_INT_MAX, 2 );
 		add_filter( 'body_class', array( $this, 'body_classes' ) );
-	}
-
-	/**
-	 * Determine if the product is purchasable.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param bool       $purchasable Whether the product is purchasable.
-	 * @param WC_Product $product     Product data.
-	 *
-	 * @return bool
-	 */
-	public function is_purchasable( $purchasable, $product ) {
-
-		// Bail early, in case product is not purchasable.
-		if ( empty( $this->conditions ) ) {
-			return false;
-		}
-
-		if ( $product->is_type( 'variation' ) ) {
-			// Get parent product.
-			$product = wc_get_product( $product->get_parent_id() );
-		}
-
-		$resolutions = array();
-		$product_id  = $product->get_id();
-
-		// Iterate through each condition.
-		foreach ( $this->conditions as $condition => $ids ) {
-
-			// Get the resolution.
-			$resolutions[] = woo_store_vacation()->service( 'resolutions' )->validate(
-				$condition,
-				array( $ids, $product_id )
-			);
-		}
-
-		// Check if any of the resolution is false.
-		if ( in_array( false, array_unique( $resolutions ), true ) ) {
-			return true;
-		}
-
-		return false;
+		add_filter( 'woocommerce_is_purchasable', array( $this, 'is_purchasable' ), PHP_INT_MAX, 2 );
+		add_action( 'woo_store_vacation_disable_purchase_product', array( $this, 'remove_add_to_cart_button' ) );
 	}
 
 	/**
@@ -215,5 +173,68 @@ class Vacation {
 		$classes[] = sanitize_html_class( woo_store_vacation()->get_slug() . '-shop-closed' );
 
 		return $classes;
+	}
+
+	/**
+	 * Determine if the product is purchasable.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param bool       $purchasable Whether the product is purchasable.
+	 * @param WC_Product $product     Product data.
+	 *
+	 * @return bool
+	 */
+	public function is_purchasable( $purchasable, $product ) {
+
+		// Bail early, in case product is not purchasable.
+		if ( empty( $this->conditions ) ) {
+			return false;
+		}
+
+		if ( $product->is_type( 'variation' ) ) {
+			// Get parent product.
+			$product = wc_get_product( $product->get_parent_id() );
+		}
+
+		$resolutions = array();
+		$product_id  = $product->get_id();
+
+		// Iterate through each condition.
+		foreach ( $this->conditions as $condition => $ids ) {
+
+			// Get the resolution.
+			$resolutions[] = woo_store_vacation()->service( 'resolutions' )->validate(
+				$condition,
+				array( $ids, $product_id )
+			);
+		}
+
+		// Check if any of the resolution is false.
+		if ( in_array( false, array_unique( $resolutions ), true ) ) {
+			return true;
+		}
+
+		/**
+		 * Disable purchase for the product.
+		 *
+		 * @since 1.9.1
+		 */
+		do_action( 'woo_store_vacation_disable_purchase_product', $product );
+
+		return false;
+	}
+
+	/**
+	 * Remove add to cart button from the variation product page.
+	 *
+	 * @since 1.9.1
+	 *
+	 * @return void
+	 */
+	public function remove_add_to_cart_button() {
+
+		// We are all set, let’s remove the add to cart button from the variation product page.
+		remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20 );
 	}
 }
