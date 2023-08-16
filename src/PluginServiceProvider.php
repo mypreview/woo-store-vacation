@@ -13,10 +13,6 @@ namespace Woo_Store_Vacation;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Woo_Store_Vacation\Integration;
-use Woo_Store_Vacation\Settings;
-use Woo_Store_Vacation\Shortcode;
-use Woo_Store_Vacation\Util;
 
 /**
  * Class PluginServiceProvider.
