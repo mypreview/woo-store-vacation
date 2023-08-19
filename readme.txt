@@ -142,6 +142,7 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 
 == Changelog ==
 = 1.9.2 =
+* Fix: Isolated the dependency injection container package to prevent potential PHP fatal errors when utilized by other third-party plugins.
 * Compatibility: WordPress 6.3
 * Compatibility: WooCommerce 8.0
 
