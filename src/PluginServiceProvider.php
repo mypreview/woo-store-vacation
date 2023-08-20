@@ -11,17 +11,10 @@
 
 namespace Woo_Store_Vacation;
 
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
-use Woo_Store_Vacation\Integration;
-use Woo_Store_Vacation\Settings;
-use Woo_Store_Vacation\Shortcode;
-use Woo_Store_Vacation\Util;
-
 /**
  * Class PluginServiceProvider.
  */
-class PluginServiceProvider implements ServiceProviderInterface {
+class PluginServiceProvider implements Vendor\Pimple\ServiceProviderInterface {
 
 	/**
 	 * Registers services on the given container.
@@ -31,7 +24,7 @@ class PluginServiceProvider implements ServiceProviderInterface {
 	 *
 	 * @since 1.9.0
 	 *
-	 * @param Container $pimple Container instance.
+	 * @param Vendor\Pimple\Container $pimple Container instance.
 	 */
 	public function register( $pimple ) {
 

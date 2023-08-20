@@ -27,7 +27,24 @@ class WooCommerce {
 	 */
 	public function setup() {
 
+		add_action( 'before_woocommerce_init', array( $this, 'add_block_editor_compatibility' ) );
 		add_action( 'before_woocommerce_init', array( $this, 'add_hpos_compatibility' ) );
+	}
+
+	/**
+	 * Declaring compatibility with product block editor.
+	 *
+	 * Despite being unrelated to the "Product Block Editor,"
+	 * a compatibility flag has been added to prevent WooCommerce from labeling it as "uncertain."
+	 *
+	 * @since 1.9.2
+	 *
+	 * @return void
+	 */
+	public function add_block_editor_compatibility() {
+
+		// Declare compatibility with product block editor.
+		FeaturesUtil::declare_compatibility( 'product_block_editor', woo_store_vacation()->service( 'file' )->plugin_file() );
 	}
 
 	/**
