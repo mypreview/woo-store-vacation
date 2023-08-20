@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3184acf5f95f4b1df0272c1a983c974",
+    "content-hash": "54d8f2bb23ccad9832e1ce0fec34476f",
     "packages": [
         {
             "name": "mahdiyazdani/wc-install-notice",

@@ -14,7 +14,7 @@ namespace Woo_Store_Vacation;
 /**
  * The plugin class.
  */
-class Plugin extends Dependencies\Pimple\Container {
+class Plugin extends Vendor\Pimple\Container {
 
 	/**
 	 * The plugin version.
