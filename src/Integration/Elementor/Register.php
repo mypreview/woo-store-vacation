@@ -2,8 +2,6 @@
 /**
  * Plugin Elementor widget registerer.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.8.1
  *
  * @package woo-store-vacation

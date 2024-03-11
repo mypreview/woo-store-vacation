@@ -2,8 +2,6 @@
 /**
  * The onboarding class for enhancing the new user experience.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.6.1
  *
  * @package woo-store-vacation

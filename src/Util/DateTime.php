@@ -2,8 +2,6 @@
 /**
  * The utility class for date-time related functions.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.7.0
  *
  * @package woo-store-vacation

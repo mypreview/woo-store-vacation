@@ -2,8 +2,6 @@
 /**
  * Vacation notice shortcode class.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.0.0
  *
  * @package woo-store-vacation
