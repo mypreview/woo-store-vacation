@@ -2,9 +2,9 @@
 
 A WordPress plugin that allows you to put your WooCommerce store on vacation mode by disabling the checkout process, displaying a custom message to visitors, and more.
 
-[![Woo Store Vacation Downloads](https://img.shields.io/wordpress/plugin/dt/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Active Installs](https://img.shields.io/wordpress/plugin/installs/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Ratings](https://img.shields.io/wordpress/plugin/r/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Tested](https://img.shields.io/wordpress/plugin/tested/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Version](https://img.shields.io/wordpress/plugin/v/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation License](https://img.shields.io/github/license/mypreview/woo-store-vacation)](https://wordpress.org/plugins/woo-store-vacation) [![Upgrade to premium version to unlock more features](https://img.shields.io/badge/💰-Upgrade%20to%20PRO-%23fedd04)](https://mypreview.one/woo-store-vacation)
+[![Woo Store Vacation Downloads](https://img.shields.io/wordpress/plugin/dt/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Active Installs](https://img.shields.io/wordpress/plugin/installs/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Ratings](https://img.shields.io/wordpress/plugin/r/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Tested](https://img.shields.io/wordpress/plugin/tested/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation Version](https://img.shields.io/wordpress/plugin/v/woo-store-vacation.svg)](https://wordpress.org/plugins/woo-store-vacation) [![Woo Store Vacation License](https://img.shields.io/github/license/mypreview/woo-store-vacation)](https://wordpress.org/plugins/woo-store-vacation) [![Upgrade to premium version to unlock more features](https://img.shields.io/badge/💰-Upgrade%20to%20PRO-%23fedd04)](https://woo.com/products/store-vacation)
 
-[![Woo Store Vacation](https://ps.w.org/woo-store-vacation/assets/banner-1544x500.jpg)](https://mypreview.one/woo-store-vacation)
+[![Woo Store Vacation](https://ps.w.org/woo-store-vacation/assets/banner-1544x500.jpg)](https://woo.com/products/store-vacation)
 
 > ⚠️ If you are not a developer, we recommend using the official [plugin post page](https://wordpress.org/plugins/woo-store-vacation "Download Woo Store Vacation plugin") on wordpress.org for this plugin.
 
@@ -79,4 +79,4 @@ We kindly appreciate your support! If you find this plugin helpful, we would be 
 
 ## Go premium 💰
 
-We are excited to offer you the premium (paid) version of the plugin! Unlock advanced features and enhanced functionality by upgrading to PRO. Take your experience to the next level. [Click here](https://mypreview.one/woo-store-vacation) to Upgrade to PRO and enjoy the additional benefits.
+We are excited to offer you the premium (paid) version of the plugin! Unlock advanced features and enhanced functionality by upgrading to PRO. Take your experience to the next level. [Click here](https://woo.com/products/store-vacation) to Upgrade to PRO and enjoy the additional benefits.
