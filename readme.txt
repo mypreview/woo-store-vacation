@@ -40,9 +40,9 @@ If you’re intrigued by the plugin and eager to explore its features, allowing 
 
 ## Unlock the full potential of your online store with PRO
 
-[Upgrade now](https://woo.com/products/store-vacation/ "Woo Store Vacation (PRO)") and enjoy powerful features and customization options that are not available in the basic version.
+[Upgrade now](https://woo.com/products/store-vacation/ "Store Vacation (PRO)") and enjoy powerful features and customization options that are not available in the basic version.
 
-With Woo Store Vacation PRO, you get access to the following features:
+With Store Vacation PRO, you get access to the following features:
 
 * **Schedule Multiple Vacations**: You can schedule an unlimited number of vacation periods for any duration of time, so you can plan multiple breaks throughout the year and adjust vacation dates according to your schedule.
 * **Recurring Weekly Closing Days**: You can schedule specific weekdays to close your shop on a recurring basis each week, which is perfect for store owners who need to take time off regularly or want to adjust store hours on certain days.
@@ -53,7 +53,7 @@ With Woo Store Vacation PRO, you get access to the following features:
 * **Exclude Individual Products**: Exclude individual products using the setting on the product edit page, so your shop can still accept new orders of those specified products when you close your shop using schedule a vacation, define weekday closing time, or enable force closed.
 * **Import and Export**: Import and Export features that allow you to quickly transfer your plugin settings and content to a new website, saving you time and avoiding manual configuration.
 
-In addition, with the PRO version, you'll receive priority support from our team, ensuring you get the help you need when you need it. Upgrade to Woo Store Vacation PRO now and take your online store management to the next level. [Visit our PRO page](https://woo.com/products/store-vacation/ "Woo Store Vacation (PRO)") to learn more and purchase.
+In addition, with the PRO version, you'll receive priority support from our team, ensuring you get the help you need when you need it. Upgrade to Store Vacation PRO now and take your online store management to the next level. [Visit our PRO page](https://woo.com/products/store-vacation/ "Woo Store Vacation (PRO)") to learn more and purchase.
 
 == Installation ==
 = Minimum Requirements =
@@ -127,7 +127,7 @@ We welcome contributions in various forms, such as bug reporting, testing, and p
 If you enjoyed using this plugin, we would greatly appreciate your feedback in the form of a [5-star rating](https://wordpress.org/support/plugin/woo-store-vacation/reviews/ "Rate Woo Store Vacation 5 stars"). Your rating will help us improve and continue providing high-quality services. Thank you!
 
 = Does Woo Store Vacation have a pro or premium version? =
-Yes, it does. The [Woo Store Vacation PRO](https://woo.com/products/store-vacation/ "Woo Store Vacation (PRO)") is available as an upgrade and offers additional features and third-party integrations.
+Yes, it does. The [Store Vacation PRO](https://woo.com/products/store-vacation/ "Store Vacation (PRO)") is available as an upgrade and offers additional features and third-party integrations.
 
 == Screenshots ==
 1. Plugin’s settings page
