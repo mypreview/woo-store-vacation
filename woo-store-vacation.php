@@ -35,7 +35,7 @@
  * Domain Path: /languages
  *
  * WC requires at least: 5.5
- * WC tested up to: 8.6
+ * WC tested up to: 8.7
  */
 
 use Woo_Store_Vacation\Plugin;
