@@ -2,8 +2,6 @@
 /**
  * The util resolutions for the plugin.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.9.0
  *
  * @package woo-store-vacation

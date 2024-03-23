@@ -2,8 +2,6 @@
 /**
  * The plugin settings.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.8.0
  *
  * @package woo-store-vacation

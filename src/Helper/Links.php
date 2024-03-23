@@ -2,8 +2,6 @@
 /**
  * Helper links used throughout the plugin.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.7.0
  *
  * @package woo-store-vacation
@@ -47,7 +45,7 @@ abstract class Links {
 	public static function pro_uri( $path = '', $args = array() ) {
 
 		return path_join(
-			'https://mypreview.one/woo-store-vacation/',
+			'https://woo.com/products/store-vacation/',
 			add_query_arg( $args, $path )
 		);
 	}

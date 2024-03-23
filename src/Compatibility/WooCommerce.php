@@ -2,8 +2,6 @@
 /**
  * Add compatibility with WooCommerce (core) features.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.6.2
  *
  * @package woo-store-vacation

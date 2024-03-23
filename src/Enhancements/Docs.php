@@ -2,8 +2,6 @@
 /**
  * Plugin documentation content.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.3.8
  *
  * @package woo-store-vacation
