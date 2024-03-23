@@ -145,10 +145,6 @@ class Plugin extends Vendor\Pimple\Container {
 			// Initialize the class.
 			( new $class() )->setup();
 		}
-
-		add_action( 'before_woocommerce_init', array( 'Woo_Store_Vacation\\I18n', 'textdomain' ) );
-		add_action( 'enqueue_block_editor_assets', array( 'Woo_Store_Vacation\\Assets', 'enqueue_editor' ) );
-		add_action( 'admin_enqueue_scripts', array( 'Woo_Store_Vacation\\Assets', 'enqueue_admin' ) );
 	}
 
 	/**
@@ -184,9 +180,6 @@ class Plugin extends Vendor\Pimple\Container {
 			),
 			'Enhancements\\Meta' => array(
 				'condition' => $is_admin,
-				'params'    => array(
-					$this['file']->plugin_basename(),
-				),
 			),
 			'Enhancements\\Notices' => array(
 				'condition' => $is_admin,
