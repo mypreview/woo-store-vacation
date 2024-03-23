@@ -61,7 +61,7 @@ require_once untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/vendor/autoloa
  *
  * @since 1.9.0
  *
- * @return mixed|Plugin
+ * @return null|Plugin
  */
 function woo_store_vacation() {
 
@@ -82,7 +82,7 @@ function woo_store_vacation() {
  *
  * @return void
  */
-function woo_store_vacation_load(): void {
+function woo_store_vacation_load() {
 
 	// Fetch the instance.
 	woo_store_vacation();
