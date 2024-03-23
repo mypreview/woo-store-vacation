@@ -17,15 +17,6 @@ use Woo_Store_Vacation\Helper;
 class Meta {
 
 	/**
-	 * The plugin basename.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @var string
-	 */
-	private $plugin_basename;
-
-	/**
 	 * Setup hooks and filters.
 	 *
 	 * @since 1.0.0
@@ -83,11 +74,12 @@ class Meta {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $links Plugin table/item action links.
+	 * @param array  $links Plugin table/item action links.
+	 * @param string $file  Path to the plugin file relative to the plugins' directory.
 	 *
 	 * @return array
 	 */
-	public function action_links( $links ) {
+	public function action_links( $links, $file ) {
 
 		// Leave early if the filter is not for this plugin.
 		if ( ! $this->is_this_plugin( $file ) ) {
