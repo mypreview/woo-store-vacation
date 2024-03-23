@@ -70,7 +70,7 @@ class Plugin extends Vendor\Pimple\Container {
 	/**
 	 * Hooks.
 	 *
-	 * @since 1.9.5
+	 * @since 1.9.4
 	 *
 	 * @return void
 	 */
