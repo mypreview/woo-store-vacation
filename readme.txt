@@ -143,7 +143,7 @@ Yes, it does. The [Store Vacation PRO](https://woo.com/products/store-vacation/ 
 == Changelog ==
 = 1.9.4 =
 * Compatibility: WordPress 6.5
-* Compatibility: WooCommerce 8.6
+* Compatibility: WooCommerce 8.7
 
 = 1.9.3 =
 * Compatibility: WordPress 6.4
