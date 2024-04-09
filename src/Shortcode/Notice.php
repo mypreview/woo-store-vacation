@@ -2,8 +2,6 @@
 /**
  * Vacation notice shortcode class.
  *
- * @author MyPreview (Github: @mahdiyazdani, @gooklani, @mypreview)
- *
  * @since 1.0.0
  *
  * @package woo-store-vacation
@@ -179,6 +177,9 @@ class Notice extends Shortcode {
 		$background_color = woo_store_vacation()->service( 'options' )->get( 'background_color' );
 		$inline_css[]     = sprintf(
 			'
+			#%1$s {
+				padding: 0;
+			}
 			#%1$s .woocommerce-info {
 				text-align:left;
 				list-style:none;

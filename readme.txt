@@ -1,11 +1,11 @@
 === Woo Store Vacation ===
 Contributors: mahdiyazdani, mypreview, gookaani
 Tags: vacation,holiday,calendar,close shop,catalog mode,disable cart,woocommerce
-Donate link: https://mypreview.one/woo-store-vacation
+Donate link: https://woo.com/products/store-vacation
 Requires at least: 5.9
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.4
-Stable tag: 1.9.3
+Stable tag: 1.9.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,20 +40,21 @@ If you’re intrigued by the plugin and eager to explore its features, allowing 
 
 ## Unlock the full potential of your online store with PRO
 
-[Upgrade now](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") and enjoy powerful features and customization options that are not available in the basic version.
+[Upgrade now](https://woo.com/products/store-vacation/ "Store Vacation (PRO)") and enjoy powerful features and customization options that are not available in the basic version.
 
-With Woo Store Vacation PRO, you get access to the following features:
+With Store Vacation PRO, you get access to the following features:
 
 * **Schedule Multiple Vacations**: You can schedule an unlimited number of vacation periods for any duration of time, so you can plan multiple breaks throughout the year and adjust vacation dates according to your schedule.
-* **Recurring Weekly Closing Days**: You can schedule specific weekdays to close your shop on a recurring basis each week, which is perfect for store owners who need to take time off regularly or want to adjust store hours on certain days.
+* **Weekly Closing Days and Hours**: You can schedule specific weekdays to close your shop on a recurring basis each week, which is perfect for store owners who need to take time off regularly or want to adjust store hours on certain days.
+* **Advanced Customizable Notice Banner**: Enjoy an array of customization options, including the ability to fine-tune font sizes, switch notice types, and transform your notice into an eye-catching Announcement bar, ensuring it remains prominently displayed as a sticky header bar for maximum impact.
 * **Smart Conditional Logic**: Experience the unmatched flexibility of plugin’s Smart Conditional Logic feature, empowering you to set specific conditions and schedules that perfectly adapt the behavior of vacation mode to your unique needs. Exclude certain products, categories, tags, shipping classes, product types, or WooCommerce brands from each vacation schedule or weekday closing time effortlessly. This intelligent functionality becomes especially valuable when you want to allow specific products to be purchased during closing times. Take complete control over your shop’s availability and provide a seamless shopping experience for customers, even when you’re on vacation.
 * **Exclude User Roles**: Exclude specific user roles, such as administrators or shop managers, from the vacation mode, so you can keep your shop open for these users even when the vacation mode is activated.
-* **Exclude Product Types**: Exclude product types from vacation mode and keep selling certain types of products even when your store is closed.
-* **Force Close**: Use the force close feature to activate vacation mode without setting a specific schedule or end time, which is helpful for unexpected situations where you need to close your store immediately without prior notice.
+* **Force Close**: Use the force close feature to activate vacation mode without setting a specific schedule or end time, which is helpful for unexpected situations where you need to close your store immediately without prior scheduling.
 * **Exclude Individual Products**: Exclude individual products using the setting on the product edit page, so your shop can still accept new orders of those specified products when you close your shop using schedule a vacation, define weekday closing time, or enable force closed.
+* **REST API Integration**: Gain access to vacation schedules, whether you're developing an app for WooCommerce or managing your store's operations. Retrieve detailed information on individual schedules or effortlessly identify Active, Disabled, Currently Running, or Upcoming schedules, empowering you to streamline your app's functionality and enhance user engagement.
 * **Import and Export**: Import and Export features that allow you to quickly transfer your plugin settings and content to a new website, saving you time and avoiding manual configuration.
 
-In addition, with the PRO version, you'll receive priority support from our team, ensuring you get the help you need when you need it. Upgrade to Woo Store Vacation PRO now and take your online store management to the next level. [Visit our PRO page](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") to learn more and purchase.
+In addition, with the PRO version, you'll receive priority support from our team, ensuring you get the help you need when you need it. Upgrade to Store Vacation PRO now and take your online store management to the next level. [Visit our PRO page](https://woo.com/products/store-vacation/ "Woo Store Vacation (PRO)") to learn more and purchase.
 
 == Installation ==
 = Minimum Requirements =
@@ -127,7 +128,7 @@ We welcome contributions in various forms, such as bug reporting, testing, and p
 If you enjoyed using this plugin, we would greatly appreciate your feedback in the form of a [5-star rating](https://wordpress.org/support/plugin/woo-store-vacation/reviews/ "Rate Woo Store Vacation 5 stars"). Your rating will help us improve and continue providing high-quality services. Thank you!
 
 = Does Woo Store Vacation have a pro or premium version? =
-Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacation/ "Woo Store Vacation (PRO)") is available as an upgrade and offers additional features and third-party integrations.
+Yes, it does. The [Store Vacation PRO](https://woo.com/products/store-vacation/ "Store Vacation (PRO)") is available as an upgrade and offers additional features and third-party integrations.
 
 == Screenshots ==
 1. Plugin’s settings page
@@ -141,6 +142,10 @@ Yes, it does. The [Woo Store Vacation PRO](https://mypreview.one/woo-store-vacat
 8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
+= 1.9.4 =
+* Compatibility: WordPress 6.5
+* Compatibility: WooCommerce 8.7
+
 = 1.9.3 =
 * Compatibility: WordPress 6.4
 * Compatibility: WooCommerce 8.3
