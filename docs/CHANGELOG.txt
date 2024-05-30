@@ -1,4 +1,17 @@
 === Woo Store Vacation ===
+= 1.9.4 =
+* Compatibility: WordPress 6.5
+* Compatibility: WooCommerce 8.7
+
+= 1.9.3 =
+* Compatibility: WordPress 6.4
+* Compatibility: WooCommerce 8.3
+
+= 1.9.2 =
+* Fix: Isolated the dependency injection container package to prevent potential PHP fatal errors when utilized by other third-party plugins.
+* Compatibility: WordPress 6.3
+* Compatibility: WooCommerce 8.0
+
 = 1.9.1 =
 * Fix: Allow specifying empty values for the text and background color options.
 * Fix: Hide add to cart button from the single variable product page.
