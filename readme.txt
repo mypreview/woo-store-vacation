@@ -61,8 +61,8 @@ In addition, with the PRO version, you'll receive priority support from our team
 
 * PHP version 7.4 or greater.
 * MySQL version 5.6 or greater or MariaDB version 10.0 or greater.
-* WordPress version 5.3 or greater.
-* WooCommerce version 4.0 or greater.
+* WordPress version 5.9 or greater.
+* WooCommerce version 5.5 or greater.
 
 = Automatic installation =
 
