@@ -45,7 +45,7 @@ abstract class Links {
 	public static function pro_uri( $path = '', $args = array() ) {
 
 		return path_join(
-			'https://woo.com/products/store-vacation/',
+			'https://woocommerce.com/products/store-vacation/',
 			add_query_arg( $args, $path )
 		);
 	}
