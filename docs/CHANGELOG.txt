@@ -1,4 +1,8 @@
 === Woo Store Vacation ===
+= 1.9.5 =
+* Compatibility: WordPress 6.8
+* Compatibility: WooCommerce 9.8
+
 = 1.9.4 =
 * Compatibility: WordPress 6.5
 * Compatibility: WooCommerce 8.7
