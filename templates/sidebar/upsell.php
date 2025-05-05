@@ -50,7 +50,7 @@ defined( 'WC_VERSION' ) || exit;
 				<span class="dashicons dashicons-star-filled"></span>
 				<span class="dashicons dashicons-star-filled"></span>
 				<span class="dashicons dashicons-star-half"></span>
-				<span class="woo-store-vacation-get-pro-rating-text">4.4 / 5</span>
+				<span class="woo-store-vacation-get-pro-rating-text">4.5 / 5</span>
 			</div>
 		</a>
 	</div>
