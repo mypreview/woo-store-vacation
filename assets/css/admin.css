@@ -11,6 +11,8 @@
 
 .woo-store-vacation-docs-title {
 	font-size: 18px;
+	padding-top: 20px;
+	margin: 0;
 }
 
 .woo-store-vacation-docs-cta a {
@@ -131,6 +133,17 @@
 	background-color: #ffafaf;
 }
 
+.woocommerce_page_wc-settings-woo-store-vacation #wpfooter {
+	position: relative;
+}
+
+.woo-store-vacation-page #mainform,
+.woo-store-vacation-page .notice {
+	box-sizing: border-box;
+	float: left;
+	width: 100%;
+}
+
 @media (min-width: 1200px) {
 
 	.woo-store-vacation-page .form-table,
@@ -145,13 +158,18 @@
 		margin-left: 20px;
 		width: 300px;
 	}
+
+	body.woo-store-vacation-page #mainform::after {
+		content: "";
+		display: table;
+		width: 100%;
+	}
 }
 
 @media (max-width: 1199px) {
 
 	.woo-store-vacation-page #mainform {
 		display: table;
-		width: 100%;
 	}
 
 	.woo-store-vacation-page .woocommerce nav.woo-nav-tab-wrapper {

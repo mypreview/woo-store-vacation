@@ -3,9 +3,9 @@ Contributors: mahdiyazdani, mypreview, gookaani
 Tags: vacation,holiday,calendar,close shop,catalog mode,disable cart,woocommerce
 Donate link: https://woocommerce.com/products/store-vacation
 Requires at least: 5.9
-Tested up to: 6.6
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -142,6 +142,9 @@ Yes, it does. The [Store Vacation PRO](https://woocommerce.com/products/store-va
 8. Adding the Store Vacation Notice Elementor widget to the page
 
 == Changelog ==
+= 1.9.6 =
+* Compatibility: WooCommerce 9.9
+
 = 1.9.5 =
 * Compatibility: WordPress 6.8
 * Compatibility: WooCommerce 9.8
